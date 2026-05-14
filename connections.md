@@ -13,6 +13,13 @@ Registry of every system your AIOS can reach. Filled by `/onboard` from Q4-Q7 an
 | 7 | Knowledge / files | Google Workspace, Coda, GitHub (second brain) | partial — GitHub via gh cli | PAT in keyring | 2026-05-13 |
 | 8 | Shared skills | Coda | mcp (claude.ai native) | akhanaton@gmail.com | 2026-05-13 |
 | 9 | Second brain / knowledge base | GitHub (`akhanaton/spyglass-wiki`) | gh cli | PAT in keyring | 2026-05-13 |
+| 10 | SEO analytics | Google Search Console | script (gsc_analyzer.py) | not yet connected | — |
+| 11 | SEO analytics | GA4 | script (ga4_analyzer.py) | not yet connected | — |
+| 12 | Keyword research | DataForSEO | script (keyword_researcher.py) | not yet connected | — |
+| 13 | Email marketing | Brevo | API | not yet connected | — |
+| 14 | Community monitoring | Reddit API | script (reddit_monitor.py) | not yet connected | — |
+| 15 | Blog CMS | Sanity | API | not yet connected | — |
+| 16 | SEO research | Ahrefs | script (ahrefs_analyzer.py) | not yet connected | — |
 
 **Mechanism options:** `mcp` (MCP server), `script` (Python/Bash hitting an API, in `scripts/`), `export` (CSV/JSON dump pipeline), `key+ref` (`.env` key + `references/{tool}-api.md` guide), `not yet connected`.
 
