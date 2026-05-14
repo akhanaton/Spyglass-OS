@@ -23,6 +23,8 @@ Read these files:
 - `marketing/context/channel-playbooks.md` — Reddit section for posting rules
 - `marketing/references/reddit-playbook.md` — sub-specific norms, timing, what works
 - `marketing/context/content-standards.md` — positioning rules, what NOT to say
+- `marketing/references/copy-frameworks.md` — hook formulas (curiosity, value, contrarian)
+- `marketing/references/repurposing-playbook.md` — if adapting a blog article for Reddit
 
 Determine the target segment from the subreddit:
 - r/alevel, r/6thForm → could be Cambridge 9709 or Edexcel IAL (check topic)

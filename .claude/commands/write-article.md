@@ -23,6 +23,8 @@ Read these files in parallel:
 - `marketing/context/content-standards.md` — quality bar, review checklist, GEO checklist, positioning
 - `marketing/context/audience-segments.md` — messaging angle for the target segment
 - `marketing/context/funnel-strategy.md` — understand where this article sits in the micro-funnel
+- `marketing/references/geo-platform-guide.md` — GEO content patterns (definition blocks, FAQ, evidence sandwich), platform-specific optimization
+- `marketing/references/copy-frameworks.md` — headline formulas, section writing tips
 
 If a keyword brief exists in `marketing/pipelines/topics/`, read it for keyword data, SERP landscape, and content angle.
 

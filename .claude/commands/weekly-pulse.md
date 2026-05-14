@@ -95,3 +95,5 @@ If the user wants to save it:
 ### Step 6: Strategy check
 
 Compare this week's numbers against targets from `marketing/context/funnel-strategy.md`. If any metric is significantly off-track, flag it and suggest whether to adjust the strategy (with reference to which wiki article to update).
+
+Reference `marketing/references/experiment-framework.md` for any active experiments and their status. Reference `marketing/references/churn-prevention.md` for retention metric targets if post-launch.

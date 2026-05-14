@@ -26,6 +26,7 @@ gh api repos/akhanaton/spyglass-wiki/contents/wiki/marketing/seo/seo-strategy.md
 ```
 
 Read `marketing/context/content-standards.md` for entity naming rules (full exam board names).
+Read `marketing/references/geo-platform-guide.md` for content types that get cited most (comparison articles ~33%, definitive guides ~15%, original research ~12%) and platform-specific optimization priorities.
 
 ### Step 2: Check for DataForSEO connection
 

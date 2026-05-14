@@ -23,6 +23,7 @@ Read these files:
 - `marketing/context/channel-playbooks.md` — channel-specific rules (especially WhatsApp frequency limits, Discord norms)
 - `marketing/context/content-standards.md` — positioning rules
 - `references/voice-enitan.md` — personal voice for outreach (from OS root)
+- `marketing/references/outreach-benchmarks.md` — personalization system, follow-up sequences, subject line data
 
 ### Step 2: Determine template
 

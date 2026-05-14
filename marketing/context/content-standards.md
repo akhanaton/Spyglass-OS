@@ -28,15 +28,44 @@ Before any content moves from `drafts/` to `review/`:
 
 ## GEO Checklist (AI Search Optimization)
 
-For all blog articles and landing pages:
+For all blog articles and landing pages. Deep detail in `marketing/references/geo-platform-guide.md`.
+
+### Structure (make content extractable)
+
+AI systems extract passages, not pages. Every key claim should work as a standalone statement.
 
 - [ ] Answer-first structure: first 2-3 sentences after each H2 are a complete, extractable answer
-- [ ] FAQPage schema: minimum 4 self-contained Q&A pairs per article
+- [ ] Key answer passages are 40-60 words (optimal for snippet extraction)
+- [ ] H2/H3 headings match how students phrase queries ("How do I revise for Cambridge 9709 Paper 1?")
+- [ ] Tables for comparisons, numbered lists for processes
+- [ ] Key Takeaways block immediately after introduction (3-5 bullet points, standalone claims)
+- [ ] FAQPage schema: minimum 4 self-contained Q&A pairs per article, conversational phrasing
+- [ ] Use content patterns from geo-platform-guide.md: definition blocks, step-by-step blocks, comparison tables, evidence sandwich blocks
+
+### Authority (make content citable)
+
+Princeton GEO study visibility boosts (apply these to every article):
+
+| Method | Boost | ExamPilot application |
+|---|---|---|
+| Cite sources | +40% | Link to exam board specs, Ofqual, official syllabi |
+| Add statistics | +37% | Exam pass rates, topic frequency data |
+| Add quotations | +30% | Student testimonials (with consent), teacher quotes |
+| Authoritative tone | +25% | Demonstrated exam expertise |
+| Keyword stuffing | **-10%** | **Never do this** |
+
 - [ ] Entity naming: spell out full names. "Cambridge International AS & A Level Mathematics 9709", "Edexcel International Advanced Level Pure Mathematics WMA11/WMA12"
 - [ ] Cite official sources: link to Ofqual, Cambridge Assessment, Pearson exam board sites
-- [ ] Conversational long-tail in FAQ: "what's the best app for Cambridge 9709 revision?"
+- [ ] Include specific statistics with named sources and dates
+- [ ] Author bios with exam teaching credentials on blog posts
+- [ ] "Last updated" date prominently displayed
+
+### Technical
+
 - [ ] AI crawlers permitted: GPTBot, ClaudeBot, PerplexityBot, Google-Extended in robots.ts
-- [ ] Key Takeaways block immediately after introduction (3-5 bullet points, standalone claims)
+- [ ] FAQPage and Article schema markup on every blog post
+- [ ] `/pricing.md` and `/llms.txt` files on exampilot.io root (see geo-platform-guide.md)
+- [ ] Page load time under 2 seconds
 
 ## Positioning Rules
 
