@@ -186,13 +186,28 @@ Both are too expensive for the current stage and provide no features you need th
 
 ## The `/strategy-review` Command (Phase 2 Design)
 
-When built, this command should:
-1. Pull last 30 days from GSC API (query + page performance)
-2. Pull DataForSEO rank tracking delta (position changes week-over-week)
-3. Pull GA4 organic session quality metrics
-4. Pull PostHog activation + conversion rates by acquisition source
-5. Compare actuals against phase KPI targets (from `marketing-plan-2026-2027.md`)
-6. Surface: top 3 content opportunities, top 3 underperforming pages, channel allocation recommendation, any KPI anomalies
-7. Output a structured decision memo — not a dashboard, a set of actions
+The weekly synthesis command. Pulls from all four data sources, runs a set of built-in strategy checks, and outputs a decision memo — not a dashboard, a numbered action list.
 
-This is the payoff of the virtuous loop. One weekly command that reads all four data sources and tells you what to do next.
+**Data pulls (in order):**
+1. GSC API: last 30 days query + page performance (impressions, clicks, CTR, position)
+2. DataForSEO rank tracking: position changes week-over-week for tracked keyword set
+3. GA4: organic session quality (engagement rate, bounce rate, goal completions by landing page)
+4. PostHog: activation + conversion rates by acquisition source (UTM-tagged)
+5. Syften/RedShip: high-engagement Reddit threads from the past 7 days (for content opportunity detection)
+
+**Built-in strategy checks (runs every time, do not build as separate commands):**
+- **Striking distance** — pages at positions 8-15, sorted by search volume × position gap × impressions (Strategy 1)
+- **Content decay** — pages losing 3+ positions over 8 consecutive weeks (Strategy 3)
+- **Intent mismatch flags** — pages where your content format diverges from the dominant SERP format for its target keyword (Strategy 11)
+- **Reddit-to-article opportunities** — high-upvote Reddit threads with confirmed DataForSEO search volume and no GSC coverage (Strategy 15)
+
+**Output structure (fixed format every run):**
+1. KPI snapshot vs. current phase targets (north star + top 3 leading indicators)
+2. Striking distance list (top 5 pages, sorted by opportunity size)
+3. Decaying pages list (any pages flagged this week)
+4. Content opportunity queue (Reddit signals + cluster gaps cross-referenced)
+5. Intent mismatch flags (any pages flagged)
+6. Channel allocation check (actual demand gen vs. acquisition split vs. exam calendar target)
+7. **Numbered action list: 3-5 specific things to do this week** — this is the only output that matters
+
+The action list is what makes this a decision tool rather than a reporting tool. Every run ends with something to do, not something to read.
