@@ -115,3 +115,15 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 **Owner:** Enitan
 
 ---
+
+## 2026-05-15 — Reddit tool stack: Syften + RedShip
+
+**Decision:** Adopt Syften (€40/mo Standard) for brand/competitor monitoring and RedShip ($19/mo Starter) for Google-ranking thread discovery and reply drafting. Combined ~EUR 57/month. Activate F5bot (free) in Phase 0 to validate subreddit volume before spending. Add RedShip in Phase 1 ahead of Results Day.
+
+**Why:** No single tool covers all requirements (subreddit monitoring + Google-rank detection + brand monitoring + reply drafting + manual-post-only workflow) at under EUR 80/mo. Syften is the strongest standalone monitoring tool with confirmed Reddit API compliance. RedShip is the only tool in this price range with an explicit weekly Google-ranking scan — finding threads that already rank on page 1 and staying in them compounds far longer than chasing new viral posts.
+
+**Alternatives considered:** ReplyAgent (rejected: proxy accounts, incompatible with karma-building strategy); Redreach (rejected: DM automation creates ban risk, pricing opaque); ReplyDaddy (close but BYOK API costs push effective price to $69-99/mo, early-stage longevity risk); Brand24 (overkill, worse Reddit granularity at higher cost); SubHunt (watch list — similar Google-rank feature to RedShip at $12/mo but insufficient third-party validation). GummySearch is dead (shut down Nov 2025).
+
+**Owner:** Enitan
+
+---
