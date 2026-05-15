@@ -75,7 +75,7 @@ Check `context/.whoami` first. For personal external content, match `references/
 
 ## Connections
 
-Revenue: Dodo Payments (pre-launch). Customer channels: Reddit, TikTok (planned), Gmail, Loom. Internal coordination: Coda (MCP connected), Discord. Calendar: Google Calendar. Docs/knowledge: Google Workspace, Coda, GitHub second brain repo. Shared skills: Coda (pending wiring). See `connections.md` for full registry.
+Revenue: Dodo Payments (pre-launch). Customer channels: Reddit, TikTok (planned), Gmail, Loom. Internal coordination: Coda (MCP connected), Discord. Calendar: Google Calendar. Docs/knowledge: Google Workspace, Coda, GitHub second brain repo. Analytics & signals: PostHog (behavioral), Reddit Monitor/Syften (community), GSC/DataForSEO (SEO), Attio CRM (contact enrichment), Brevo (email activation). Shared skills: Coda (pending wiring). See `connections.md` for full registry.
 
 ## GTM Engineering
 

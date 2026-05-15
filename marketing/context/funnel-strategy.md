@@ -84,6 +84,28 @@ The May/June 2026 exam window is too close for SEO to rank. Direct channels are 
 
 SEO and TikTok are being built now for the August 2026 Results Day window (Oct/Nov resit cohort) and long-term compounding.
 
+## Measurement Layer — GTM Engineering
+
+The funnel above defines how content and community activity flow through discovery stages. GTM Engineering (Enitan's function) is the measurement and routing layer that closes the feedback loop.
+
+Every event in the funnel generates a signal scored by `marketing/gtm-engineering/scoring-model.md`:
+
+| Funnel event | Signal type | Where it goes |
+|---|---|---|
+| Pricing page visit, trial signup | Behavioral (PostHog) | CRS score → Attio contact enriched |
+| Reddit post, brand mention | Community (Syften/Reddit API) | Coda Signals table → manual response |
+| Keyword ranking change | SEO (GSC/DataForSEO) | Coda Signals table → content audit or brief |
+| Exam season −30 days | Campaign (calendar) | Coda checklist → campaign activation |
+
+**Weekly ritual:** Run `/signal-review` (Enitan) before `/weekly-pulse` (Teresa). Together they give the full picture: content output + intent response.
+
+**Destinations:**
+- Coda Signals table — operational review of all signals needing action
+- Attio CRM — enriched student contacts (tier, score, exam board, topic focus, source)
+- Brevo sequences — conversion and re-engagement emails triggered by tier thresholds
+
+See `marketing/gtm-engineering/` for the full signal registry, scoring mechanics, and trigger playbook.
+
 ## The Flywheel
 
 Short-term: manual outreach (Reddit, Discord, tutors) drives the first 100 students.
