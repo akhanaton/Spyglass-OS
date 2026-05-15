@@ -140,6 +140,18 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-05-15 — GTM Engineering signal architecture adopted
+
+**Decision:** Added GTM Engineering as Enitan's formal function within Spyglass OS. Built a B2C-adapted signal architecture covering first-party (PostHog behavioral), second-party (Reddit community), and third-party (GSC/DataForSEO SEO + exam calendar) signals. Activation chain: PostHog → scored signal → Coda Signals table (operational) + Attio CRM (contact enrichment) → Brevo sequences. Phase 0 is command-driven (`/signal-review`); Phase 1 automates Attio enrichment and Brevo sequence triggers once those APIs are connected.
+
+**Why:** The Marketing Machine (content, community execution) generates demand but has no intelligence layer to track who is paying attention, how engaged they are, or when they're ready to convert. A signal architecture closes the loop: every piece of content we produce, every Reddit post we answer, every blog article we publish — the behavioral response feeds back into a score that routes the right action to the right person at the right time. Adapted from B2B intent-signal architecture (workflows.io) for a B2C edtech context — no CRM deals, no SDR sequences, student behavioral signals instead of firmographic data.
+
+**Alternatives considered:** (1) Integrate signals into the Marketing Machine only (rejected: Marketing Machine is Teresa's content/community domain; signal scoring and CRM enrichment are engineering concerns — clean separation avoids coordination friction); (2) Start fully automated from day 1 (rejected: no conversion data yet to validate scoring weights; premature automation fires wrong triggers automatically — worse than manual).
+
+**Owner:** Enitan
+
+---
+
 ## 2026-05-15 — Reddit tool stack: Syften + RedShip
 
 **Decision:** Adopt Syften (€40/mo Standard) for brand/competitor monitoring and RedShip ($19/mo Starter) for Google-ranking thread discovery and reply drafting. Combined ~EUR 57/month. Activate F5bot (free) in Phase 0 to validate subreddit volume before spending. Add RedShip in Phase 1 ahead of Results Day.

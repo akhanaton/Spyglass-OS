@@ -77,6 +77,29 @@ Check `context/.whoami` first. For personal external content, match `references/
 
 Revenue: Dodo Payments (pre-launch). Customer channels: Reddit, TikTok (planned), Gmail, Loom. Internal coordination: Coda (MCP connected), Discord. Calendar: Google Calendar. Docs/knowledge: Google Workspace, Coda, GitHub second brain repo. Shared skills: Coda (pending wiring). See `connections.md` for full registry.
 
+## GTM Engineering
+
+Enitan's function. Runs alongside the Marketing Machine. Where the Marketing Machine creates and distributes content, GTM Engineering captures intent signals, scores them, and routes them to action.
+
+**Owner:** Enitan  
+**Ritual:** `/signal-review` — weekly (Friday, after `/weekly-pulse`)
+
+**The activation chain:**
+- Signal sources: PostHog (behavioral) → Reddit Monitor (community) → GSC/DataForSEO (SEO) → Calendar (exam dates)
+- Signal destination: Coda Signals table (operational review) + Attio CRM (enriched contact profiles)
+- Trigger chain: Attio → Brevo (manual Phase 0, automated Phase 1 post-launch)
+
+**Context files:**
+- `marketing/gtm-engineering/signal-registry.md` — all signals, categories, weights
+- `marketing/gtm-engineering/scoring-model.md` — CRS/EHS tiers, scoring mechanics
+- `marketing/gtm-engineering/trigger-playbook.md` — if→then rules per threshold
+- `marketing/data_sources/modules/signal_processor.py` — the computation engine
+
+**Phase gates:**
+- Phase 0 (now): command-driven, manual action, tune weights from observation
+- Phase 1 (post-Brevo + Attio API): automated contact enrichment and sequence triggers
+- Phase 2 (8-12 weeks post-launch): empirical weight adjustment from signal-to-conversion data
+
 ## Marketing Machine
 
 The `marketing/` directory is the execution engine for ExamPilot marketing across all channels: SEO, email, social, copywriting, and direct outreach. Commands live in `.claude/commands/`, agents in `.claude/agents/`.

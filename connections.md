@@ -20,6 +20,12 @@ Registry of every system your AIOS can reach. Filled by `/onboard` from Q4-Q7 an
 | 14 | Community monitoring | Reddit API | script (reddit_monitor.py) | not yet connected | — |
 | 15 | Blog CMS | Sanity | API | not yet connected | — |
 | 16 | SEO research | Ahrefs | script (ahrefs_analyzer.py) | not yet connected | — |
+| 17 | GTM signals — behavioral | PostHog | mcp (claude.ai native) + script | POSTHOG_API_KEY | 2026-05-15 |
+| 18 | GTM signals — community | Reddit Monitor (Syften + reddit_monitor.py) | script | REDDIT_CLIENT_ID | not yet connected |
+| 19 | GTM signals — SEO | GSC + DataForSEO | script | GSC_CREDENTIALS_PATH + DATAFORSEO_LOGIN | not yet connected |
+| 20 | GTM signals — output (operational) | Coda Signals table | mcp (claude.ai native) | akhanaton@gmail.com | 2026-05-15 |
+| 21 | GTM signals — CRM / enrichment | Attio | API | not yet connected | — |
+| 22 | GTM signals — activation | Brevo (sequences) | API | not yet connected | — |
 
 **Mechanism options:** `mcp` (MCP server), `script` (Python/Bash hitting an API, in `scripts/`), `export` (CSV/JSON dump pipeline), `key+ref` (`.env` key + `references/{tool}-api.md` guide), `not yet connected`.
 

@@ -92,7 +92,22 @@ Display the pulse in the conversation (not saved to file by default).
 If the user wants to save it:
 - Save to `marketing/pipelines/research/weekly-pulse-YYYY-MM-DD.md`
 
-### Step 6: Strategy check
+### Step 6: GTM Signal Summary
+
+Pull the latest signal data from the Coda Signals table (or from the most recent `/signal-review` output if run this week):
+
+```
+### GTM Signals (this week)
+- Hot users: X  |  Warm: X  |  Churning: X
+- Top community signal: [one sentence]
+- Top SEO movement: [one sentence]
+- Exam calendar alerts: [any events within 30 days]
+→ Full detail: run /signal-review or view Coda Signals table
+```
+
+If `/signal-review` hasn't been run this week, prompt: "Run /signal-review first for a complete picture."
+
+### Step 7: Strategy check
 
 Compare this week's numbers against targets from `marketing/context/funnel-strategy.md`. If any metric is significantly off-track, flag it and suggest whether to adjust the strategy (with reference to which wiki article to update).
 
