@@ -23,7 +23,7 @@ The plan is organized in four phases:
 | 0: Foundation | Mid-Jun-Jul 2026 | Content infrastructure, community seeding | Content Infrastructure Readiness Score (weighted composite) |
 | 1: Soft Launch | Aug-Oct 2026 | Results Day campaign, first 100 students | Activated Trials (signup + first practice session) |
 | 2: Growth Engine | Nov 2026-Mar 2027 | SEO compounding, email nurture, TikTok launch | Monthly Organic Signups |
-| 3: Scale | Apr-Nov 2027 | Channel optimization, paid amplification, new markets | MRR |
+| 3: Scale | Apr-Nov 2027 | Channel optimization, new markets | MRR |
 
 **What this plan is:** The strategic framework. Channel priorities, phase gates, KPI definitions, and resource allocation.
 
@@ -658,7 +658,7 @@ Pre-Results Day checklist:
 | TikTok account live with 10+ videos | No | No |
 | Email list > 500 | No | No |
 
-**Decision rule:** Both must-pass criteria met. Phase 3 activities (paid amplification, new market expansion) only begin after organic channels demonstrably work.
+**Decision rule:** Both must-pass criteria met. Phase 3 activities (new market expansion, exam board expansion) only begin after organic channels demonstrably work.
 
 ### Phase 3: Scale (April - November 2027)
 
@@ -689,12 +689,6 @@ Pre-Results Day checklist:
 - [ ] Segment-specific campaigns: Cambridge vs Edexcel, free vs paid, active vs at-risk
 - [ ] Email-driven conversion: 10%+ of paid conversions from email
 - [ ] List size target: 2,000+ contacts
-
-**Paid amplification (evaluate, do not commit until Phase 3):**
-- Only after organic channels prove CAC < EUR25
-- Test budget: EUR200-500/month
-- Channels to test first: Reddit ads (high intent, precise targeting), TikTok Spark Ads (amplify organic winners)
-- Do not run paid ads before organic product-market fit is proven
 
 **Phase 3 success criteria:** MRR EUR5,000-9,000 by Nov 2027 (300-500 paying users). Organic acquisition > 50% of total. CAC < EUR25 blended. Monthly churn < 8%.
 
@@ -937,7 +931,7 @@ The leading indicators tell you whether you're doing the right activities. The l
 | 0: Foundation | Readiness Score >= 70%. 20+ pages indexed, Reddit active, email ready. | Zero articles published by end of July. No Reddit activity. No waitlist form. | Results Day arrives with nothing to capture demand. Extend Phase 0 by max 2 weeks, but August is a hard deadline. |
 | 1: Soft Launch | 100+ activated trials, 30%+ D7 retention, 40%+ PMF score, first paying customers. | <30 trials. <15% D7 retention. PMF score < 25%. | **Pivot signal.** The product does not solve the problem as positioned. Re-evaluate product, messaging, or target segment before continuing to Phase 2. |
 | 2: Growth Engine | Organic > 30% of total. Conversion 15-20%. 70-120 paying users. MRR EUR1,200-2,150. TikTok live. | Organic < 10% after 5 months. Conversion < 5%. Paying users < 30. | Content strategy or positioning needs fundamental rethinking. Is ExamPilot targeting the right keywords? The right audience? The right channels? |
-| 3: Scale | 300-500 paying users. MRR EUR5,000-9,000. CAC < EUR25. Organic > 50%. Churn < 7%. | MRR < EUR3,000 by Nov 2027. CAC rising. Outreach still >50%. Churn > 12%. | Growth ceiling hit. Evaluate: product gaps, pricing misalignment, market saturation, or need for paid amplification. |
+| 3: Scale | 300-500 paying users. MRR EUR5,000-9,000. CAC < EUR25. Organic > 50%. Churn < 7%. | MRR < EUR3,000 by Nov 2027. CAC rising. Outreach still >50%. Churn > 12%. | Growth ceiling hit. Evaluate: product gaps, pricing misalignment, market saturation, or new exam board / geography expansion. |
 
 ### 5.7 KPI Dashboard Cadence
 
@@ -1073,21 +1067,11 @@ The A-Level exam calendar is ExamPilot's metronome. All marketing activity inten
 
 This is shared between Enitan and Teresa. Divide by strength: whoever is stronger at content writing owns SEO and email. Whoever is stronger at community interaction owns Reddit and outreach. TikTok is a joint effort (one scripts, one films, or both).
 
-### 7.3 When to Consider Paid Advertising
+### 7.3 Paid Advertising
 
-Do NOT allocate budget to paid ads until ALL of the following conditions are met:
+No paid advertising. ExamPilot is an organic-only acquisition strategy across all phases and all channels. Growth comes from SEO compounding, community presence (Reddit), TikTok organic content, email nurture, and direct outreach. This is a deliberate, permanent decision — not a deferral.
 
-1. Organic CAC is known and stable (you need a baseline to compare against)
-2. Trial-to-paid conversion rate is >10% (otherwise paid traffic leaks out)
-3. D30 retention is >20% (otherwise you're paying to acquire users who churn)
-4. At least one organic channel delivers 50+ signups/month (proves product-market fit)
-
-When ready, test in this order:
-1. Reddit ads (r/alevel, r/6thForm — high intent, precise targeting, EUR5-10/day test budget)
-2. TikTok Spark Ads (amplify your best-performing organic videos, EUR5-10/day)
-3. Google Ads (branded search only — protect your brand name, EUR3-5/day)
-
-Initial paid test budget: EUR200-500/month. Only scale what proves CAC < organic CAC.
+When the growth ceiling is hit in Phase 3 or beyond, the response is product expansion (new exam boards, new geographies, new subjects) and deeper organic channel investment — not paid acquisition.
 
 ---
 
@@ -1199,7 +1183,7 @@ Decisions made in this plan that should be logged:
 
 1. **Stage-based KPI evolution adopted** over AARRR or universal metrics. Rationale: 2-person team, pre-revenue, premature optimization is the bigger risk than metric gaps.
 2. **Sequential expansion: 9709 P1 → P3 → S1 → S2 → M1 → 0580 → Edexcel IAL.** Rationale: complete each unit before starting the next. Full CIE 9709 coverage first (students need all their units on one platform), then 0580 (IGCSE-to-A-Level pipeline), then Edexcel IAL (parallel market, 10 units: P1-P4, M1-M3, S1-S3).
-3. **Paid advertising deferred** to Phase 3, conditional on four organic benchmarks being met simultaneously. Rationale: paid traffic without proven conversion wastes money.
+3. **No paid advertising.** Organic-only acquisition across all phases. Growth ceiling response is product and geography expansion, not paid spend.
 4. **TikTok launch deferred** to Phase 2 (November 2026). Rationale: building content foundation and proving product-market fit with direct channels first.
 5. **TikTok geographic focus** on markets where available (Pakistan, UAE, Malaysia, Egypt, Saudi Arabia). No India-specific short-form variant.
 6. **Location-based SEO deferred** to Phase 2. Rationale: requires domain authority to rank; build after pillar/spoke clusters.

@@ -82,7 +82,7 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ## 2026-05-14 — 18-month marketing plan: stage-based KPIs + micro-funnel architecture
 
-**Decision:** Adopted stage-based KPI evolution (Phase 0-3) combined with leading/lagging indicators over AARRR pirate metrics or a single universal north star. Each phase has 1-2 primary KPIs that shift as the business matures. Channel-specific KPIs measured independently against each channel's funnel role. Six additional decisions documented in the plan: Edexcel deferred, paid ads conditional, TikTok Phase 2, location SEO Phase 2, product-led SEO Phase 2, pillar+spoke as SEO foundation.
+**Decision:** Adopted stage-based KPI evolution (Phase 0-3) combined with leading/lagging indicators over AARRR pirate metrics or a single universal north star. Each phase has 1-2 primary KPIs that shift as the business matures. Channel-specific KPIs measured independently against each channel's funnel role. Six additional decisions documented in the plan: Edexcel deferred, no paid ads (permanent), TikTok Phase 2, location SEO Phase 2, product-led SEO Phase 2, pillar+spoke as SEO foundation.
 
 **Why:** 2-person team at pre-revenue stage. Premature optimization (measuring CAC before there are customers) creates noise. Stage gates force discipline: you prove activation before measuring revenue, you prove organic before scaling paid. The micro-funnel (TikTok → Reddit → SEO → AI Search → Website) is the discovery architecture; the B2C macro-funnel (awareness → advocacy) is the lifecycle.
 
@@ -111,6 +111,18 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 **Why:** The original EUR 1,500 target implicitly assumed ~75-100 paying users (from 500 total trials at 15% conversion). It did not account for the multiplicative effect of covering five 9709 units: each unit is a new acquisition channel (new keywords, new student segments, new Reddit questions), and multi-unit coverage improves both conversion and retention. With 130-180+ indexed pages by Nov 2027, the SEO footprint is 3-4x larger than a Pure-1-only model. 500 paying users is a stretch for Nov 2027 (more likely Q1 2028) but 300-350 is realistic at the moderate scenario.
 
 **Alternatives considered:** Keeping EUR 1,500 as a conservative floor (rejected: it's so far below what the pricing math actually produces that it would give false comfort at Phase 3 if hit but still far below potential).
+
+**Owner:** Enitan
+
+---
+
+## 2026-05-15 — No paid advertising, ever
+
+**Decision:** ExamPilot will not run paid ads of any kind across any phase. This is a permanent strategic decision, not a deferral. All acquisition is organic: SEO, Reddit, TikTok organic content, email, and direct outreach. If a growth ceiling is hit in Phase 3+, the response is product expansion (new exam boards, geographies, subjects) and deeper organic channel investment.
+
+**Why:** Organic acquisition builds compounding assets (content, community authority, email list, brand reputation). Paid acquisition stops the moment you stop paying. For a 2-person team with limited budget and a long-horizon content strategy, organic is the only channel that scales without linear cost increases.
+
+**Alternatives considered:** Paid ads deferred to Phase 3 conditional on organic benchmarks (rejected: a conditional deferral creates ambiguity and temptation; a clean no removes the decision from the table permanently).
 
 **Owner:** Enitan
 
