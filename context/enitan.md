@@ -17,7 +17,7 @@ Roles are flexible — Enitan and Teresa cross lines where they see fit.
 3. Work with Teresa to plan and implement SEO and Growth strategies including relevant KPIs, goals, strategy, and milestones
 
 ## Top pain
-Time-suck TBD — to be identified at first `/level-up` session.
+OS↔wiki friction: every capture event (document, research, decision, conversation excerpt) requires manually deciding where it lives, converting to the right template, running ingest + lint, and fixing issues — 4 steps across two repos, 15-30 min per item. Happening 3+ times/week. Addressed by `/capture` skill (built 2026-05-15).
 
 ## Voice
 See `references/voice-enitan.md`.

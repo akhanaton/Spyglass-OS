@@ -163,3 +163,24 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 **Owner:** Enitan
 
 ---
+
+## 2026-05-15 — /capture skill: OS↔wiki ingest pipeline automation
+
+**Decision:** Built `/capture` as an AI-assisted skill (L2 autonomy, Bike Method Phase 1) that collapses the 4-step OS↔wiki capture pipeline — classify destination, draft in correct template, commit via gh api, lint + surface issues — into one command with a human review gate before every commit.
+
+**Scoped via 3Ms Method interview:**
+- Trigger: Enitan runs `/capture` with content (paste, file path, URL, or description)
+- Data sources: input content + AGENTS.md (wiki conventions) + wiki templates
+- Transformations: content → classified destination → drafted article → committed file → lint report
+- Decision points: OS vs wiki? / which template? / lint issues auto-fixable or needs human?
+- Destination: wiki article or OS file + optional `decisions/log.md` entry + `_session_context.md` update prompt
+- Autonomy: L2 — AI drafts, human reviews and approves before any commit
+- KPI: Time from "I want to capture this" to "lint-clean and committed" — target under 5 min (from ~15-30 min)
+
+**Why:** The capture pipeline was a repeating attention tax on every useful piece of information encountered. At 3+ occurrences per week, the friction was real enough to cause skipped captures. The wiki cannot grow as a living knowledge system if ingestion is expensive.
+
+**Alternatives considered:** Sub-agent for full pipeline (rejected: L4 too high for first build, no validation baseline yet); prompt template only (rejected: doesn't solve CWD-switching friction or lint parsing); local wiki clone for lint (rejected: machine-specific path, breaks for Teresa). All operations run via `gh api` — no local clone dependency. Phase 2 (auto-commit high-confidence types) available as an explicit edit to `bike-method-phase` once Phase 1 is validated.
+
+**Owner:** Enitan
+
+---
