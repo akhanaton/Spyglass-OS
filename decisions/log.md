@@ -116,6 +116,18 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-05-15 — SEO analytics stack: DataForSEO as core programmatic layer
+
+**Decision:** Build the SEO intelligence loop on DataForSEO API + GSC API + GA4 + PostHog, synthesized by Claude via a `/strategy-review` command. Reject SEO-Stack.io. Deprecate Ubersuggest (redundant). Keep Mangools until DataForSEO `keyword_researcher.py` module is built and validated (Phase 2). Add Ahrefs Webmaster Tools (free) immediately for site audit coverage.
+
+**Why:** DataForSEO is pay-per-call ($12-28/mo at startup scale) and covers everything Ahrefs Lite ($129/mo) and SEMrush Pro ($140/mo) provide programmatically — rank tracking, keyword research, competitor SERP data, backlink data, on-page NLP analysis. The AI querying layer SEO-Stack sells is what Claude in the OS already does, with full business context. The virtuous loop (DataForSEO → GSC → GA4 → PostHog → Claude → action) closes the feedback chain from keyword opportunity through to trial conversion and retention by source. Each layer answers a different question; together they surface decisions, not just reports.
+
+**Alternatives considered:** SEO-Stack.io (rejected: first-party data only, redundant with DataForSEO, founder listing business for sale — continuity risk, MCP server unconfirmed); Ahrefs Lite (rejected: 4x cost, no features needed until Phase 3); SEMrush Pro (rejected: same cost issue, stronger on PPC which is not a Phase 0-2 priority); Mangools kept short-term as the human-facing keyword research UI until programmatic layer is validated.
+
+**Owner:** Enitan
+
+---
+
 ## 2026-05-15 — Reddit tool stack: Syften + RedShip
 
 **Decision:** Adopt Syften (€40/mo Standard) for brand/competitor monitoring and RedShip ($19/mo Starter) for Google-ranking thread discovery and reply drafting. Combined ~EUR 57/month. Activate F5bot (free) in Phase 0 to validate subreddit volume before spending. Add RedShip in Phase 1 ahead of Results Day.
