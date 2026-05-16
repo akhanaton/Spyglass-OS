@@ -279,6 +279,28 @@ Do not run more than one revision loop. If still below 70 after one revision pas
 
 ---
 
+### Step 5.5 — Humanity injection (editor agent)
+
+**Condition:** Only run if the content-quality composite score is ≥50. Below 50, the draft needs structural work first — run this step after revision.
+
+Read `agents/editor.md` and apply it to the draft.
+
+**What the editor agent does:**
+- Scores current humanity level (1-10) across 5 signals: sentence rhythm, genuine opinions, conversational asides, named mini-stories, AI tells absent
+- Replaces passive constructions with active voice
+- Breaks up runs of same-length sentences
+- Removes all AI tell phrases ("it's worth noting", "let's dive in", "at the end of the day", etc.)
+- Flags missing mini-stories for human to fill (does NOT invent names or outcomes)
+- Splits any paragraph with 5+ sentences
+- Removes all em-dashes and replaces with contextually correct punctuation
+- Adds 1-2 rhetorical questions if none exist
+
+**What it does NOT change:** keyword placement, heading text, exam board facts, CTAs, or any sentence where rephrasing would displace the primary keyword from the H1 or first 100 words.
+
+Show before/after for 3 key edits. Report humanity score before and after. Return the full edited article.
+
+---
+
 ### Step 6 — Save and report
 
 **File path:** `marketing/pipelines/drafts/[topic-slug]-YYYY-MM-DD.md`
@@ -307,7 +329,7 @@ date: YYYY-MM-DD
 Draft saved: marketing/pipelines/drafts/[filename]
 Word count: [n] words
 Quality score: [n]/100
-Agents run: SEO optimizer ✓ | Meta creator ✓ | Internal linker ✓ | Quality analysis ✓
+Agents run: SEO optimizer ✓ | Meta creator ✓ | Internal linker ✓ | Quality analysis ✓ | Editor ✓
 Issues to resolve before review:
   - [VERIFY] flags: [count]
   - Quality fixes: [top 1-3]
