@@ -184,3 +184,48 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 **Owner:** Enitan
 
 ---
+
+## 2026-05-16 — SEO write pipeline ported from seomachine into Spyglass OS
+
+**Decision:** Ported the full blog article write pipeline from the seomachine repo into Spyglass OS, replacing the stub `/write-article` command with a proper skill and 4 sub-agents. Updated `references/voice-house.md` from a placeholder to the full ExamPilot brand voice guide.
+
+**What was built:**
+- `.claude/skills/write-article/SKILL.md` — 6-step write skill: pre-write confirmation, full article structure (GEO-first, APP formula, Key Takeaways, mini-stories, contextual CTAs, FAQ, conclusion), guardrails scrub pass, 4 post-write agents, quality gate, save + report
+- `agents/seo-optimizer.md` — keyword density, heading structure, GEO compliance audit
+- `agents/meta-creator.md` — 3 meta title + 3 meta description options with scoring patterns
+- `agents/internal-linker.md` — passage-level link insertion with anchor text rules
+- `agents/content-quality.md` — 5-dimension inline scorer (Voice 30%, Specificity 25%, Structure 20%, SEO 15%, GEO 10%), threshold routing
+- `references/voice-house.md` — full ExamPilot brand voice: 5 pillars, tone by content type, messaging framework, terminology table, formatting standards, CTAs, what we never do
+
+**Why:** The seomachine repo had the full execution layer; Spyglass OS had context files but no runnable write pipeline. Porting gives the OS the ability to go from research brief to reviewed draft in one command, with quality scoring built in.
+
+**Alternatives considered:** Keep write pipeline in seomachine and call cross-repo (rejected: CWD friction, breaks Teresa's access); rebuild from scratch (rejected: seomachine's agent architecture was already validated).
+
+**Owner:** Enitan
+
+---
+
+## 2026-05-16 — Python quality scorer and /pre-write skill added
+
+**Decision:** Ported the 3-module Python quality scorer from seomachine and created a new `/pre-write` skill for Sanity CMS content scaffolding.
+
+**Python scorer (`marketing/data_sources/modules/`):**
+- `readability_scorer.py` — Flesch/Kincaid + structure analysis; targets Grade 8-10 / Flesch 60-70; graceful fallback if `textstat` not installed
+- `seo_quality_rater.py` — 6-dimension SEO rating with ExamPilot defaults (1800-word min, 20-word sentence target, Cambridge/Pearson authority links)
+- `content_scorer.py` — 5-dimension composite scorer; ExamPilot additions: banned brand phrases in Humanity scoring; exam codes (9709/12, WMA11, syllabus topic numbers) boosting Specificity; YAML frontmatter parsing in `main()`
+- `requirements.txt` updated: added `textstat>=0.7.3`
+- `write-article/SKILL.md` Step 5 updated: Python scorer is now primary; inline content-quality agent is fallback
+
+**`/pre-write` skill (`.claude/skills/pre-write/SKILL.md`):**
+- 5-step flow: classify content type → plan structure → build Sanity JSON scaffold → anti-regression checklist → save to product repo
+- Reads `integration.json` as gold standard before every scaffold
+- 10-type content taxonomy with folder mappings; full Sanity block type reference
+- Writes to `/Users/enitan/Documents/Projects/spyglass/scripts/content/[folder]/[slug].json`
+
+**Why:** The inline content-quality agent can't do Flesch scoring. The Python scorer gives real readability data. The /pre-write skill fills the gap for product content (topic pages, hub pages, feature pages) which previously required manual JSON construction.
+
+**Alternatives considered:** Keep only inline scoring (rejected: loses Flesch accuracy, rhythm analysis); build Python scorer as external CI step only (rejected: more valuable in-session where Claude can act on results immediately).
+
+**Owner:** Enitan
+
+---
