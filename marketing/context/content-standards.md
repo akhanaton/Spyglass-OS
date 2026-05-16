@@ -21,7 +21,7 @@ Before any content moves from `drafts/` to `review/`:
 - [ ] No "AI tutor", "AI wrapper", "AI-powered" language. Use "learning science", "spaced repetition", "active recall", "exam readiness"
 - [ ] Pricing is correct: EUR29/mo, EUR69/3mo, EUR96/6mo, EUR144/yr. EUR only.
 - [ ] No B2B school licensing messaging
-- [ ] Internal links included (minimum 3 for blog articles)
+- [ ] Internal links included (minimum 3 for blog articles — initial estimate, adjust via `/tune`)
 - [ ] CTA present and appropriate for funnel stage
 - [ ] Factually accurate for the specific exam board (Cambridge 9709 vs Edexcel IAL)
 - [ ] No generic filler phrases ("in today's world", "it's no secret that", "at the end of the day")
@@ -35,11 +35,11 @@ For all blog articles and landing pages. Deep detail in `marketing/references/ge
 AI systems extract passages, not pages. Every key claim should work as a standalone statement.
 
 - [ ] Answer-first structure: first 2-3 sentences after each H2 are a complete, extractable answer
-- [ ] Key answer passages are 40-60 words (optimal for snippet extraction)
+- [ ] Key answer passages are 40-60 words (initial estimate — optimal for snippet extraction)
 - [ ] H2/H3 headings match how students phrase queries ("How do I revise for Cambridge 9709 Paper 1?")
 - [ ] Tables for comparisons, numbered lists for processes
 - [ ] Key Takeaways block immediately after introduction (3-5 bullet points, standalone claims)
-- [ ] FAQPage schema: minimum 4 self-contained Q&A pairs per article, conversational phrasing
+- [ ] FAQPage schema: minimum 4 self-contained Q&A pairs per article (initial estimate), conversational phrasing
 - [ ] Use content patterns from geo-platform-guide.md: definition blocks, step-by-step blocks, comparison tables, evidence sandwich blocks
 
 ### Authority (make content citable)

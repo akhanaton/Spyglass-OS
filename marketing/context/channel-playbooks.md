@@ -19,9 +19,9 @@ Operational rules for each active marketing channel. Strategy lives in the wiki.
 - If asked directly "what tools do you recommend", that is the green light.
 - Account must have sufficient karma and age. Minimum: 50+ karma, 30+ days.
 
-**Posting cadence:** 2-3 genuinely helpful contributions per week per sub. No flooding.
+**Posting cadence:** 2-3 genuinely helpful contributions per week per sub (initial estimate). No flooding.
 
-**Best posting times:** Evenings GMT (after school, 4pm-9pm UK) and weekends. Target audience is 16-18 year olds in UK, UAE, Pakistan, Malaysia, Singapore, Nigeria timezones.
+**Best posting times:** Evenings GMT (after school, 4pm-9pm UK) and weekends (initial estimate — test and adjust). Target audience is 16-18 year olds in UK, UAE, Pakistan, Malaysia, Singapore, Nigeria timezones.
 
 **What gets banned/downvoted:**
 - Obvious marketing language ("revolutionary", "game-changing")
@@ -53,7 +53,7 @@ Operational rules for each active marketing channel. Strategy lives in the wiki.
 
 **Status:** Stub until P2. Brevo selected but not yet connected.
 
-**When wired:**
+**When wired (all cadences are initial estimates — adjust via `/tune` after 30 days of send data):**
 - Welcome sequence: 5 emails over 14 days after signup
 - Campaign emails: maximum 1 per week to engaged list
 - Re-engagement: after 14 days inactive, maximum 3 emails
@@ -62,7 +62,7 @@ Operational rules for each active marketing channel. Strategy lives in the wiki.
 
 ## SEO / Blog
 
-**Publishing cadence:** Maximum 3 articles per week. Quality over velocity.
+**Publishing cadence:** Maximum 3 articles per week (initial estimate). Quality over velocity.
 
 **Review process:**
 1. Draft generated via `/write-article` to `marketing/pipelines/drafts/`
@@ -83,3 +83,41 @@ Operational rules for each active marketing channel. Strategy lives in the wiki.
 - Focus on Cambridge 9709 and Edexcel IAL specific content
 - No hard sell. Educational value first.
 - 2-3 videos per week
+
+## X / Build in Public
+
+**Status:** Active. Personal accounts only (Enitan + Teresa).
+
+**Target audience:** Founders, indie hackers, edtech builders, potential advisors. NOT students.
+
+**Strategy reference:** `references/x-build-in-public-strategy.md`
+
+**Rules of engagement:**
+- Both founders post from personal accounts. Never a brand account.
+- Every draft reviewed before posting. No auto-publish. No exceptions.
+- Use `references/voice-{author}.md` for voice, NOT voice-house.md.
+- No links in main tweets (deprioritised by X algorithm). Links go in self-reply.
+- One hashtag max (#buildinpublic), only when relevant, never in every post.
+- No em dashes, no banned phrases (see content-standards.md).
+- Reply to every comment on your posts within 2 hours.
+- 70% replies, 30% original content in first 60 days. Shift to 50/50 after 500 followers.
+
+**Posting cadence:** 1-2 original tweets/day + 2-3 quality replies. 1 weekly thread (Friday draft, Monday/Tuesday publish).
+
+**Best posting times:** Test and adjust. Start with 8-9 AM GMT and 5-6 PM GMT.
+
+**Content sources:** decisions/log.md, Linear issues, PostHog metrics, git commits, wiki articles, signal-review output, marketing experiments.
+
+**Content split:**
+- Enitan: engineering, product architecture, data/metrics, technical build-in-public, Spyglass OS
+- Teresa: marketing experiments, content strategy, community building, educational insights
+
+**What gets ignored:**
+- Threads without a specific number or screenshot
+- AI-sounding prose (audience is hypersensitive)
+- Product pitches disguised as transparency
+- Same content posted by both founders
+
+**Scheduling:** Via Postiz (Standard plan, $29/mo). Human queues drafts after review. Never API-direct (Phase 0).
+
+**Metrics:** Track via Postiz analytics + UTM links into PostHog. Weekly: impressions, engagement rate, follower growth, reply ratio. Monthly: content type performance review.

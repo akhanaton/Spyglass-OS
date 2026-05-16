@@ -163,14 +163,53 @@ created: YYYY-MM-DD
 [P2 — TikTok Phase 2. Requires video production. Do not activate until TikTok channel is live.]
 ```
 
+### Step 5.5: Generate X version (build-in-public)
+
+> Target audience: founders and builders (NOT students). Extract the BUILD process from the article, not the exam content.
+
+Read `context/.whoami` to determine the author. Load `references/voice-{author}.md`.
+
+**Standalone tweet:**
+
+Extract one process insight from the article. What did we learn about BUILDING this content, not what the content teaches students?
+
+Good examples:
+- "Just published our 10th article on Cambridge 9709 revision. The internal linking alone took 2 hours. Here's what we learned about topical authority."
+- "Wrote 3,000 words on integration techniques today. The Python content scorer gave it a 72. Tweaking the structure until it hits 80."
+
+Bad examples:
+- "Here's how to revise for 9709 Paper 1" (student content, not builder content)
+- "Check out our latest article!" (marketing, not build-in-public)
+
+Max 280 characters. No links (put in self-reply). No em dashes. No banned phrases.
+
+**Thread flag:** If the article's creation involved an interesting multi-step process, decision, or failure, flag it: "[THREAD CANDIDATE] This article's creation story could make a good weekly thread. Run `/write-x --type thread` to expand."
+
+Save tweet to `marketing/pipelines/outreach/x-post-{author}-{slug}-YYYY-MM-DD.md`
+
+```yaml
+---
+type: x-post
+channel: x
+author: {author}
+audience: founder
+post-type: milestone
+source: repurpose
+source_article: {path}
+status: drafted
+date: YYYY-MM-DD
+---
+```
+
 ### Step 6: Show all outputs and prompt
 
-Display all three versions (Reddit, Email Sequence, TikTok placeholder) inline.
+Display all four versions (Reddit, Email Sequence, TikTok placeholder, X tweet) inline.
 
-Ask: "Three repurposed assets created from '[article title]'. Which do you want to review first?
+Ask: "Four repurposed assets created from '[article title]'. Which do you want to review first?
 - Reddit post for [subreddit]
 - Email sequence (3 emails for Brevo)
 - TikTok script (P2 placeholder)
+- X tweet (build-in-public)
 
 Or say 'all look good' to move on."
 

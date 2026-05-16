@@ -26,6 +26,7 @@ Registry of every system your AIOS can reach. Filled by `/onboard` from Q4-Q7 an
 | 20 | GTM signals — output (operational) | Coda Signals table | mcp (claude.ai native) | akhanaton@gmail.com | 2026-05-15 |
 | 21 | GTM signals — CRM / enrichment | Attio | API | not yet connected | — |
 | 22 | GTM signals — activation | Brevo (sequences) | API | not yet connected | — |
+| 23 | Social scheduling | Postiz (Standard plan) | API + dashboard | not yet connected | — |
 
 **Mechanism options:** `mcp` (MCP server), `script` (Python/Bash hitting an API, in `scripts/`), `export` (CSV/JSON dump pipeline), `key+ref` (`.env` key + `references/{tool}-api.md` guide), `not yet connected`.
 

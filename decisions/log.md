@@ -261,6 +261,66 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-05-16 — Continuous improvement adopted as core OS principle
+
+**Decision:** Adopted continuous improvement as a core operating principle of Spyglass OS. Every repeatable function follows a three-step loop: Capture (inputs + outcomes), Review (at defined cadence), Adjust (change parameters, log with data). Created `references/continuous-improvement.md` (philosophy reference) and `/tune` skill (monthly review ritual). Added to CLAUDE.md as a foundational section alongside the 3Ms framework. All initial parameters across the OS are now explicitly labeled as estimates subject to data-backed adjustment. Linear: EP-51.
+
+**Why:** The GTM Engineering signal architecture already embeds this pattern (weights are "initial estimates, adjust after 8-12 weeks"). Extending it to every OS function -- content, SEO, support, product, X -- creates a system that gets measurably better each month. Without this, parameter settings fossilize and drift from reality. With it, each monthly `/tune` cycle narrows the gap between what we assume and what the data shows.
+
+**Alternatives considered:** Ad hoc improvements as needed (rejected: leads to inconsistent attention, some functions improve while others stagnate); quarterly reviews only (rejected: too slow for early-stage where conditions change weekly); automated parameter adjustment (rejected: premature, Phase 1 is human-approved adjustments only).
+
+**Owner:** Enitan
+
+---
+
+## 2026-05-16 — Build-in-public on X integrated into Spyglass OS
+
+**Decision:** Added X (Twitter) build-in-public as a new channel in Spyglass OS. Created `/write-x` skill (pulls from decisions log, Linear, PostHog, git, or freeform input), strategy reference, two templates (x-post, x-thread), and updated 7 existing files (channel playbooks, audience segments, funnel strategy, repurposing playbook, `/repurpose` command, `/weekly-pulse` command, connections.md). Postiz Standard ($29/mo, already planned for TikTok) handles scheduling. Incremental cost: $0. Enitan starts posting; Teresa joins when `voice-teresa.md` is populated with real writing samples. Full strategy in `references/x-build-in-public-strategy.md`. Linear: EP-50.
+
+**Why:** Build-in-public on X serves a different audience (founders, indie hackers, edtech builders) than the student micro-funnel. It builds founder credibility, creates a launch-day amplification audience, and opens doors to advisors and partnerships. Research shows: 15-25% conversion from engaged X followers at SaaS launch, 6-month timeline to build launch-ready audience. Starting now (6 months before Phase 1 soft launch) is correctly timed. X is a parallel credibility channel, not a replacement for any student-facing channel.
+
+**Alternatives considered:** Brand account only (rejected: personal accounts get 5-10x more engagement); delay until Phase 2 with TikTok (rejected: 6-month audience-building lead time means starting now is optimal); full automation pipeline (rejected: Phase 0 is manual copy-paste to Postiz, automation comes after n8n is wired in EP-49).
+
+**Owner:** Enitan (infrastructure + posting), Teresa (posting, after voice file populated)
+
+---
+
+## 2026-05-16 — Spyglass OS full coverage assessment: gaps identified and prioritised
+
+**Decision:** Completed a research-backed audit of Spyglass OS coverage across all functions. Two critical gaps identified that must be fixed before the first paid user: (1) involuntary churn is undocumented in wiring — ChurnWard ($29/mo, Dodo Payments integration confirmed) to be added; (2) no production observability — Sentry Team ($26/mo) to be added. Three strategic additions with outsized returns: WhatsApp via AiSensy for Tier 1 markets (UAE 85.8% penetration, India 500M+ users), student outcome data collection (the product moat — must collect from the first exam cohort), and n8n for event-driven activation chain (trial → Attio → Brevo → Discord). Full assessment in `references/os-coverage-assessment.md`. Linear: EP-49.
+
+**Why:** Marketing machine is strong. Revenue operations and production observability have no wiring. Student outcome data is the single most defensible competitive advantage and has a one-year collection window tied to the exam calendar — missing the first cohort means waiting 12 months. WhatsApp is not optional for Pakistan/UAE/India markets; it is the primary communication channel in those geographies.
+
+**Alternatives considered:** Add more marketing tooling (rejected: already deep coverage); full help desk / NPS infrastructure (rejected: overkill at 100 users, confirmed by external benchmarks); Zapier over n8n (rejected: per-operation pricing compounds at scale, n8n is flat).
+
+**Owner:** Enitan
+
+---
+
+## 2026-05-16 — Product owner OS layer: thin infrastructure, not a marketing-scale build
+
+**Decision:** Build a minimal product owner layer in Spyglass OS — ~15% the size of the marketing infrastructure. Two Tier 1 items now (Linear MCP wiring + `/backlog-review` command; PostHog extended to `/product-pulse`). Four Tier 2 items at Phase 1 (`templates/prd.md`, `/spec` command, `/product-review` ritual, Coda Product Board view). Nothing in Tier 3 until 200+ users. Full assessment in `references/product-owner-strategy.md`. Linear: EP-47.
+
+**Why:** Marketing runs continuously and in parallel — deep infrastructure pays. Product decisions at pre-launch are serial, low-frequency, and owned by one person. The risk isn't missing tooling; it's not having a fast path from signal → decision → shipped. Over-engineering creates overhead with no ROI until paying users generate real feedback.
+
+**Alternatives considered:** Full product OS parity with marketing machine (rejected: wrong stage, wrong cadence, wrong size team); no product infrastructure at all (rejected: Linear is invisible to the OS today — that gap has a real cost).
+
+**Owner:** Enitan
+
+---
+
+## 2026-05-16 — Customer support: thin insight-capture layer, not a support operation
+
+**Decision:** Build a purposeful-but-thin customer support layer: Discord added to `connections.md`, `templates/support/` folder (6 templates), Coda support log table, and a `/feedback-digest` command. Phase 1 adds PostHog in-app feedback surveys and Attio wiring. No help desk, no NPS, no FAQ, no ticketing system. Full assessment in `references/customer-support-strategy.md`. Linear: EP-48.
+
+**Why:** At alpha (100 students), support volume will be 3–8 contacts/week. The risk isn't operational overwhelm — it's losing the insight from early conversations. Framing support as user research determines the right infrastructure: optimise for insight capture, not ticket resolution. The `/feedback-digest` command is the lever — it turns every support touchpoint into a product intelligence input.
+
+**Alternatives considered:** Help desk tooling (Intercom/Zendesk — rejected: overkill until 500+ users with volume exceeding what two people can handle conversationally); NPS surveys (rejected: meaningless at alpha, no reliable baseline); FAQ pre-built (rejected: let the Coda log tell you what to write, don't guess).
+
+**Owner:** Teresa (operations), Enitan (tooling)
+
+---
+
 ## 2026-05-16 — OS structural audit: skills promoted to canonical layer, duplicates resolved
 
 **Decision:** Ran a full coherence audit of Spyglass OS after the seomachine port. Four issues identified and fixed in commit `f6ab25c`:

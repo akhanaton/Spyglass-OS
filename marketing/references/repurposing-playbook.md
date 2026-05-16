@@ -19,7 +19,8 @@ Starting from a single SEO blog article (written via `/write-article`):
 | Email tip | Email list | One key insight + link to full article |
 | TikTok script | TikTok | One surprising fact or tip. 30-60 seconds. Visual. |
 | Carousel | Instagram (future) | 8-10 slides, one point per slide, bold text |
-| Thread | Twitter/X (future) | 5-7 tweets, one point per tweet, hook in tweet 1 |
+| Thread | X | 5-7 tweets, one point per tweet. Hook in tweet 1. Builder audience: extract the BUILD process, not the exam content. |
+| Tweet | X | Single insight or milestone from the article. 280 chars max. Screenshot if visual. Builder audience. |
 | Student DM resource | WhatsApp/Discord | "Hey, wrote up something on [topic] that might help: [link]" |
 
 ### Adaptation Rules
@@ -28,6 +29,7 @@ Starting from a single SEO blog article (written via `/write-article`):
 - Email: lead with the insight, not the article. Link is secondary.
 - TikTok: one hook, one idea, one CTA. 30-60 seconds max. See video section below.
 - Never cross-post the same text to multiple platforms.
+- X: completely different audience (founders/builders, not students). Extract the *process* insight, not the *exam* insight. "We just published our 10th article on Cambridge 9709 revision" (how we're building) not "Here's how to revise for 9709 Paper 1" (what the article says). Never cross-post Reddit content to X. The registers are incompatible.
 
 ## Short-Form Video Strategy (TikTok — P2)
 

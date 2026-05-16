@@ -2,6 +2,8 @@
 
 Defines how signals are combined into a score, what tiers mean, and how tiers map to actions. Weights are initialised from the signal registry and updated empirically post-launch.
 
+**All thresholds, caps, and tier boundaries below are initial estimates.** Adjust via `/tune` after 8-12 weeks of signal-to-conversion data. See `references/continuous-improvement.md`.
+
 ---
 
 ## Score types
@@ -36,10 +38,10 @@ Signals that contribute:
 
 | Tier | Score range | Meaning | Action |
 |---|---|---|---|
-| **Hot** | 40+ | High engagement trial user — showing strong purchase intent | Prioritise for conversion email in Brevo. Enrich Attio with tier = Hot. |
-| **Warm** | 20–39 | Engaged but not yet ready to convert | Add to active nurture sequence. Monitor for tier upgrade weekly. |
-| **Cold** | 5–19 | Discovery stage — low or no product interaction | Demand gen content. No direct conversion push. |
-| **Prospect** | 1–4 | Website visitor or one-time touch | No action unless combined with community signal. |
+| **Hot** | 40+ (initial estimate) | High engagement trial user — showing strong purchase intent | Prioritise for conversion email in Brevo. Enrich Attio with tier = Hot. |
+| **Warm** | 20–39 (initial estimate) | Engaged but not yet ready to convert | Add to active nurture sequence. Monitor for tier upgrade weekly. |
+| **Cold** | 5–19 (initial estimate) | Discovery stage — low or no product interaction | Demand gen content. No direct conversion push. |
+| **Prospect** | 1–4 (initial estimate) | Website visitor or one-time touch | No action unless combined with community signal. |
 
 ---
 
@@ -47,25 +49,25 @@ Signals that contribute:
 
 | Tier | Score delta (7-day) | Meaning | Action |
 |---|---|---|---|
-| **Healthy** | +10 or above | Regularly engaged | No action needed. |
-| **Fading** | −5 to +9 | Reduced engagement | Trigger re-engagement nudge (in-app or email). |
-| **At-risk** | −20 or below | Inactivity penalty triggered | Activate churn prevention sequence. See `references/churn-prevention.md`. |
+| **Healthy** | +10 or above (initial estimate) | Regularly engaged | No action needed. |
+| **Fading** | −5 to +9 (initial estimate) | Reduced engagement | Trigger re-engagement nudge (in-app or email). |
+| **At-risk** | −20 or below (initial estimate) | Inactivity penalty triggered | Activate churn prevention sequence. See `references/churn-prevention.md`. |
 
 ---
 
 ## Scoring mechanics
 
 ### Rolling window
-CRS is computed over a **30-day rolling window**. Signals older than 30 days decay to 50% weight; signals older than 60 days are excluded. This prevents a single viral session from permanently inflating a score.
+CRS is computed over a **30-day rolling window** (initial estimate). Signals older than 30 days decay to 50% weight; signals older than 60 days are excluded. This prevents a single viral session from permanently inflating a score.
 
 ### Score cap
-Maximum CRS per signal type per window:
+Maximum CRS per signal type per window (initial estimates):
 - Session duration signals: cap at ×3 (max +30 from this signal alone)
 - Email CTA clicks: cap at ×2 (max +16)
 - No cap on explicit intent signals (upgrade CTA click, pricing page)
 
 ### Signal combination boost
-If a user triggers ≥3 distinct signal types in the same 7-day window, apply a +5 combination boost. Multi-signal engagement is a stronger predictor of conversion than depth in one channel.
+If a user triggers ≥3 distinct signal types in the same 7-day window, apply a +5 combination boost (initial estimate). Multi-signal engagement is a stronger predictor of conversion than depth in one channel.
 
 ---
 

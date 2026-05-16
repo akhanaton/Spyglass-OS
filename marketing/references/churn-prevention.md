@@ -38,9 +38,9 @@ Cancel button → Exit survey → Dynamic save offer → Confirmation → Post-c
 ### Save Offer Rules
 
 - Match offer to reason. Discount won't save someone who isn't using the product.
-- Maximum 2 offers per cancel session (primary + fallback)
-- Never exceed 25% discount (higher trains cancel-for-discount behavior)
-- Time-limit discounts: 2-3 months, then full price resumes
+- Maximum 2 offers per cancel session (primary + fallback) (initial estimate)
+- Never exceed 25% discount (initial estimate — higher trains cancel-for-discount behavior)
+- Time-limit discounts: 2-3 months, then full price resumes (initial estimate)
 - Keep "continue cancelling" visible at every step. No dark patterns. GDPR audience.
 - Track discount accepters. If they cancel again at full price, don't re-offer.
 
@@ -50,12 +50,12 @@ Best save option for ExamPilot's seasonal usage pattern.
 
 | Setting | Recommendation |
 |---|---|
-| Duration options | 1, 2, or 3 months |
-| Default | 1 month |
-| Maximum | 3 months |
+| Duration options | 1, 2, or 3 months (initial estimate) |
+| Default | 1 month (initial estimate) |
+| Maximum | 3 months (initial estimate) |
 | During pause | Keep data and progress, remove access |
 | Reactivation | Auto-reactivate with 7-day advance email |
-| Repeat pauses | 1 per 12-month period |
+| Repeat pauses | 1 per 12-month period (initial estimate) |
 
 **Reactivation sequence:**
 - Day -7: "Your pause ends in 7 days. Here's what's new in ExamPilot."
@@ -76,6 +76,8 @@ Best save option for ExamPilot's seasonal usage pattern.
 
 ### Health Score (0-100)
 
+**All weights and tier boundaries below are initial estimates.** Adjust via `/tune` after 30 days of subscriber engagement data. See `references/continuous-improvement.md`.
+
 ```
 Health = (
   Session frequency    x 0.30 +
@@ -88,14 +90,16 @@ Health = (
 
 | Score | Status | Action |
 |---|---|---|
-| 80-100 | Healthy | Referral prompt |
-| 60-79 | Needs attention | "You haven't practiced in a few days" email |
-| 40-59 | At risk | Re-engagement campaign with specific weak topic nudge |
-| 0-39 | Critical | Personal email from Enitan |
+| 80-100 (initial estimate) | Healthy | Referral prompt |
+| 60-79 (initial estimate) | Needs attention | "You haven't practiced in a few days" email |
+| 40-59 (initial estimate) | At risk | Re-engagement campaign with specific weak topic nudge |
+| 0-39 (initial estimate) | Critical | Personal email from Enitan |
 
 ## Involuntary Churn: Dunning
 
 ### The Dunning Timeline
+
+**Timeline intervals are initial estimates.** Adjust via `/tune` based on recovery rates per retry attempt.
 
 ```
 Day -30 to -7:  Pre-dunning (card expiry alerts)
@@ -141,13 +145,15 @@ ExamPilot audience includes under-18s. Parents may be the billing contact.
 
 ## Metrics
 
+**All targets are initial estimates.** Adjust via `/tune` after 90 days of subscriber data.
+
 | Metric | Target |
 |---|---|
-| Monthly churn rate | <5% |
-| Voluntary save rate | 20-30% |
-| Involuntary recovery rate | 50-60% |
-| Pause reactivation rate | 60-80% |
-| Time to cancel (exit survey completion) | >80% |
+| Monthly churn rate | <5% (initial estimate) |
+| Voluntary save rate | 20-30% (initial estimate) |
+| Involuntary recovery rate | 50-60% (initial estimate) |
+| Pause reactivation rate | 60-80% (initial estimate) |
+| Time to cancel (exit survey completion) | >80% (initial estimate) |
 
 ## Implementation Phases
 

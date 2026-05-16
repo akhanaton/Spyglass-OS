@@ -107,6 +107,37 @@ Pull the latest signal data from the Coda Signals table (or from the most recent
 
 If `/signal-review` hasn't been run this week, prompt: "Run /signal-review first for a complete picture."
 
+### Step 6.5: X / Build in Public metrics
+
+Check `connections.md` for Postiz (row 23).
+
+**If Postiz is connected:**
+Query Postiz dashboard for the past 7 days:
+- Total posts published (both founders combined)
+- Total threads published
+- Total impressions and engagement rate
+- Follower count and net change
+- Top performing post (by engagement)
+
+**If not yet connected, ask:**
+- "How many tweets/threads did each of you post this week?"
+- "Any posts get notable engagement? Approximate likes/replies?"
+- "How many replies did you send to other accounts?"
+
+**Display:**
+```
+### X / Build in Public (this week)
+- Posts: X  |  Threads: X  |  Replies sent: X
+- Impressions: X (trend)  |  Engagement rate: X%
+- Followers: X (net +/- X)
+- Top post: "[first 50 chars...]" -- X likes, X replies
+- Reply ratio: X% replies vs X% original (target: 70/30 first 60 days, 50/50 after)
+```
+
+If this is the first week, set the baseline. No trend data yet.
+
+Prompt: "What should next week's thread be about? The decisions log has [N] new entries since last pulse."
+
 ### Step 7: Strategy check
 
 Compare this week's numbers against targets from `marketing/context/funnel-strategy.md`. If any metric is significantly off-track, flag it and suggest whether to adjust the strategy (with reference to which wiki article to update).

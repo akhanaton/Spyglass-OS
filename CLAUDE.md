@@ -19,11 +19,16 @@ Read `references/3ms-framework.md` once. It's how {{Your Name}} thinks about AI 
 
 > *The Three Ms of AI™ is a trademark of Nate Herk. © 2026 Nate Herk.*
 
+## Continuous improvement
+
+Read `references/continuous-improvement.md`. Every repeatable function in this OS follows a three-step loop: Capture (what happened + what resulted), Review (compare outcomes to expectations at a defined cadence), Adjust (change parameters, log the change with the data that drove it). Initial parameters are always estimates. `/tune` runs monthly to review all active functions and propose data-backed adjustments.
+
 ## Your skills
 
 - `/onboard` — already run if you're seeing this filled in. Re-run any time to refresh from an edited `aios-intake.md`.
 - `/audit` — Four-Cs gap report. Run on Day 7, then weekly. Watch your score climb.
 - `/level-up` — Weekly 3Ms interview. Find one automation, scope it, ship it. One per week.
+- `/tune` — Monthly improvement loop. Reviews all active functions, proposes parameter adjustments from data. Last Friday of each month.
 
 ## Where things live
 
