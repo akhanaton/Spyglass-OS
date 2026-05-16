@@ -258,10 +258,21 @@ After saving the draft, run these four agents sequentially. Each produces a find
 
 ### Step 5 — Quality gate
 
-The Content Quality agent scores the draft. Apply the same threshold logic as the quality agent:
+Score the draft using the Python scorer when available; otherwise fall back to the inline content-quality agent.
+
+**Primary: Python scorer**
+```bash
+python3 marketing/data_sources/modules/content_scorer.py marketing/pipelines/drafts/[filename].md
+```
+Requires `textstat` (`pip install textstat`). Produces a 5-dimension breakdown with priority fixes.
+
+**Fallback: inline agent**
+If the Python scorer is unavailable or errors, run the Content Quality agent (see `agents/content-quality.md`) and use its composite score.
+
+Apply the same threshold logic from both paths:
 
 - **Score ≥70**: Save to `marketing/pipelines/drafts/` — ready for human review
-- **Score 50-69**: Apply the top 3 fixes from the quality agent inline, re-score, then save
+- **Score 50-69**: Apply the top 3 fixes from the scorer inline, re-score, then save
 - **Score <50**: Save to `marketing/pipelines/drafts/` with a `_NEEDS_REVISION` prefix and a note block explaining what failed
 
 Do not run more than one revision loop. If still below 70 after one revision pass, save with the prefix and surface the issues clearly.
@@ -316,6 +327,6 @@ Next step: Human review → resolve [VERIFY] flags → move to marketing/pipelin
 
 | Phase | What changes |
 |---|---|
-| **1 (now)** | Full human review on every draft. All [VERIFY] flags resolved before moving to review/. |
+| **1 (now)** | Full human review on every draft. All [VERIFY] flags resolved before moving to review/. Python scorer available in `marketing/data_sources/modules/content_scorer.py`. |
 | **2** | Auto-apply top quality fixes before saving. High-confidence article types go directly to review/ queue. |
-| **3** | Add DataForSEO SERP analysis to pre-write. Python quality scorer replaces inline scoring. |
+| **3** | Add DataForSEO SERP analysis to pre-write. Python scorer runs automatically pre-save, no manual trigger. |
