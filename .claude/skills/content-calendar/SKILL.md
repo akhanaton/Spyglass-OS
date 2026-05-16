@@ -1,13 +1,21 @@
 ---
 name: content-calendar
 description: Generates a 4-week content publishing calendar based on pipeline state, exam calendar, and available research. Outputs inline as a table — does not save unless asked.
+bike-method-phase: 1
+three-ms-attribution: |
+  Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.
+  The Three Ms of AI™ is a trademark of Nate Herk.
 ---
 
-## Input
+> *Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.*
 
-$ARGUMENTS
+## When `/content-calendar` runs
 
-Optional: a specific week to start from, or a focus constraint. Examples:
+- Friday ritual — plan next 4 weeks of publishing
+- After a `/research-topics` or `/research-gaps` run that added new pipeline items
+- When the user asks "what should we publish next?" or "what's on the content plan?"
+
+Optional arguments: a specific week to start from, or a focus constraint. Examples:
 - "starting next Monday" — offset the 4-week window
 - "cambridge only" — filter to 9709 content
 - "include repurposing" — show full calendar including Reddit repurposing slots
@@ -36,12 +44,12 @@ Read frontmatter from each file for: `keyword`, `type`, `stage`, `target-segment
 
 Read `marketing/gtm-engineering/signal-registry.md` for exam dates.
 
-From today (2026-05-16), mark which exam windows fall within the next 4 weeks:
-- Main exam season: May 1 – Jun 15 → ACTIVE NOW
+From today's date, mark which exam windows fall within the next 4 weeks:
+- Main exam season: May 1 – Jun 15
 - CIE Results Day: Aug 15
 - Resit window: Oct 1 – Nov 30
 
-Flag current active window: "ACTIVE: Main exam season (May 1 – Jun 15). Prioritize exam-specific content."
+Flag the current active window (e.g. "ACTIVE: Main exam season (May 1 – Jun 15). Prioritize exam-specific content.").
 
 Calculate exam-urgency for each pipeline item:
 - Content aligned to an active window = Week 1 priority
@@ -107,10 +115,10 @@ Active exam window: [name or "none"]
 
 | Week | Day | Content | Type | Action | Command | Priority |
 |------|-----|---------|------|--------|---------|----------|
-| W1 | Mon May 18 | [keyword] | new article | Draft | /write-article "[kw]" | URGENT |
-| W1 | Wed May 20 | [keyword] | rewrite | Review | /rewrite "[path]" light | THIS WEEK |
-| W1 | Fri May 22 | [keyword] | new article | Draft | /write-article "[kw]" | THIS WEEK |
-| W1 | Sat May 23 | [Reddit] | repurpose | Repurpose | /repurpose "[path]" | THIS WEEK |
+| W1 | Mon [date] | [keyword] | new article | Draft | /write-article "[kw]" | URGENT |
+| W1 | Wed [date] | [keyword] | rewrite | Review | /rewrite "[path]" light | THIS WEEK |
+| W1 | Fri [date] | [keyword] | new article | Draft | /write-article "[kw]" | THIS WEEK |
+| W1 | Sat [date] | [Reddit] | repurpose | Repurpose | /repurpose "[path]" | THIS WEEK |
 ...
 ```
 

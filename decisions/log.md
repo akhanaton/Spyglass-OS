@@ -229,3 +229,32 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 **Owner:** Enitan
 
 ---
+
+---
+
+## 2026-05-16 — Full seomachine feature set ported into Spyglass OS
+
+**Decision:** Ported every applicable feature from `akhanaton/seomachine` into Spyglass OS across three commits (`7e0af12`, `b50e66e`, `d61fadb`). 63 new files, ~15,500 lines. seomachine is now superseded by Spyglass OS for all ExamPilot marketing work.
+
+**What was ported (summary):**
+
+*Commands (14 new → 24 total):* /article, /rewrite, /optimize, /analyze-existing, /scrub, /research-serp, /research-gaps, /research-trending, /research-topics, /research-ai-citations, /priorities, /repurpose, /content-calendar, /cluster, /landing-research, /landing-write, /landing-audit, /landing-competitor
+
+*Post-write agents (9 new → 12 total):* content-analyzer, editor, headline-generator, keyword-mapper, performance, cluster-strategist, cro-analyst, landing-page-optimizer
+
+*Python modules (15 new → 21 total):* content_scrubber, keyword_analyzer, search_intent_analyzer, content_length_comparator, opportunity_scorer, competitor_gap_analyzer, diagram_generator, google_analytics, data_aggregator, article_planner, landing_page_scorer, above_fold_analyzer, cta_analyzer, trust_signal_analyzer, cro_checker
+
+*Skills (17 new → 25 total):* seo-audit, copywriting, email-sequence, schema-markup, marketing-psychology, analytics-tracking, copy-editing, ab-test-setup, signup-flow-cro, onboarding-cro, paywall-upgrade-cro, free-tool-strategy, page-cro, form-cro, popup-cro, launch-strategy
+
+*Context files (4 new):* target-keywords.md, internal-links-map.md, competitor-analysis.md, ai-citation-targets.md
+
+**What was deliberately excluded:**
+- `wordpress_publisher.py` + /publish-draft + /landing-publish — ExamPilot uses Sanity CMS, not WordPress
+- `engagement_analyzer.py` — requires GA4 custom events; ExamPilot's GA4 is pageview-only
+- `landing_performance.py` — requires conversion tracking not yet implemented
+- `/paid-ads` skill — permanent no-paid-ads decision (logged 2026-05-15)
+- Podcast-specific content (Castos references) — not applicable
+
+**Why:** seomachine was built for ExamPilot but maintained as a separate repo, creating a split-brain problem — Teresa couldn't access it, commands were CWD-dependent, and the AIOS had no awareness of the full capability set. Consolidating into Spyglass OS gives both users access to the full marketing machine under one roof.
+
+**Owner:** Enitan

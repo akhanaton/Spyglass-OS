@@ -1,13 +1,21 @@
 ---
 name: landing-competitor
 description: Analyse a competitor's landing page — headlines, CTAs, trust signals, objection handling, and content gaps. Use before writing any comparison page or topic hub that needs to out-rank a competitor. Works from a URL or a competitor name.
+bike-method-phase: 1
+three-ms-attribution: |
+  Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.
+  The Three Ms of AI™ is a trademark of Nate Herk.
 ---
 
-## Input
+> *Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.*
 
-$ARGUMENTS
+## When `/landing-competitor` runs
 
-Expect: a competitor URL or competitor name. Known competitor names:
+- Before writing any comparison page or topic hub that targets a competitor keyword
+- When the user asks "what does [competitor]'s page look like?" or "how should we position against [competitor]?"
+- As research input for `/landing-write comparison`
+
+Expects a competitor URL or competitor name. Known competitor names:
 - "SaveMyExams" → savemyexams.com
 - "PapaCambridge" → papacambridge.com
 - "Physics & Maths Tutor" or "PMT" → physicsandmathstutor.com

@@ -1,13 +1,21 @@
 ---
 name: research-serp
 description: Analyzes top-10 SERP results for a keyword to determine optimal content format, word count, and SERP features before writing.
+bike-method-phase: 1
+three-ms-attribution: |
+  Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.
+  The Three Ms of AI™ is a trademark of Nate Herk.
 ---
 
-## Input
+> *Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.*
 
-$ARGUMENTS
+## When `/research-serp` runs
 
-Expect: a keyword or topic to analyze. Examples:
+- Before writing any article — run this before `/research-keywords` or before `/write-article`
+- When the user asks "what ranks for [keyword]?" or "should we write about [topic]?"
+- As Step 1 of the `/article` pipeline for high-stakes content
+
+Expects a keyword or topic to analyze. Examples:
 - "cambridge 9709 integration by parts"
 - "how to pass edexcel WMA11"
 - "best revision tool for a level maths"

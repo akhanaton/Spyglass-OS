@@ -11,7 +11,7 @@ Registry of every system your AIOS can reach. Filled by `/onboard` from Q4-Q7 an
 | 5 | Project / task tracking | Coda | mcp (claude.ai native) | akhanaton@gmail.com | 2026-05-13 |
 | 6 | Meeting intelligence | Google Workspace | not yet connected | — | — |
 | 7 | Knowledge / files | Google Workspace, Coda, GitHub (second brain) | partial — GitHub via gh cli | PAT in keyring | 2026-05-13 |
-| 8 | Shared skills | Coda | mcp (claude.ai native) | akhanaton@gmail.com | 2026-05-13 |
+| 8 | Shared skills | GitHub (`akhanaton/spyglass-os`) | git clone / gh cli | PAT in keyring | 2026-05-16 |
 | 9 | Second brain / knowledge base | GitHub (`akhanaton/spyglass-wiki`) | gh cli | PAT in keyring | 2026-05-13 |
 | 10 | SEO analytics | Google Search Console | script (gsc_analyzer.py) | not yet connected | — |
 | 11 | SEO analytics | GA4 | script (ga4_analyzer.py) | not yet connected | — |

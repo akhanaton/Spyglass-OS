@@ -1,13 +1,21 @@
 ---
 name: research-keywords
 description: Research and prioritize keywords for a given topic. Outputs a structured keyword brief to the topics pipeline.
+bike-method-phase: 1
+three-ms-attribution: |
+  Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.
+  The Three Ms of AI™ is a trademark of Nate Herk.
 ---
 
-## Input
+> *Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.*
 
-$ARGUMENTS
+## When `/research-keywords` runs
 
-Expect: seed topic or keyword. Examples:
+- After `/research-gaps` identifies a Tier 1 or Tier 2 gap worth pursuing
+- Before `/write-article` — every article should have a keyword brief first
+- When the user names a topic and wants to know whether it's worth writing about
+
+Expects a seed topic or keyword. Examples:
 - "cambridge 9709 pure 1 integration"
 - "best app for a level maths revision"
 - "edexcel WMA11 past papers"

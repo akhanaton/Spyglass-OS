@@ -1,13 +1,21 @@
 ---
 name: research-gaps
 description: Identifies keywords that competitors rank for but ExamPilot doesn't. Produces tiered gap opportunities.
+bike-method-phase: 1
+three-ms-attribution: |
+  Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.
+  The Three Ms of AI™ is a trademark of Nate Herk.
 ---
 
-## Input
+> *Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.*
 
-$ARGUMENTS
+## When `/research-gaps` runs
 
-Optional: a specific competitor to focus on, or a topic area to narrow gaps. Examples:
+- Monthly — check what competitors rank for that ExamPilot doesn't
+- Before building a content sprint to identify the highest-value targets
+- After `/research-topics` to see which cluster gaps competitors are filling
+
+Optional arguments: a specific competitor to focus on, or a topic area to narrow gaps. Examples:
 - "savemyexams" — focus gap analysis on SaveMyExams
 - "integration" — find integration-related gaps only
 - (no input) — run full gap analysis across all three competitors
@@ -70,7 +78,7 @@ For each of the three competitors, systematically identify content categories Ex
 - "how to revise [topic] a level maths"
 - "[topic] past paper questions and answers"
 - "common mistakes [topic] a level"
-- "examPilot vs [competitor]" (comparison pages)
+- "ExamPilot vs [competitor]" (comparison pages)
 - "[exam board] grade boundaries [year]" [VERIFY]
 - "a level maths [topic] worked examples"
 

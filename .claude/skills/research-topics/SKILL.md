@@ -1,13 +1,22 @@
 ---
 name: research-topics
 description: Topic clustering for topical authority. Groups related keywords into pillar/spoke clusters mapped to ExamPilot's exam board structure.
+bike-method-phase: 1
+three-ms-attribution: |
+  Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.
+  The Three Ms of AI™ is a trademark of Nate Herk.
 ---
 
-## Input
+> *Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.*
 
-$ARGUMENTS
+## When `/research-topics` runs
 
-Optional: an exam board or topic area to focus on. Examples:
+- Before building out a new content area from scratch
+- When the user asks "what topics should we cover?" or "what's our cluster map?"
+- After `/research-gaps` to prioritize which gap clusters to build first
+- Monthly to check cluster completion progress
+
+Optional arguments: an exam board or topic area to focus on. Examples:
 - "cambridge 9709 pure 1" — cluster only around P1 topics
 - "edexcel ial" — cluster all Edexcel IAL modules
 - (no input) — full cluster map across Cambridge 9709 and Edexcel IAL

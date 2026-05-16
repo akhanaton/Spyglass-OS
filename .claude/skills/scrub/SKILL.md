@@ -1,13 +1,21 @@
 ---
 name: scrub
 description: Remove AI watermarks from a draft article — invisible Unicode chars, em-dash normalization, and AI-tell phrase flagging. Run on any draft before the quality gate. Wraps content_scrubber.py.
+bike-method-phase: 1
+three-ms-attribution: |
+  Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.
+  The Three Ms of AI™ is a trademark of Nate Herk.
 ---
 
-## Input
+> *Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.*
 
-$ARGUMENTS
+## When `/scrub` runs
 
-Expect: file path to a markdown article draft. Example:
+- After any write pass, before the quality gate
+- When a draft feels "AI-ish" and needs a mechanical clean before editorial review
+- As a standalone pass on any draft in `marketing/pipelines/drafts/`
+
+Expects a file path to a markdown draft. Example:
 - `marketing/pipelines/drafts/cambridge-9709-integration-2026-05-16.md`
 
 If no file path given, ask: "Which draft should I scrub? Give me the file path."
@@ -26,7 +34,7 @@ If the file exists, read it and note the approximate word count.
 python3 marketing/data_sources/modules/content_scrubber.py [filepath] --report
 ```
 
-If the module is available, use it. The --report flag returns a structured diagnostic without modifying the file. Review the output before applying changes.
+If the module is available, use it. The `--report` flag returns a structured diagnostic without modifying the file. Review the output before applying changes.
 
 If the module is not available, proceed to Step 3 and apply the rules inline.
 

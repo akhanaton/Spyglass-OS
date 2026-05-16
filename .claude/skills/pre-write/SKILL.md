@@ -1,6 +1,6 @@
 ---
 name: pre-write
-description: Scaffold a Sanity CMS JSON structure for ExamPilot product content pages before writing begins. Determines content type, maps content to Sanity block types, and writes a validated scaffold to /Users/enitan/Documents/Projects/spyglass/scripts/content/. Run before /write-article for any non-blog content type.
+description: Scaffold a Sanity CMS JSON structure for ExamPilot product content pages before writing begins. Determines content type, maps content to Sanity block types, and writes a validated scaffold to $SPYGLASS_PRODUCT_REPO/scripts/content/. Run before /write-article for any non-blog content type.
 bike-method-phase: 1
 three-ms-attribution: |
   Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.
@@ -9,9 +9,23 @@ three-ms-attribution: |
 
 > *Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.*
 
+## Setup — product repo path
+
+This skill writes to the ExamPilot product repo. Each team member must set `SPYGLASS_PRODUCT_REPO` to their local clone path:
+
+```bash
+# Add to your shell profile (~/.zshrc or ~/.bashrc):
+export SPYGLASS_PRODUCT_REPO="/path/to/your/spyglass"
+
+# Enitan: /Users/enitan/Documents/Projects/spyglass
+# Teresa: set to wherever you cloned the spyglass repo
+```
+
+All paths below use `$SPYGLASS_PRODUCT_REPO`. If the variable is unset, ask the user for the path before proceeding.
+
 ## What this skill does
 
-Produces a Sanity JSON scaffold for a product content page — topic guides, hub pages, comparison pages, etc. The scaffold goes into the product repo (`/Users/enitan/Documents/Projects/spyglass/scripts/content/`) and becomes the structural brief for the content writer (or `/write-article` for blog posts).
+Produces a Sanity JSON scaffold for a product content page — topic guides, hub pages, comparison pages, etc. The scaffold goes into the product repo (`$SPYGLASS_PRODUCT_REPO/scripts/content/`) and becomes the structural brief for the content writer (or `/write-article` for blog posts).
 
 **Bike Method Phase 1:** The scaffold must be reviewed by a human before any content is written against it. It is a structural plan, not final content.
 
@@ -26,7 +40,7 @@ Produces a Sanity JSON scaffold for a product content page — topic guides, hub
 Always read this before producing any scaffold:
 
 ```bash
-cat /Users/enitan/Documents/Projects/spyglass/scripts/content/topics/cambridge-9709-pure-1/integration.json
+cat $SPYGLASS_PRODUCT_REPO/scripts/content/topics/cambridge-9709-pure-1/integration.json
 ```
 
 That file is the canonical reference. Every scaffold you produce must be structurally consistent with it. Key things to observe:
@@ -179,13 +193,13 @@ Before saving, verify:
 
 ### Step 5 — Save and report
 
-**Output path:** `/Users/enitan/Documents/Projects/spyglass/scripts/content/[folder]/[slug].json`
+**Output path:** `$SPYGLASS_PRODUCT_REPO/scripts/content/[folder]/[slug].json`
 
 Write the scaffold using the Write tool. Do not commit to git — that is the developer's responsibility after human review.
 
 **One-screen close:**
 ```
-Scaffold saved: /Users/enitan/Documents/Projects/spyglass/scripts/content/[path]
+Scaffold saved: $SPYGLASS_PRODUCT_REPO/scripts/content/[path]
 Content type: [type]
 Sections planned: [n] (keyFormulas, examTips, workedExamples, FAQ)
 Assets specified: [n] visual assets
