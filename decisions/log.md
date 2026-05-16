@@ -258,3 +258,23 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 **Why:** seomachine was built for ExamPilot but maintained as a separate repo, creating a split-brain problem — Teresa couldn't access it, commands were CWD-dependent, and the AIOS had no awareness of the full capability set. Consolidating into Spyglass OS gives both users access to the full marketing machine under one roof.
 
 **Owner:** Enitan
+
+---
+
+## 2026-05-16 — OS structural audit: skills promoted to canonical layer, duplicates resolved
+
+**Decision:** Ran a full coherence audit of Spyglass OS after the seomachine port. Four issues identified and fixed in commit `f6ab25c`:
+
+1. **Skills are now the canonical execution layer.** 7 commands that existed only in `.claude/commands/` (scrub, content-calendar, research-topics, research-gaps, research-keywords, research-serp, landing-competitor) were promoted to proper `.claude/skills/{name}/SKILL.md` files with bike-method-phase frontmatter and 3Ms attribution. The `write-article` command was deleted — the skill was already a strict superset (adds APP formula, Python scorer, editor agent). 16 commands remain, all genuinely command-only with no skill twin.
+
+2. **3 agents relocated.** `content-analyzer`, `cro-analyst`, and `landing-page-optimizer` were incorrectly nested under `.claude/skills/write-article/agents/` during the seomachine port. All three run after `/landing-write`, not `/write-article`. Moved to `.claude/agents/` (top-level).
+
+3. **Hardcoded machine path fixed.** `/pre-write` skill hardcoded `/Users/enitan/Documents/Projects/spyglass/scripts/content/` in 4 places, breaking Teresa's access entirely. Replaced with `$SPYGLASS_PRODUCT_REPO` env var with a setup block at the top of the skill.
+
+4. **connections.md row 8 corrected.** Entry said "Shared skills | Coda | mcp" — skills never moved to Coda. Updated to reflect reality: shared via `akhanaton/spyglass-os` GitHub repo via git clone / gh cli.
+
+**Why:** The seomachine port added 63 files in 3 commits without a structural review pass. The command/skill duplication created maintenance drift risk (update the skill, command stays stale) and ambiguity about which implementation runs. Skills are the right canonical layer: they have discoverability metadata, phase tracking, and work regardless of CWD — the exact properties that make them shareable with Teresa.
+
+**Alternatives considered:** Commands as canonical, delete duplicate skills (rejected: commands are the seomachine pattern we moved away from; loses bike-method-phase metadata and trigger-word discoverability); split commands/skills by role — commands for operational pipelines, skills for advisory (rejected: introduces new abstraction the OS doesn't support, most capabilities are operational anyway).
+
+**Owner:** Enitan
