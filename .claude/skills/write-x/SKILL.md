@@ -1,6 +1,6 @@
 ---
 name: write-x
-description: Draft a tweet or thread for X (build in public). Pulls from OS data sources (decisions log, Linear, PostHog, git) or accepts freeform input. Drafts in the author's personal voice with anti-AI scrub. Human review gate before publishing. Trigger on "write a tweet", "draft a thread", "write-x", or any request to create X/Twitter content for build-in-public. One run = one draft saved to marketing/pipelines/outreach/.
+description: Draft a tweet or thread for X (build in public). Pulls from OS data sources (decisions log, Linear, PostHog, git) or accepts freeform input. Drafts in the author's personal voice with anti-AI scrub. Human review gate before publishing. Trigger on "write a tweet", "draft a thread", "write-x", or any request to create X/Twitter content for build-in-public. One run = one draft saved to build-in-public/pipelines/outreach/.
 bike-method-phase: 1
 three-ms-attribution: |
   Adapted from The Three Ms of AI(TM) (c) 2026 Nate Herk. All rights reserved.
@@ -44,13 +44,13 @@ cat references/voice-{author}.md
 cat context/{author}.md
 
 # 3. X channel rules
-cat marketing/context/channel-playbooks.md    # read X / Build in Public section
+cat build-in-public/context/channel-rules.md
 
 # 4. Content standards and banned phrases
 cat marketing/context/content-standards.md
 
 # 5. Build-in-public strategy (for content pillars and anti-AI rules)
-cat references/x-build-in-public-strategy.md
+cat build-in-public/references/x-strategy.md
 ```
 
 Do not skip the voice file. The draft must sound like the author typed it on their phone.
@@ -96,7 +96,7 @@ If `--type` was specified, use it. Otherwise:
 
 **For standalone tweets (`post`):**
 
-Load `marketing/templates/x-post.md`. Generate a single tweet, max 280 characters.
+Load `build-in-public/templates/x-post.md`. Generate a single tweet, max 280 characters.
 
 Rules:
 - Determine post-type: milestone, decision, failure, tip, question, or reply-prompt
@@ -107,7 +107,7 @@ Rules:
 
 **For threads (`thread`):**
 
-Load `marketing/templates/x-thread.md`. Generate 5-7 tweets.
+Load `build-in-public/templates/x-thread.md`. Generate 5-7 tweets.
 
 Rules:
 - Tweet 1 (hook): the single most compelling insight, number, or decision. Must stop scrolling. No hashtags.
@@ -149,8 +149,8 @@ Wait for edits. Apply any changes the author requests.
 ### Step 7 -- Save
 
 Save the approved draft to:
-- Posts: `marketing/pipelines/outreach/x-post-{author}-{slug}-YYYY-MM-DD.md`
-- Threads: `marketing/pipelines/outreach/x-thread-{author}-{slug}-YYYY-MM-DD.md`
+- Posts: `build-in-public/pipelines/outreach/x-post-{author}-{slug}-YYYY-MM-DD.md`
+- Threads: `build-in-public/pipelines/outreach/x-thread-{author}-{slug}-YYYY-MM-DD.md`
 
 Apply YAML frontmatter from the appropriate template.
 

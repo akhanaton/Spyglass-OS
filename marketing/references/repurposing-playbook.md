@@ -30,6 +30,7 @@ Starting from a single SEO blog article (written via `/write-article`):
 - TikTok: one hook, one idea, one CTA. 30-60 seconds max. See video section below.
 - Never cross-post the same text to multiple platforms.
 - X: completely different audience (founders/builders, not students). Extract the *process* insight, not the *exam* insight. "We just published our 10th article on Cambridge 9709 revision" (how we're building) not "Here's how to revise for 9709 Paper 1" (what the article says). Never cross-post Reddit content to X. The registers are incompatible.
+  Full X repurposing rules: `build-in-public/context/repurposing-rules.md`
 
 ## Short-Form Video Strategy (TikTok — P2)
 

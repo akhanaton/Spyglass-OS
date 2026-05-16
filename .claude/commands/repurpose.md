@@ -30,6 +30,7 @@ Read the full article. Extract:
 Read these in parallel:
 - `marketing/references/repurposing-playbook.md` — repurposing rules and channel-specific guidelines
 - `marketing/context/channel-playbooks.md` — operational rules per channel (Reddit, email, TikTok)
+- `build-in-public/context/channel-rules.md` — operational rules for X / build-in-public
 - `marketing/context/audience-segments.md` — tone and messaging for the target segment
 
 ### Step 3: Generate Reddit version
@@ -168,6 +169,7 @@ created: YYYY-MM-DD
 > Target audience: founders and builders (NOT students). Extract the BUILD process from the article, not the exam content.
 
 Read `context/.whoami` to determine the author. Load `references/voice-{author}.md`.
+Load `build-in-public/context/channel-rules.md` for X posting rules.
 
 **Standalone tweet:**
 
@@ -185,7 +187,7 @@ Max 280 characters. No links (put in self-reply). No em dashes. No banned phrase
 
 **Thread flag:** If the article's creation involved an interesting multi-step process, decision, or failure, flag it: "[THREAD CANDIDATE] This article's creation story could make a good weekly thread. Run `/write-x --type thread` to expand."
 
-Save tweet to `marketing/pipelines/outreach/x-post-{author}-{slug}-YYYY-MM-DD.md`
+Save tweet to `build-in-public/pipelines/outreach/x-post-{author}-{slug}-YYYY-MM-DD.md`
 
 ```yaml
 ---

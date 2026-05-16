@@ -40,7 +40,7 @@ Query key marketing metrics: new signups, trial starts, page views on key landin
 **Pipeline activity:**
 ```bash
 find marketing/pipelines/ -name "*.md" -newer marketing/pipelines/.last-pulse 2>/dev/null | wc -l
-ls -la marketing/pipelines/drafts/ marketing/pipelines/review/ marketing/pipelines/published/ marketing/pipelines/outreach/ 2>/dev/null
+ls -la marketing/pipelines/drafts/ marketing/pipelines/review/ marketing/pipelines/published/ marketing/pipelines/outreach/ build-in-public/pipelines/outreach/ 2>/dev/null
 ```
 
 ### Step 3: Manual input for unconnected sources

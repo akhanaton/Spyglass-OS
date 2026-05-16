@@ -35,4 +35,4 @@ date: YYYY-MM-DD
 
 ## Output
 
-Save to: `marketing/pipelines/outreach/x-post-{author}-{slug}-YYYY-MM-DD.md`
+Save to: `build-in-public/pipelines/outreach/x-post-{author}-{slug}-YYYY-MM-DD.md`

@@ -37,6 +37,7 @@ Read `references/continuous-improvement.md`. Every repeatable function in this O
 - `connections.md` — registry of every system your AIOS can reach
 - `decisions/log.md` — append-only record of decisions and why
 - `archives/` — old stuff. Don't delete. Move here.
+- `build-in-public/` — build-in-public sub-OS for X. Separate workstream: different audience (founders), different KPIs (credibility, not signups). Not a marketing channel.
 
 See `EXPANSIONS.md` for what to add as you grow.
 

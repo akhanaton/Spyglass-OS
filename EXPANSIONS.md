@@ -62,6 +62,26 @@ Anti-patterns. These look helpful but rot the structure:
 
 ---
 
+## The workstream test — when a folder becomes a sub-OS
+
+A folder and a sub-OS are different things. A folder is a storage container. A sub-OS (`build-in-public/`, `youtube-os/`, etc.) is a scoped operating environment with its own context, templates, and pipelines.
+
+A new workstream earns a sub-OS folder when it passes all five of these:
+
+1. **Different goal** — does it exist for a reason that is fundamentally separate from ExamPilot student conversion?
+2. **Different audience** — would a message written for this workstream's audience be wrong for the student micro-funnel audience, and vice versa?
+3. **Different KPIs** — does it have metrics that would dilute or confuse the primary product KPIs if mixed together?
+4. **Different voice** — does it require a personal voice (`voice-{author}.md`) rather than the house voice, or a register incompatible with student content?
+5. **Different cadence** — does it run on a rhythm that is unrelated to the exam calendar that governs ExamPilot's marketing?
+
+Three or more yeses = sub-OS. Two or fewer = put it inside the closest existing folder.
+
+**Non-example:** Reddit outreach, email sequences, SEO articles — same goal (student conversion), same audience, same KPIs. They get channels inside `marketing/`, not their own sub-OS.
+
+**Real example:** Build-in-public on X — different goal (founder credibility), different audience (founders/indie hackers), different KPIs (engagement rate not trial signups), different voice (personal not house), different cadence (daily posting unrelated to exam dates). Five for five. Now lives in `build-in-public/`. See `decisions/log.md` 2026-05-16 for the decision.
+
+---
+
 ## How to tell when it's time to add a folder
 
 Ask three questions:

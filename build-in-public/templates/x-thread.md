@@ -44,4 +44,4 @@ Never: "check out our product" or any hard CTA.
 
 ## Output
 
-Save to: `marketing/pipelines/outreach/x-thread-{author}-{slug}-YYYY-MM-DD.md`
+Save to: `build-in-public/pipelines/outreach/x-thread-{author}-{slug}-YYYY-MM-DD.md`

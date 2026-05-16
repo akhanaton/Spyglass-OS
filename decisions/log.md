@@ -338,3 +338,23 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 **Alternatives considered:** Commands as canonical, delete duplicate skills (rejected: commands are the seomachine pattern we moved away from; loses bike-method-phase metadata and trigger-word discoverability); split commands/skills by role — commands for operational pipelines, skills for advisory (rejected: introduces new abstraction the OS doesn't support, most capabilities are operational anyway).
 
 **Owner:** Enitan
+
+---
+
+## 2026-05-16 — Build-in-public extracted to dedicated sub-OS
+
+**Decision:** Extracted the build-in-public on X workstream from `marketing/` into a new top-level sub-OS `build-in-public/`. Previously, X infrastructure was spread across `references/x-build-in-public-strategy.md`, `marketing/templates/x-post.md`, `marketing/templates/x-thread.md`, and X sections inside three `marketing/context/` files (`channel-playbooks.md`, `audience-segments.md`, `funnel-strategy.md`).
+
+New structure:
+- `build-in-public/references/x-strategy.md` (moved from `references/x-build-in-public-strategy.md`)
+- `build-in-public/templates/x-post.md`, `x-thread.md` (moved from `marketing/templates/`, save paths updated)
+- `build-in-public/context/channel-rules.md`, `audience.md`, `funnel.md`, `repurposing-rules.md` (extracted from `marketing/context/` files, which now have one-line pointer stubs)
+- `build-in-public/pipelines/outreach/` (new output folder — X drafts no longer go to `marketing/pipelines/outreach/`)
+
+Skills/commands updated: `write-x/SKILL.md` (8 path edits), `repurpose.md` (3 edits), `tune/SKILL.md` (2 edits), `weekly-pulse.md` (pipeline scan fix), `CLAUDE.md` (`build-in-public/` added to "Where things live"). `marketing/` is now purely ExamPilot student-facing.
+
+**Why:** Build-in-public on X was placed inside `marketing/` by path-of-least-resistance when the feature was first built. But by a 5-criteria workstream test (different goal, different audience, different KPIs, different voice, different cadence) it qualifies as a second workstream. The X strategy doc itself states: "It does NOT directly convert students." Keeping it in `marketing/` causes: `/weekly-pulse` conflating student funnel and builder metrics; `channel-playbooks.md` mixing incompatible audiences; future `/tune` parameter drift between workstreams. The workstream test that identified this is now documented in `EXPANSIONS.md`.
+
+**Alternatives considered:** Leave in `marketing/`, add a comment (rejected: cost compounds as X content grows; a half-committed structure is worse than a clean one); partial extract — move only leaf files, leave context sections in `marketing/context/` (rejected: still requires reading two locations to understand the X channel, defeating the purpose).
+
+**Owner:** Enitan

@@ -32,7 +32,7 @@ cat references/continuous-improvement.md
 # 2. Current function parameters
 cat marketing/gtm-engineering/scoring-model.md
 cat marketing/gtm-engineering/signal-registry.md
-cat references/x-build-in-public-strategy.md
+cat build-in-public/references/x-strategy.md
 cat marketing/context/channel-playbooks.md
 cat marketing/context/content-standards.md
 cat marketing/references/churn-prevention.md
@@ -186,7 +186,7 @@ Wait for decisions on each proposed adjustment.
 
 For each accepted adjustment:
 
-1. Update the source file (e.g., `scoring-model.md`, `x-build-in-public-strategy.md`, `channel-playbooks.md`)
+1. Update the source file (e.g., `scoring-model.md`, `build-in-public/references/x-strategy.md`, `channel-playbooks.md`)
 2. Change the parameter value
 3. Update the label from "initial estimate" to "adjusted [date] based on [data point]"
 4. Append to `decisions/log.md`:
