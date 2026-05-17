@@ -472,3 +472,43 @@ Skills/commands updated: `write-x/SKILL.md` (8 path edits), `repurpose.md` (3 ed
 **Alternatives considered:** (1) Ritual-only approach — all phase execution wired through `/weekly-pulse` and `/tune` (rejected: rituals are designed for steady-state recurring execution, not one-time project setup; forcing gate criteria into a weekly review creates noise and loses tasks between sessions); (2) Wiki-based tracker — a `phase-0-tracker.md` wiki article updated manually (rejected: wikis go stale fast, no owner accountability, no dependency tracking); (3) New OS infrastructure — a `/task` command or Coda task table (rejected: Linear already exists and is MCP-connected — adding new infrastructure for the same job is the wrong move).
 
 **Owner:** Enitan
+
+---
+
+## 2026-05-17 — Phase 0 Foundation: Linear milestone + 24 issues + /weekly-pulse gate scoring
+
+**Decision:** Operationalised the marketing plan Phase 0 by creating a Linear milestone ("Phase 0 — Foundation", target July 31 2026) with 24 issues (EP-52 to EP-75) and updating `/weekly-pulse` Step 7 to score the Phase 0 gate every Friday.
+
+**What was built:**
+
+*Linear milestone:* Phase 0 — Foundation (Alpha Launch project, target 2026-07-31). Gate: all 4 must-pass criteria met AND weighted score ≥ 65%. Hard override: August arrival triggers Phase 1 regardless.
+
+*24 issues (EP-52 → EP-75):*
+- EP-52: Wire Brevo (Enitan, Urgent, Jun 21) — blocks EP-55, EP-62, EP-63, EP-64
+- EP-53: Audit existing ~8 articles (Teresa, Urgent, Jun 28) — blocks EP-67 through EP-73
+- EP-54: Technical SEO foundation — CWV, GSC, robots.ts, /pricing.md, /llms.txt (Enitan, Urgent, Jun 21)
+- EP-55: Landing page + waitlist signup (Enitan, Urgent, Jun 28)
+- EP-56: 5-10 programmatic past paper pages (Enitan, High, Jul 20)
+- EP-57: Bing + Brave Search verified (Enitan, Medium, Jul 5)
+- EP-58: School/teacher outreach list — 5-10 schools Tier 1 (Enitan, High, Jul 15)
+- EP-59: Teresa's LinkedIn profile complete (Teresa, Urgent, Jun 21)
+- EP-60: Join + observe 2-3 Facebook parent groups (Teresa, High, Jun 21)
+- EP-61: WhatsApp Business App + ExamPilot community (Teresa, Medium, Jul 5)
+- EP-62: Waitlist email sequence 5 emails (Teresa, Urgent, Jul 5)
+- EP-63: Student onboarding email sequence 6 emails (Teresa, High, Jul 10)
+- EP-64: Parent email sequence 4 emails (Teresa, High, Jul 10)
+- EP-65: "For Parents" landing page (Teresa, High, Jul 15)
+- EP-66: Results Day content — staged, DO NOT publish early (Teresa, Urgent, Jul 20)
+- EP-67: Pillar page Cambridge 9709 Pure Mathematics 1 (Teresa, Urgent, Jul 10)
+- EP-68–70: Topic spokes — Coordinate Geometry, Quadratics, Series & Circular Measure (Teresa, High, Jul 15)
+- EP-71–73: Strategy spokes — How to Pass, Common Mistakes, Best Resources (Teresa, High, Jul 20)
+- EP-74: Examiner report analysis bridge content (Teresa, Medium, Jul 25)
+- EP-75: Link building 3-5 referring domains (Enitan, Medium, Jul 28)
+
+*`/weekly-pulse` Step 7 updated:* Queries Linear for EP-55, EP-62, EP-60, EP-61, EP-65 status; scores 9 gate criteria (4 must-pass + 5 weighted); outputs scorecard with ON TRACK / AT RISK / BLOCKED; surfaces single blocking item. Phase-aware — adapts to Phase 1+ once Phase 0 is passed.
+
+**Why:** Applied the execution model (see 2026-05-17 execution model entry): Phase 0 is one-time setup work → Linear. Recurring gate check → ritual. Both wired.
+
+**Key dependency chain:** EP-52 (Brevo) unblocks EP-55/62/63/64. EP-53 (article audit) unblocks EP-67–73. EP-59 (Teresa LinkedIn profile) must be done before Enitan acts on EP-58.
+
+**Owner:** Enitan
