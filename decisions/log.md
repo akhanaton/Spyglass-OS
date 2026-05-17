@@ -453,4 +453,22 @@ Skills/commands updated: `write-x/SKILL.md` (8 path edits), `repurpose.md` (3 ed
 
 **Owner:** Teresa (content + posting), Enitan (infrastructure).
 
+---
+
+## 2026-05-17 — OS execution model: Linear for tasks, OS for execution, wiki for knowledge
+
+**Decision:** Established a three-tool execution model for operationalizing strategic plans in Spyglass OS. Linear handles one-time tasks with owners and deadlines. OS skills and rituals handle recurring execution and cadence-driven review. Wiki holds durable knowledge. No work should live in more than one place. Decision framework codified in `references/execution-model.md`.
+
+**Why:** The marketing plan needed to be turned from a strategic document into actionable items. The initial instinct was to wire everything through OS rituals (`/weekly-pulse` phase gate scoring, `/tune` phase tracking). But Phase 0 is primarily one-time setup work — setup tasks don't fit rituals, which are designed for steady-state recurring execution. Forcing setup tasks into rituals means they either disappear between sessions or generate noise in the weekly review. Linear already exists, is MCP-connected, is used by Enitan for product (EP-XX issues), and Teresa can see it without running the OS. The right tool for the job.
+
+**The framework:**
+- One-time task, specific owner, deadline, dependencies → Linear
+- Recurring execution, cadence-driven, data-triggered → OS skill or ritual
+- Durable knowledge, reasoning, reference material → wiki
+- Phase transitions → `decisions/log.md` via `/phase-gate` skill (to build)
+
+**What would change this:** If Linear stops being used consistently by both founders, the task tracking layer collapses and everything migrates back to ritual-driven. The model only works if Linear is maintained.
+
+**Alternatives considered:** (1) Ritual-only approach — all phase execution wired through `/weekly-pulse` and `/tune` (rejected: rituals are designed for steady-state recurring execution, not one-time project setup; forcing gate criteria into a weekly review creates noise and loses tasks between sessions); (2) Wiki-based tracker — a `phase-0-tracker.md` wiki article updated manually (rejected: wikis go stale fast, no owner accountability, no dependency tracking); (3) New OS infrastructure — a `/task` command or Coda task table (rejected: Linear already exists and is MCP-connected — adding new infrastructure for the same job is the wrong move).
+
 **Owner:** Enitan

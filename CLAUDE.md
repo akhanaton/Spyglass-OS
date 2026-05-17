@@ -23,6 +23,10 @@ Read `references/3ms-framework.md` once. It's how {{Your Name}} thinks about AI 
 
 Read `references/continuous-improvement.md`. Every repeatable function in this OS follows a three-step loop: Capture (what happened + what resulted), Review (compare outcomes to expectations at a defined cadence), Adjust (change parameters, log the change with the data that drove it). Initial parameters are always estimates. `/tune` runs monthly to review all active functions and propose data-backed adjustments.
 
+## Execution model
+
+Read `references/execution-model.md` when operationalizing any strategic plan or deciding how to track a piece of work. Three-tool rule: Linear for tasks with owners and deadlines, OS skills and rituals for recurring execution, wiki for durable knowledge. The decision test is in the reference file.
+
 ## Your skills
 
 - `/onboard` — already run if you're seeing this filled in. Re-run any time to refresh from an edited `aios-intake.md`.
