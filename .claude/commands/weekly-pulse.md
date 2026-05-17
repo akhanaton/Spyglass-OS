@@ -174,8 +174,85 @@ If fewer than 5 posts exist on Teresa's profile, flag: "Content warm-up insuffic
 
 Prompt: "What educator insight from this week could make a good LinkedIn post? The decisions log has [N] new entries — any worth reframing as a teacher-facing insight?"
 
-### Step 7: Strategy check
+### Step 7: Phase gate score
 
-Compare this week's numbers against targets from `marketing/context/funnel-strategy.md`. If any metric is significantly off-track, flag it and suggest whether to adjust the strategy (with reference to which wiki article to update).
+Determine the current phase from `marketing/strategy/marketing-plan-2026-2027.md`. Run the gate scoring block for that phase. This is the single most important output of the weekly pulse — it tells you whether you are on track to pass the gate before the deadline.
 
-Reference `marketing/references/experiment-framework.md` for any active experiments and their status. Reference `marketing/references/churn-prevention.md` for retention metric targets if post-launch.
+---
+
+#### Phase 0 gate (active until gate passed or August arrives)
+
+Query Linear via MCP for the Phase 0 milestone issues. Check completion status of these specific issues:
+
+```
+EP-55 — Landing page live (must-pass proxy: waitlist form live)
+EP-62 — Waitlist email sequence loaded and tested (must-pass)
+EP-60 — Facebook Groups joined ≥ 2
+EP-61 — WhatsApp community created
+EP-65 — "For Parents" page live
+```
+
+For data-dependent criteria, use available sources or ask manually:
+
+| Criterion | How to check | Threshold | Weight | Must-pass? |
+|---|---|---|---|---|
+| Pages indexed | GSC (if connected) or ask: "How many pages indexed in GSC this week?" | ≥ 15 | 20% | Yes |
+| Waitlist form live | EP-55 status in Linear | Done | 15% | Yes |
+| Email sequences loaded + tested | EP-62 status in Linear | Done | 15% | Yes |
+| Reddit accounts active with karma | Ask: "Reddit accounts aged 30+ days with 50+ karma?" | Yes/No | 10% | Yes |
+| Blog articles published | Count files in `marketing/pipelines/published/` | ≥ 8 | 15% | No |
+| Tutor conversations initiated | Ask: "How many tutor conversations started so far?" | ≥ 3 | 10% | No |
+| Facebook Groups joined | EP-60 status in Linear | Done | 5% | No |
+| WhatsApp community created | EP-61 status in Linear | Done | 5% | No |
+| "For Parents" page live | EP-65 status in Linear | Done | 5% | No |
+
+**Scoring:**
+- Each criterion scores its full weight if met, 0 if not met
+- Must-pass criteria: flag as ✗ BLOCKING if not yet met (score separately)
+- Weighted score = sum of weights for met criteria
+
+**Display:**
+```
+### Phase 0 Gate Score — [date]
+Target: mid-July 2026  |  Hard override: August 1
+
+Must-pass criteria:
+  Pages indexed ≥ 15:          ✓/✗  (current: X pages)
+  Waitlist form live:           ✓/✗  (EP-55: [status])
+  Email sequences loaded:       ✓/✗  (EP-62: [status])
+  Reddit accounts active:       ✓/✗
+
+Scored criteria:
+  Blog articles ≥ 8:           ✓/✗  (X/8)   [15%]
+  Tutor conversations ≥ 3:     ✓/✗  (X/3)   [10%]
+  Facebook Groups joined:       ✓/✗          [5%]
+  WhatsApp community:           ✓/✗          [5%]
+  "For Parents" page live:      ✓/✗          [5%]
+
+Weighted score: X% / 65% threshold
+Must-pass failures: X
+
+Status: ON TRACK / AT RISK / BLOCKED
+Blocking item this week: [the single highest-priority incomplete item]
+```
+
+**Status rules:**
+- BLOCKED: any must-pass criterion not met AND due date < 2 weeks away
+- AT RISK: weighted score < 65% AND fewer than 3 weeks to target date
+- ON TRACK: all must-pass met OR sufficient time remaining
+
+After displaying the score, state one action: "To move the needle this week: [specific next step linked to the lowest-scoring open Linear issue]."
+
+---
+
+#### Phase 1+ gate (once Phase 0 is passed)
+
+Read the relevant phase gate criteria from `marketing/strategy/marketing-plan-2026-2027.md` and apply the same scoring pattern above. The Phase 0 block is replaced by the active phase's criteria.
+
+---
+
+**Strategy check (runs every week regardless of phase):**
+
+Compare channel metrics from Steps 1-6 against targets from `marketing/context/funnel-strategy.md`. Flag any metric significantly off-track and note which wiki article or OS file governs it.
+
+Reference `marketing/references/experiment-framework.md` for any active experiments. Reference `marketing/references/churn-prevention.md` for retention metrics post-launch.
