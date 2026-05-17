@@ -1,10 +1,12 @@
 # ExamPilot Marketing Plan: May 2026 - November 2027
 
-**Version:** 2.0
+**Version:** 3.0
 **Owner:** Enitan & Teresa
 **Review cadence:** Monthly review, quarterly recalibration
 **Status:** Draft for review
-**Last updated:** 2026-05-15
+**Last updated:** 2026-05-17
+**v3.0 changes:** Channel realignment from target market analysis. Reddit repositioned as SEO/AI seeding. Parent acquisition added (Section 3.7). School/teacher B2C2B partnerships added (Section 3.8). WhatsApp Communities replace Discord as primary international channel (Section 3.9). TikTok updated for region-specific content. See `decisions/log.md` 2026-05-17 entry.
+**v3.0.1 changes:** LinkedIn added to build-in-public sub-OS as second channel (Teresa, professional authority/teacher outreach warm-up). See `build-in-public/references/linkedin-strategy.md` and `decisions/log.md` 2026-05-17 (LinkedIn entry).
 
 ---
 
@@ -110,7 +112,21 @@ Website → Trial → Paid
 - TikTok drives curiosity that triggers search on Google and Reddit
 - AI Search aggregates all three into recommendations
 
-**The end goal:** A warm, pre-qualified visitor arriving at exampilot.io with high intent and pre-built trust. This is "zero-click nurturing" — the student is already sold before they click through.
+**The end goal:** A warm, pre-qualified visitor arriving at exampilot.io with high intent and pre-built trust. This is "zero-click nurturing" -- the student is already sold before they click through.
+
+#### Parent Funnel (Parallel Path)
+
+In target markets (Pakistan, UAE, Nigeria, Malaysia), the parent is often the economic buyer. A parallel parent funnel operates alongside the student micro-funnel:
+
+```
+Facebook Groups / WhatsApp (parent discovery: "other parents use this")
+    ↓ research
+"For Parents" Landing Page (trust-building: "safe, affordable, works")
+    ↓ decision
+Website → Trial (parent creates account for child) → Paid
+```
+
+The student funnel and parent funnel converge at the website. They operate in parallel, not in sequence. A student may discover ExamPilot through TikTok and tell their parent. A parent may discover it through a Facebook Group and tell their child. Both paths lead to the same conversion point.
 
 ### 2.4 Full B2C Funnel Mapping
 
@@ -118,12 +134,12 @@ The micro-funnel sits inside the broader B2C customer lifecycle:
 
 | Stage | Consumer Mindset | Channel | Primary Goal | Success Metric |
 |---|---|---|---|---|
-| Awareness | "Never heard of you" | TikTok, SEO, Reddit | Reach | Impressions, new visitors |
-| Consideration | "Interesting, tell me more" | Blog, comparison pages, Reddit threads | Educate and build trust | Time on site, return visits, AI citations |
-| Intent | "I want this. Is it you?" | Landing page, free trial, AI Search | Remove friction | Trial signups |
+| Awareness | "Never heard of you" | TikTok, SEO, Reddit, Facebook Groups (parents), WhatsApp Communities | Reach | Impressions, new visitors |
+| Consideration | "Interesting, tell me more" | Blog, comparison pages, Reddit threads, "For Parents" page, school recommendations | Educate and build trust | Time on site, return visits, AI citations |
+| Intent | "I want this. Is it you?" | Landing page, free trial, AI Search, parent email sequence | Remove friction | Trial signups |
 | Purchase | "I'm in" | Checkout, onboarding | Smooth conversion | Trial-to-paid rate |
-| Retention | "Was it worth it?" | In-app, email | Repeat behaviour | D7/D30 retention, session depth |
-| Advocacy | "I love this" | Referral, reviews, word of mouth | Organic growth | NPS, referral rate |
+| Retention | "Was it worth it?" | In-app, email, WhatsApp community | Repeat behaviour | D7/D30 retention, session depth |
+| Advocacy | "I love this" | Referral, reviews, word of mouth, teacher recommendations | Organic growth | NPS, referral rate |
 
 Each channel strategy below maps to one or more of these stages.
 
@@ -280,7 +296,7 @@ TikTok is the emotional discovery engine. It puts ExamPilot on a student's radar
 **Posting cadence:**
 - Growing phase: 1 video/day (batch filming: 10 videos per filming session)
 - Maintaining phase: 3-5 videos/week
-- Best posting times (UK): 7-9 AM (before school), 12-3 PM (lunch/free periods), 7-11 PM (evening revision)
+- Best posting times (GST-optimised for target markets): 4pm-9pm GST (covers Pakistan and UAE after school, overlaps with UK evening 12-5pm GMT and Malaysia/Singapore evening 8pm-1am MYT/SGT). Secondary window: 7-9 AM GST (morning study).
 
 **Content pillars (rotate weekly):**
 
@@ -296,7 +312,15 @@ TikTok is the emotional discovery engine. It puts ExamPilot on a student's radar
 - Caption text
 - On-screen text overlay (first 3 seconds)
 - Spoken audio (first 3 seconds)
-- Hashtags (#alevel #cambridgemaths #9709 #revision #alevelmaths)
+- Hashtags (#alevel #cambridgemaths #9709 #revision #alevelmaths #olevel #igcse #cambridgeinternational)
+
+**Region-specific content rules:**
+- English audio (language of instruction for CIE worldwide). Consider Urdu subtitles for Pakistan-targeted content (P2, test engagement).
+- Avoid UK-specific slang (innit, mate, sixth form, UCAS). Use universally understood English.
+- Examples and scenarios should reference international school contexts, not UK sixth form colleges.
+- Pricing comparisons should use tutor rates in target markets (PKR 3,000-8,000/hour in Pakistan, AED 150-300/hour in UAE), not UK rates.
+- Use exam paper codes (9709/12, WMA11) as universal identifiers across all markets.
+- Don't reference UK-only institutions or cultural touchpoints.
 
 #### 3.2.2 Exam Season Campaigns
 
@@ -362,26 +386,39 @@ Every link-in-bio URL must use UTM parameters: `?utm_source=tiktok&utm_medium=so
 
 ### 3.3 Reddit Strategy
 
-Reddit is the trust-building layer. Skeptical teenagers and their parents search Reddit specifically for unfiltered peer opinions. A well-placed, genuinely helpful comment can rank on Google and get cited by AI search tools.
+Reddit is the SEO/AI citation seeding engine. Threads rank on Google (#2 most visible site after Wikipedia, +2,100% visibility since Aug 2024), get cited by AI tools (92.8% of AI search opportunities cite Reddit), and compound indefinitely. Direct student acquisition from Reddit is secondary -- the premium international CIE audience (Pakistan, UAE, Nigeria, Malaysia) does not primarily browse r/alevel. But they DO Google "Cambridge 9709 how to solve integration questions" and find a Reddit thread. They DO ask ChatGPT "best resources for Cambridge A-Level Maths" and get a Reddit-sourced answer.
 
-**Active subreddits:** r/alevel (primary), r/6thForm, r/CambridgeInternational, r/Edexcel
+**Active subreddits (reprioritised):** r/CambridgeInternational (primary -- direct CIE audience), r/Edexcel (Edexcel IAL), r/alevel (secondary -- UK domestic, strong Google indexing), r/6thForm (tertiary -- UK-focused)
 
 **Operating model:**
-- 2-3 genuinely helpful contributions per week per sub
+- 2-3 genuinely helpful contributions per week per sub, optimised for search intent queries
 - Value first, always. Answer the question before anything else.
 - Only mention ExamPilot when directly relevant and only after building karma (50+ karma, 30+ day account age)
 - No link drops. Describe what ExamPilot does if asked. Let them Google it.
+- Write posts answering specific exam questions students Google (e.g., "How to approach 9709/32 Paper 3 complex numbers questions")
+- Include exam paper codes, topic names, specific terminology -- these are the long-tail keywords that get indexed
+- Structure answers to be citable: clear, factual, formatted
 
 **Content types by phase:**
 
 | Phase | Content Type | Example |
 |---|---|---|
-| 0: Foundation | Pure value posts, no mention | "Here's how I'd revise differentiation for 9709 P1" |
+| 0: Foundation | Pure value posts targeting search-intent queries | "Here's how to approach 9709 Pure 1 integration by substitution -- the three patterns the examiner tests" |
 | 1: Soft Launch | Value + soft mention when relevant | "I've been working on a tool that does exactly this..." |
-| 2: Growth | Value + natural recommendation | Full engagement as a known, trusted community member |
-| 3: Scale | Community leadership | Host AMAs, provide exam season guides, become the go-to resource |
+| 2: Growth | Value + natural recommendation, authoritative voice | Full engagement as a known, trusted contributor with exam-specific expertise |
+| 3: Scale | Community leadership + content seeding | Host AMAs, provide exam season guides, become the go-to authority for 9709 content on Reddit |
 
-**Reddit → SEO flywheel:** Reddit threads that rank on Google are golden. Search for existing high-ranking threads about Cambridge 9709 topics and add genuinely helpful answers. These answers get indexed by Google and cited by AI search tools, creating a compounding authority loop.
+**Reddit success metrics (repositioned):**
+
+| Metric | Phase 0-1 | Phase 2-3 |
+|---|---|---|
+| Karma across target subs | 100+ | 500+ |
+| Threads ranking on Google | Track baseline | 3+ threads in top 20 |
+| AI citations from Reddit content | Track baseline | ExamPilot cited in AI responses |
+| Inbound DM requests (organic) | Track any | 5+/month |
+| Reddit-referred site visits (UTM) | Track baseline | 100+/month |
+
+**Reddit → SEO/AI flywheel:** Reddit threads that rank on Google are the highest-leverage content asset. The CIE student in Lahore won't browse r/alevel directly, but they will find an ExamPilot answer through Google, ChatGPT, or Perplexity. Search for existing high-ranking threads about Cambridge 9709 topics and add genuinely helpful answers. These answers get indexed by Google, cited by AI search tools, and compound into a durable authority loop.
 
 ### 3.4 AI Search (GEO) Strategy
 
@@ -476,25 +513,195 @@ Direct outreach is the highest-leverage channel for the first 100 students. It d
 - Value prop for tutors: Students get personalized gap analysis between sessions. Tutors get insight into where students need help.
 - Rules: Only warm intros. Maximum 1 follow-up if no response. Never position as tutor replacement.
 
-**Channel 2: Reddit Direct (value-first)**
+**Channel 2: Reddit Direct (value-first, secondary)**
 - Engage in target subs for 4+ weeks before any outreach
 - When students post asking for revision help, offer genuine advice
 - Only DM if they explicitly ask for more help or tool recommendations
 - Never DM-spam
+- Note: Reddit's primary role is SEO/AI citation seeding (Section 3.3). Direct acquisition is organic, not targeted.
 
-**Channel 3: Discord Study Servers**
+**Channel 3: WhatsApp Communities**
+- Create ExamPilot study community via WhatsApp Business App (free)
+- Join existing CIE student study groups in Tier 1 markets (Pakistan, UAE)
+- Share study tips, exam reminders, answer questions
+- Value-first rules identical to Reddit: no spam, no link drops
+- See Section 3.9 for full WhatsApp strategy
+
+**Channel 4: Discord Study Servers (secondary)**
 - Join and contribute to A-Level study servers, Cambridge Maths groups
 - Share study tips, answer questions
 - Only share ExamPilot in dedicated "resources" channels if they exist
+- Note: Discord is secondary to WhatsApp for CIE international students. Maintain presence but do not prioritise over WhatsApp.
+
+**Channel 5: School/Teacher Outreach**
+- Target 5-10 school maths departments in Tier 1 markets
+- See Section 3.8 for full B2C2B partnership model
 
 **Phase 0-1 targets:**
 
 | Channel | Target Students | Method |
 |---|---|---|
-| Tutor referrals | 15-25 | 10-15 tutor conversations → 2-3 students per converted tutor |
-| Reddit direct | 15-25 | Value posting → natural interest → DM for access |
-| Discord | 10-20 | Community contribution → resource sharing |
-| Total | 40-70 students | First cohort for PMF validation |
+| Tutor referrals | 15-25 | 10-15 tutor conversations, 2-3 students per converted tutor |
+| Reddit direct | 5-10 | Organic interest from value posting (reduced -- repositioned as seeding engine) |
+| WhatsApp communities | 10-20 | Community contribution + student study groups |
+| School/teacher outreach | 10-20 | 5-10 school conversations, 2-3 converting to recommendations |
+| Facebook Groups (parent) | 5-10 | Parent community engagement (see Section 3.7) |
+| Discord | 5-10 | Community contribution (secondary channel) |
+| Total | 50-95 students | First cohort for PMF validation (expanded from 40-70) |
+
+### 3.7 Parent Acquisition Strategy
+
+In target markets (Pakistan, UAE, Nigeria, Malaysia, Singapore), the parent is the economic buyer. ExamPilot's current funnel is student-facing only. This section adds a parallel parent acquisition path. Voice: `references/voice-parent.md`.
+
+#### 3.7.1 Facebook Groups
+
+Active parent communities exist and are untapped:
+- COALI (Cambridge O/A Level and IGCSE): 100,000+ members, Pakistan-dominant
+- Cambridge International Education official page: 969,520+ likes
+- Dubai Expat Community: 110,000+ members
+- Abu Dhabi Q&A: 93,000+ members
+- School-specific parent WhatsApp groups across Pakistan, UAE, Nigeria
+
+**Operating model (same rules as Reddit):**
+- Join and observe norms for 2-4 weeks before contributing
+- Answer parent questions about CIE exam preparation with genuine, helpful advice
+- Only mention ExamPilot when directly relevant and when community rules allow
+- No link drops. Describe what ExamPilot does. Let them search.
+- Track activity in Coda Signals table (which groups, what posted, parent inquiries generated)
+
+**Posting cadence:** 2-3 contributions/week across groups (initial estimate -- adjust via `/tune`).
+
+**What works in parent groups:**
+- Exam calendar reminders ("Cambridge 9709 results are out Thursday. Here's what parents can do.")
+- Study approach advice ("Here's how to help your child revise integration without doing the maths yourself.")
+- Value framing comparisons ("What we spend on tutoring vs. what online tools cost -- my breakdown.")
+- Progress visibility tips ("How I track whether my child's revision is actually working.")
+
+#### 3.7.2 "For Parents" Landing Page
+
+A distinct page on exampilot.io designed for the parent buyer. Not a copy of the student landing page with different wording -- a fundamentally different page with different priorities.
+
+**Design principles:**
+- Trust-first: GDPR compliance badge, data safety statement, and "no social features" prominent above the fold
+- Value framing: EUR29/month vs. private tutoring costs in target markets. EUR144/year = one hour of tutoring for a year of daily practice.
+- Progress visibility: show the parent dashboard concept (topic-level progress, ERI trend, session frequency)
+- Social proof: parent testimonials (with consent, parental consent for under-18 quotes)
+- Clear CTA: "Start a free trial for your child"
+
+**Phase timing:** Design and publish in Phase 0. Update with real testimonials in Phase 1+.
+
+#### 3.7.3 Parent Email Sequence (Brevo)
+
+Triggered when a parent email is captured from the "For Parents" page or Facebook Group engagement.
+
+- Email 1 (immediate): "Here's what ExamPilot does for your child" -- trust, safety, GDPR
+- Email 2 (Day 3): "How it works" -- product walkthrough, progress tracking emphasis
+- Email 3 (Day 7): "What other parents are saying" -- social proof, value framing
+- Email 4 (Day 14): "Start a free trial for [exam board]" -- conversion CTA
+
+**Phase timing:** Write sequences in Phase 0. Activate in Phase 1 when parent page is live and generating signups.
+
+#### 3.7.4 WhatsApp Parent Groups
+
+Identify and join parent WhatsApp groups in Tier 1 markets. Share exam prep tips, exam calendar reminders, and link to "For Parents" page when relevant.
+
+**Rules:** Same as tutor WhatsApp outreach. Only groups you have a warm intro to or find through existing parent communities. Maximum 1 follow-up if no response. No spam.
+
+**Phase timing:** Phase 1. Requires Facebook Groups presence established first (Phase 0) to build warm connections.
+
+### 3.8 School/Teacher Partnership Model (B2C2B)
+
+ExamPilot is always consumer-purchased. Schools and teachers are referral partners, not customers. One school recommending ExamPilot to its Year 12 cohort = 50-200 potential students at zero CAC. This is the highest-leverage acquisition channel if it converts.
+
+**This is NOT B2B.** There is no school licensing, no institution pricing, no enterprise sales. Teachers get a reason to recommend. Students/parents pay individually at consumer prices. See `references/voice-teacher.md` for voice.
+
+#### 3.8.1 Teacher Referral Program
+
+**What teachers get:**
+- Free premium access to ExamPilot for personal use in lesson prep
+- Aggregate class performance dashboard (student progress by topic, with student consent)
+- No cost, no contract, no obligation
+
+**What we ask:**
+- "Would you be open to having 2-3 of your students try it for free? I'd love your feedback."
+- Low-commitment first ask. Let the product prove itself through student outcomes.
+
+**Scaling incentives:**
+- 5+ students via teacher's referral link = continued free access
+- 20+ students = extended free access + recognition (case study, featured partner)
+- Referral tracked via UTM: `?utm_source=teacher&utm_medium=referral&utm_campaign=[teacher-id]`
+
+#### 3.8.2 Competitive Reference
+
+Validated B2C2B models in this market:
+- **SaveMyExams:** Free teacher accounts via "Teacher Partnership" scheme. Teachers recommend. Students pay premium. Low friction, proven adoption.
+- **Seneca Learning:** Free tier for all. Usage thresholds unlock school premium (30 students + 3 teachers = 100 premium accounts). Scales organically.
+
+ExamPilot's model is closest to SaveMyExams: free teacher access, consumer purchase. No Seneca-style usage gating (too complex for Phase 0-1).
+
+#### 3.8.3 Outreach and Pipeline
+
+**Phase 0 (now):** Manual outreach to 5-10 school maths departments in Tier 1 markets. Found via LinkedIn, warm intros from existing tutor contacts, CIE school directories. Professional voice (`references/voice-teacher.md`). LinkedIn content warm-up (Teresa's posts on exam prep/learning science) must be established before any direct outreach — teacher clicks profile and sees relevant content. See `build-in-public/references/linkedin-strategy.md`.
+
+**Phase 1 (Aug-Oct 2026):** First school recommendations expected. Track: schools contacted, interested, recommending, students attributed. Pipeline tracked in Attio CRM.
+
+**Phase 2 (Nov 2026+):** If validated, build self-serve teacher signup. Teacher creates account, gets free access, shares class join link. Students sign up individually.
+
+**Phase 3:** If school partnerships prove high-leverage, consider school-level partnerships (with explicit per-student consumer pricing, never licensing).
+
+#### 3.8.4 Metrics
+
+| Metric | Phase 0-1 | Phase 2-3 |
+|---|---|---|
+| Schools contacted | 5-10 | 20-40 |
+| Schools recommending | 2-3 | 10-20 |
+| Students per recommending school | Track baseline | 20-50 average |
+| School-sourced trial signups | Track baseline | 50+/quarter |
+| Teacher referral conversion rate | Track baseline | 15-25% (initial estimate) |
+
+**Growth projection note:** School partnerships are NOT modeled in the Section 5.8 growth projections. If validated in Phase 1, re-model at the Phase 2 quarterly review with actual conversion data.
+
+### 3.9 WhatsApp Communities
+
+WhatsApp is the dominant communication platform for CIE students in South Asia, Middle East, and West Africa. In Pakistan alone, there are 100+ active student study groups on WhatsApp. Discord skews UK/US demographic and is not a primary platform for the target audience. WhatsApp Communities replaces Discord as the primary community channel for international students.
+
+#### 3.9.1 Phase 0: WhatsApp Business App (Free)
+
+- Install WhatsApp Business App (free, no API needed)
+- Create ExamPilot WhatsApp Channel (broadcast-only, unlimited followers, free)
+- Create ExamPilot WhatsApp Community (up to 5,000 members with sub-groups, free)
+- Sub-groups by exam board or topic: "9709 Pure 1", "9709 Pure 3", "Edexcel IAL"
+- Seed with study tips, exam calendar reminders, new content announcements
+- Cost: EUR 0
+
+#### 3.9.2 Phase 1: Evaluate WhatsApp Business API
+
+When community exceeds 256 members or broadcast segmentation is needed:
+- Evaluate Wati (~EUR30/month Growth plan, 3 users) for:
+  - Automated welcome messages for new community members
+  - Broadcast segmentation by exam board and topic
+  - Link click tracking (currently impossible with free app)
+  - CRM integration (Attio, PostHog UTM params)
+- Alternative: Interakt (~EUR15/month) as budget option
+- Alternative: AiSensy (~EUR20/month) for South Asia-focused BSP
+
+#### 3.9.3 Operating Model
+
+Same value-first rules as Reddit:
+- Study tips, exam tips, Q&A. Educational content first.
+- ExamPilot mention only when directly relevant to a question or study need.
+- No spam, no mass messaging, no purchased contact lists.
+- Broadcast messages: maximum 2/week. Always educational value, not promotional.
+- Exam calendar alerts: Results Day, mock season, registration deadlines (high utility).
+
+#### 3.9.4 Metrics
+
+| Metric | Phase 0-1 | Phase 2-3 |
+|---|---|---|
+| Community members | 50+ | 200+ |
+| Broadcast messages/week | 1-2 | 2-3 |
+| Link clicks (UTM, Phase 1+) | Track baseline | 20+/month |
+| Community-referred signups | Track baseline | 10+/month |
 
 ---
 
@@ -540,6 +747,16 @@ Direct outreach is the highest-leverage channel for the first 100 students. It d
 - [ ] Tutor outreach templates ready
 - [ ] Student DM templates ready
 - [ ] 5+ tutor conversations initiated
+- [ ] School/teacher outreach list drafted (5-10 schools in Tier 1 markets)
+
+**Parent acquisition:**
+- [ ] Join 2-3 Facebook parent groups (COALI, CIE A Level Mathematics communities)
+- [ ] "For Parents" landing page live on exampilot.io
+- [ ] Parent email sequence drafted (4 emails: trust, product, social proof, trial CTA)
+
+**WhatsApp:**
+- [ ] WhatsApp Business App installed
+- [ ] ExamPilot WhatsApp Community created with sub-groups
 
 **Content:**
 - [ ] Blog live with 15+ articles (existing ~8 + new spokes + strategy spokes + bridge content)
@@ -553,9 +770,12 @@ Direct outreach is the highest-leverage channel for the first 100 students. It d
 | Pages indexed (GSC) | >= 15 | 20% | Yes |
 | Waitlist form live | Yes | 15% | Yes |
 | Email sequences loaded and tested | Yes | 15% | Yes |
-| Reddit accounts active with karma | Yes | 15% | Yes |
-| Blog articles published | >= 8 | 20% | No |
-| Tutor conversations initiated | >= 3 | 15% | No |
+| Reddit accounts active with karma | Yes | 10% | Yes |
+| Blog articles published | >= 8 | 15% | No |
+| Tutor conversations initiated | >= 3 | 10% | No |
+| Facebook Groups joined | >= 2 | 5% | No |
+| WhatsApp community created | Yes | 5% | No |
+| "For Parents" page live | Yes | 5% | No |
 
 **Decision rule:** All must-pass criteria met AND weighted score >= 65%. Hard calendar override: if August arrives, enter Phase 1 regardless -- the Results Day opportunity window does not wait.
 
@@ -594,8 +814,19 @@ Pre-Results Day checklist:
 
 **Outreach:**
 - [ ] Tutor outreach intensifies (warm intros only)
-- [ ] Target: 10-15 active tutor relationships → 40-70 students trying ExamPilot
+- [ ] Target: 10-15 active tutor relationships
 - [ ] Follow up with every early user who hasn't completed first session
+- [ ] School/teacher outreach initiated (5-10 conversations)
+
+**Parent acquisition:**
+- [ ] Parent-facing Results Day content published ("Whatever your child's result, here's the next step")
+- [ ] Parent email sequence activated in Brevo
+- [ ] Active in Facebook Groups with value-first posts during Results Day week
+- [ ] "For Parents" page updated with Results Day messaging
+
+**WhatsApp:**
+- [ ] WhatsApp community growing (target: 50+ members)
+- [ ] Results Day broadcast sent to WhatsApp Channel
 
 **Measurement:**
 - [ ] PMF survey (Sean Ellis: "How would you feel if you could no longer use ExamPilot?") after student completes 3rd session
@@ -643,6 +874,16 @@ Pre-Results Day checklist:
 - [ ] Re-engagement sequence firing for inactive users
 - [ ] First A/B test: subject lines for open rate optimization
 
+**Parent acquisition:**
+- [ ] Facebook Groups engagement metrics reviewed (posts made, inquiries generated)
+- [ ] Parent funnel conversion tracked separately in PostHog (UTM: source=parent)
+- [ ] Parent email sequence A/B tested (subject lines, value framing)
+
+**School partnerships:**
+- [ ] School partnership scaling: 5-10 schools recommending
+- [ ] Teacher dashboard prototype evaluated (if school partnerships show traction)
+- [ ] WhatsApp Business API evaluated (Wati ~EUR30/month) for community scaling
+
 **Product-Led Growth:**
 - [ ] Referral mechanism: students can share their ERI/progress with friends
 - [ ] NPS survey deployed in-app after session 5+
@@ -657,6 +898,7 @@ Pre-Results Day checklist:
 | Monthly organic sessions > 500 | No | No |
 | TikTok account live with 10+ videos | No | No |
 | Email list > 500 | No | No |
+| WhatsApp community > 100 members | No | No |
 
 **Decision rule:** Both must-pass criteria met. Phase 3 activities (new market expansion, exam board expansion) only begin after organic channels demonstrably work.
 
@@ -690,7 +932,20 @@ Pre-Results Day checklist:
 - [ ] Email-driven conversion: 10%+ of paid conversions from email
 - [ ] List size target: 2,000+ contacts
 
-**Phase 3 success criteria:** MRR EUR5,000-9,000 by Nov 2027 (300-500 paying users). Organic acquisition > 50% of total. CAC < EUR25 blended. Monthly churn < 8%.
+**School partnerships:**
+- [ ] 10-20 schools recommending ExamPilot
+- [ ] School-sourced students tracked as % of total trials
+- [ ] Teacher self-serve signup live (if validated in Phase 2)
+
+**Parent acquisition:**
+- [ ] Parent funnel contributing 10%+ of total signups
+- [ ] Facebook Groups established presence (recognised contributor in 3+ groups)
+
+**WhatsApp:**
+- [ ] Community at 200+ members
+- [ ] WhatsApp Business API active (if community exceeds 256)
+
+**Phase 3 success criteria:** MRR EUR5,000-9,000 by Nov 2027 (300-500 paying users). Organic acquisition > 50% of total. CAC < EUR25 blended. Monthly churn < 8%. School-sourced students tracked (not yet in success criteria targets -- data needed first).
 
 ---
 
@@ -868,6 +1123,35 @@ Holding every channel to the same "signups" metric would cause you to kill TikTo
 | Students per converted tutor | 2-3 | — |
 | Response rate (outreach msgs) | 15-25% | — |
 | Outreach → trial conversion | 40%+ | — |
+
+#### Facebook Groups (Parent Acquisition)
+
+| Metric | Phase 0-1 | Phase 2-3 |
+|---|---|---|
+| Groups joined and active in | 3-5 | 5-8 |
+| Value posts/week | 2-3 | 2-3 |
+| Parent inquiries generated | Track baseline | 10+/month |
+| Parent page referrals (UTM) | Track baseline | 20+/month |
+| Parent-sourced trial signups | Track baseline | 5+/month |
+
+#### WhatsApp Communities
+
+| Metric | Phase 0-1 | Phase 2-3 |
+|---|---|---|
+| Community members | 50+ | 200+ |
+| Broadcast messages/week | 1-2 | 2-3 |
+| Link clicks (UTM, Phase 1+) | Track baseline | 20+/month |
+| Community-referred signups | Track baseline | 10+/month |
+
+#### School/Teacher Partnerships
+
+| Metric | Phase 0-1 | Phase 2-3 |
+|---|---|---|
+| Schools contacted | 5-10 | 20-40 |
+| Schools recommending | 2-3 | 10-20 |
+| Students per recommending school | Track baseline | 20-50 average |
+| School-sourced trial signups | Track baseline | 50+/quarter |
+| Teacher referral conversion rate | Track baseline | 15-25% (initial estimate) |
 
 ### 5.5 KPI Approaches: Pros, Cons, and Recommendation
 
@@ -1049,21 +1333,24 @@ The A-Level exam calendar is ExamPilot's metronome. All marketing activity inten
 | Surfer SEO | EUR89 | Optional | X | X | Evaluate necessity |
 | Claude API | ~EUR20 | X | X | X | X |
 | TikTok (organic) | Free | — | — | X | X |
+| WhatsApp Business App | Free | X | X | X | X |
+| Wati (WhatsApp API) | ~EUR30 | — | Evaluate | X | X |
 | AI monitoring tool | EUR0-50 | — | — | Optional | X |
-| **Total** | | **EUR49-138** | **~EUR138** | **EUR138-188** | **EUR138-238** |
+| **Total** | | **EUR49-138** | **~EUR138-168** | **EUR168-218** | **EUR168-268** |
 
 ### 7.2 Time Allocation (2-person team)
 
 | Activity | Hours/Week (Phase 0-1) | Hours/Week (Phase 2-3) |
 |---|---|---|
 | SEO content (research + write + review) | 6-8 | 4-6 |
-| Reddit engagement | 2-3 | 1-2 |
+| Reddit engagement (SEO/AI seeding) | 2-3 | 1-2 |
 | TikTok (script + film + edit + post) | 0 | 3-5 |
 | Email (write + segment + send) | 1-2 | 2-3 |
-| Direct outreach (tutors, students) | 4-6 | 1-2 |
+| Direct outreach (tutors, students, schools) | 4-6 | 1-2 |
+| Facebook Groups + WhatsApp community | 1-2 | 1-2 |
 | Analytics + reporting (weekly pulse) | 1 | 1-2 |
 | Strategy + planning | 1 | 1 |
-| **Total** | **15-21 hrs/week** | **13-21 hrs/week** |
+| **Total** | **17-24 hrs/week** | **14-22 hrs/week** |
 
 This is shared between Enitan and Teresa. Divide by strength: whoever is stronger at content writing owns SEO and email. Whoever is stronger at community interaction owns Reddit and outreach. TikTok is a joint effort (one scripts, one films, or both).
 
@@ -1117,6 +1404,10 @@ Where to find content ideas, in order of signal strength:
 | Content quality dips due to AI reliance | Medium | High | Mandatory human review for every piece. Low-risk AI workflow only. |
 | Exam board changes syllabus | Low | Medium | Content structured by topic, not by year. Annual syllabus review during summer. |
 | Team bandwidth is insufficient | High | High | Automation via AIOS marketing machine. Prioritize ruthlessly. Drop lowest-ROI channel first (Discord). |
+| School partnerships slow to close | Medium | Medium | Start manual in P0, expect 3-6 month cycle. One school = 50-200 students makes patience worthwhile. Do not depend on school partnerships for P0-P1 targets. |
+| Parent buyer cycle longer than student | Medium | Low | Parent funnel runs in parallel. Students convert faster. Parent funnel is bonus acquisition, not a dependency for P0-P1 milestones. |
+| WhatsApp community moderation overhead | Low | Low | Same rules as Reddit. Two people can manage <500 members. If moderation becomes burdensome, appoint student moderators from power users. |
+| Facebook Groups rule changes block engagement | Low | Medium | Facebook frequently changes group posting rules. Maintain multi-channel presence so no single platform is critical. |
 
 ---
 
@@ -1193,6 +1484,12 @@ Decisions made in this plan that should be logged:
 10. **Formal phase gate scoring** with must-pass criteria and weighted thresholds. Rationale: checklists are ambiguous; scored gates force explicit decisions.
 11. **Programmatic SEO uses noindex-until-enriched** protocol. Rationale: prevents thin content penalties while building URL structure early.
 12. **Brevo wiring in Phase 0 first two weeks** (not vague "before Phase 1"). Rationale: silence after signup kills trust permanently.
+13. **Reddit repositioned as SEO/AI citation seeding engine** (v3.0). Direct acquisition target reduced from 15-25 to 5-10. Primary role is indexable content for Google and AI tools. Rationale: r/alevel and r/6thForm are UK domestic; premium CIE international students find Reddit via Google, not by browsing.
+14. **Parent acquisition added as primary channel** (v3.0). Facebook Groups, parent WhatsApp, "For Parents" page, parent email sequence. Rationale: parent is economic buyer in Tier 1 markets; no parent acquisition path existed in v2.0.
+15. **School/teacher B2C2B partnership model added** (v3.0). Free teacher access, consumer purchase. Not B2B. Rationale: one school recommendation = 50-200 students; SaveMyExams and Seneca validate the model.
+16. **Discord demoted to secondary; WhatsApp Communities promoted** (v3.0). Rationale: CIE students in South Asia, Middle East, and West Africa are on WhatsApp, not Discord.
+17. **TikTok updated for region-specific content** (v3.0). GST-optimised posting times, no UK slang, universal exam identifiers. Rationale: UK-focused content does not resonate in Lahore, Lagos, or Dubai.
+18. **Growth projections not revised upward** (v3.0). School partnerships excluded from projections until Phase 2 review with real data. Rationale: no validated conversion data for new channels yet.
 
 ---
 

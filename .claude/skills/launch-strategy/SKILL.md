@@ -51,7 +51,10 @@ Technical gates:
 
 Marketing gates:
 - 10+ Reddit karma on target subreddits (r/alevel, r/6thForm, r/CambridgeInternational)
-- Discord presence established in at least 2 A-Level student servers
+- WhatsApp community created with sub-groups by exam board/topic
+- 2-3 Facebook parent groups joined (COALI, CIE parent communities)
+- School/teacher outreach list drafted (5-10 schools)
+- Discord presence established in at least 2 A-Level student servers (secondary channel)
 - 5+ tutor contacts warmed via WhatsApp or email
 
 Content gates:
@@ -162,22 +165,25 @@ Budget: €0
 
 ---
 
-**Phase B: First 10-50 students — Reddit + Discord community (Week 2-8)**
+**Phase B: First 10-50 students — Multi-channel community (Week 2-8)**
 
 Goal: organic word-of-mouth, identify first super-users.
 
 Timing: begin 6-8 weeks before the next major exam window. Students searching for revision tools earliest are the highest-intent users.
 
 Actions:
-- Reddit: post 2-3 value-first pieces of content per week in r/alevel, r/6thForm, r/CambridgeInternational before mentioning ExamPilot
+- Reddit (SEO/AI seeding): post 2-3 value-first pieces of content per week in r/CambridgeInternational (primary), r/alevel, r/6thForm before mentioning ExamPilot
   - Value-first means: answer a student's question, share a technique, explain a concept — not promote
   - Once karma > 10 on each sub: soft-mention ExamPilot as "something I'm working on" in a relevant thread
   - Run `/write-reddit` to generate compliant posts
-- Discord: join 2-3 A-Level student servers. Lurk for one week before posting. Contribute to study help threads. Mention ExamPilot only after establishing presence.
+- WhatsApp Communities: create ExamPilot community with sub-groups by exam board/topic. Join existing CIE student study groups in Tier 1 markets (Pakistan, UAE). Broadcast max 2/week, educational content first.
+- Facebook Groups (parent channel): contribute value-first in COALI, CIE parent communities. Parent voice per `references/voice-parent.md`.
+- School/teacher outreach: initiate 5-10 conversations with B2C2B referral partners. Teacher voice per `references/voice-teacher.md`.
+- Discord (secondary): join 2-3 A-Level student servers. Lurk for one week before posting. Contribute to study help threads. Mention ExamPilot only after establishing presence.
 - Community rule: never post ExamPilot as a cold promotion. Always value first, product mention as a follow-up or in response to a direct question about revision tools.
 
 Success criteria: 50 students with accounts, 25+ have completed at least one session
-Trigger to Phase C: organic mentions of ExamPilot appear in Reddit/Discord without prompting (first word-of-mouth signal)
+Trigger to Phase C: organic mentions of ExamPilot appear in Reddit/WhatsApp/Discord without prompting (first word-of-mouth signal)
 
 Budget: €0
 
@@ -202,6 +208,15 @@ Tutor channel:
 - Offer: free ExamPilot access for their students' current exam cycle
 - Goal: one tutor with 5+ students = 5 students. 10 tutors = up to 50 students.
 - Run `/outreach-draft` to generate tutor outreach messages
+
+School/Teacher channel (B2C2B):
+- Target: 5-10 CIE maths department heads at international schools in Tier 1 markets (Pakistan, UAE)
+- **LinkedIn content warm-up required first.** Teresa's LinkedIn profile must have 5-10 relevant posts on exam prep/learning science live before any teacher DM outreach. A teacher who sees an empty profile will not respond. Run `/write-linkedin` to build the content warm-up layer.
+- Once warm-up is established: connect via LinkedIn with a personalised note referencing a specific pain point. Never pitch in the connection request.
+- Offer: free teacher access + aggregate class progress dashboard. Students pay individually at consumer prices. No B2B pricing.
+- One school with 20+ students using ExamPilot = ongoing free teacher access + recognition.
+- Track all contacts in Attio CRM: school, teacher name, LinkedIn connection status, conversation stage, students attributed.
+- See `build-in-public/references/linkedin-strategy.md` for full outreach sequencing.
 
 Results Day resit cohort (August 15 onwards):
 - Students who received unexpected Cambridge results are immediately searching for resit resources

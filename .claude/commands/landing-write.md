@@ -99,8 +99,8 @@ Apply these rules across all page types:
 
 **Content rules:**
 - Flag all unverified claims with [VERIFY]
-- No B2B language. Consumer only — students, parents, self-study learners.
-- No school licensing or institutional pricing
+- No B2B school licensing or institution pricing. ExamPilot is always consumer-purchased.
+- Teachers are B2C2B referral partners (see `references/voice-teacher.md`), not customers.
 - EUR pricing only if mentioned: €29/mo, €69/3mo, €96/6mo, €144/yr. Never GBP or USD.
 - CTAs: "Start practising free", "Try ExamPilot free" — action + benefit, not "Sign Up" or "Get Started"
 - 3-5 internal links to related pages (e.g. `/cambridge/*`, `/pricing`, `/features`) using descriptive anchor text

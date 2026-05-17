@@ -37,7 +37,7 @@ Read `references/continuous-improvement.md`. Every repeatable function in this O
 - `connections.md` — registry of every system your AIOS can reach
 - `decisions/log.md` — append-only record of decisions and why
 - `archives/` — old stuff. Don't delete. Move here.
-- `build-in-public/` — build-in-public sub-OS for X. Separate workstream: different audience (founders), different KPIs (credibility, not signups). Not a marketing channel.
+- `build-in-public/` — build-in-public sub-OS for X and LinkedIn. Two channels, one sub-OS: X targets founders/indie hackers (Enitan + Teresa), LinkedIn targets teachers/parents/edtech professionals (Teresa). Neither is a student acquisition channel. See `build-in-public/references/` for per-channel strategy.
 
 See `EXPANSIONS.md` for what to add as you grow.
 
@@ -77,11 +77,11 @@ The wiki has four skills — they only work when the wiki repo is the CWD. For w
 
 ## Voice
 
-Check `context/.whoami` first. For personal external content, match `references/voice-{name}.md`. For shared team outputs, match `references/voice-house.md`. Casual but professional. Short sentences. No em dashes. Bullet points over paragraphs. Never publish in either person's name without a review step.
+Check `context/.whoami` first. For personal external content, match `references/voice-{name}.md`. For shared team outputs, match `references/voice-house.md`. For parent-facing content, match `references/voice-parent.md`. For teacher/school-facing content, match `references/voice-teacher.md`. Casual but professional. Short sentences. No em dashes. Bullet points over paragraphs. Never publish in either person's name without a review step.
 
 ## Connections
 
-Revenue: Dodo Payments (pre-launch). Customer channels: Reddit, TikTok (planned), Gmail, Loom. Internal coordination: Coda (MCP connected), Discord. Calendar: Google Calendar. Docs/knowledge: Google Workspace, Coda, GitHub second brain repo. Analytics & signals: PostHog (behavioral), Reddit Monitor/Syften (community), GSC/DataForSEO (SEO), Attio CRM (contact enrichment), Brevo (email activation). Shared skills: Coda (pending wiring). See `connections.md` for full registry.
+Revenue: Dodo Payments (pre-launch). Customer channels: Reddit, TikTok (planned), Gmail, Loom, WhatsApp, Facebook Groups. Internal coordination: Coda (MCP connected), Discord, WhatsApp. Calendar: Google Calendar. Docs/knowledge: Google Workspace, Coda, GitHub second brain repo. Analytics & signals: PostHog (behavioral), Reddit Monitor/Syften (community), GSC/DataForSEO (SEO), Attio CRM (contact enrichment), Brevo (email activation). Build-in-public: X (Enitan + Teresa, founders), LinkedIn (Teresa, teacher/parent/professional audience — outreach warm-up + credibility). Shared skills: Coda (pending wiring). See `connections.md` for full registry.
 
 ## GTM Engineering
 
@@ -91,7 +91,7 @@ Enitan's function. Runs alongside the Marketing Machine. Where the Marketing Mac
 **Ritual:** `/signal-review` — weekly (Friday, after `/weekly-pulse`)
 
 **The activation chain:**
-- Signal sources: PostHog (behavioral) → Reddit Monitor (community) → GSC/DataForSEO (SEO) → Calendar (exam dates)
+- Signal sources: PostHog (behavioral) → Reddit Monitor (community) → GSC/DataForSEO (SEO) → Calendar (exam dates) → WhatsApp/Facebook (community) → School/teacher referrals (B2C2B)
 - Signal destination: Coda Signals table (operational review) + Attio CRM (enriched contact profiles)
 - Trigger chain: Attio → Brevo (manual Phase 0, automated Phase 1 post-launch)
 
@@ -123,10 +123,10 @@ The `marketing/` directory is the execution engine for ExamPilot marketing acros
 
 **Content pipeline convention** — every content artifact gets YAML frontmatter:
 ```yaml
-type: article | reddit-post | reddit-comment | outreach-dm | email | landing-page | tiktok-script
-channel: seo | reddit | email | discord | whatsapp | tutor-outreach | tiktok
+type: article | reddit-post | reddit-comment | outreach-dm | email | landing-page | tiktok-script | whatsapp-broadcast | facebook-post | school-outreach | linkedin-post | linkedin-article
+channel: seo | reddit | email | discord | whatsapp | tutor-outreach | tiktok | facebook-groups | school-outreach | linkedin
 stage: tofu | mofu | bofu
-target-segment: student-cambridge | student-edexcel | tutor | parent | resit-student
+target-segment: student-cambridge | student-edexcel | tutor | parent | teacher-school | resit-student
 status: topic | researched | drafted | in-review | published
 keyword: (primary keyword if SEO content)
 created: YYYY-MM-DD
@@ -136,7 +136,7 @@ created: YYYY-MM-DD
 - Never auto-publish. Every draft goes to `marketing/pipelines/review/`.
 - Flag all exam-board-specific claims with `[VERIFY]`.
 - ExamPilot is a "learning science" tool, not an "AI tutor" or "AI wrapper".
-- No B2B school licensing messaging. Consumer only.
+- No B2B school licensing or institution pricing. ExamPilot is always consumer-purchased. Teachers are B2C2B referral partners (see `references/voice-teacher.md`).
 - Pricing: EUR only. Monthly EUR29, Quarterly EUR69, Semi-annual EUR96, Annual EUR144.
 
 **Data modules** in `marketing/data_sources/modules/` require env vars. Run via `python3 marketing/data_sources/modules/{module}.py`.

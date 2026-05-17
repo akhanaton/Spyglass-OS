@@ -341,6 +341,36 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-05-16 — Premium positioning validated: market large enough, pricing confirmed, channel gaps identified
+
+**Decision:** Confirmed ExamPilot's premium positioning (single EUR price, no regional adjustment, targeting the segment that can afford it in every market). The addressable market is verified as large enough. Marketing channel mix has identified gaps that need addressing in a future session.
+
+**Key findings:**
+- TAM: 250,000-350,000 CIE + Edexcel IAL maths students/year (EUR36M-50M at annual pricing)
+- ~95% of CIE students globally attend private/international schools — CIE IS the premium segment
+- EUR29/month = 0.5-17% of annual school fees across all target markets; equivalent to 1-2 hours of tutoring
+- Dodo Payments confirms support for all target markets (Nigeria, Pakistan, UAE, Malaysia, Singapore, etc.)
+- No regional pricing adjustment needed — even Pakistan/Nigeria's top private school families can afford it
+
+**Channel misalignments identified (modifications pending):**
+1. Reddit should be repositioned as SEO/AI citation engine (not direct acquisition for premium international segment)
+2. No parent-facing acquisition path exists (parent is the economic buyer in most target markets)
+3. No school/teacher partnership model (one school = 50-200 students)
+4. Discord should be deprioritized in favour of WhatsApp Communities (dominant in South Asia, Middle East, West Africa)
+5. TikTok needs region-specific content (not UK-focused) — verified as THE platform for 16-18s in all target markets
+6. Dual voice strategy needed (student-facing casual + parent-facing trust-building)
+7. Postiz covers TikTok/X but NOT WhatsApp/Facebook Groups — WhatsApp Business App (free) covers Phase 0; Wati (~$30/month) for Phase 1
+
+**What was NOT decided:** How and when to modify the marketing plan. Research saved to wiki (`wiki/marketing/target-market-analysis.md`) for future implementation session.
+
+**Why:** Needed to verify the strategic assumption that a premium-only position wouldn't limit growth. Data confirms the market is large enough. The finding that CIE ≈ private school globally means we are not excluding anyone by pricing — we're just naming our natural audience.
+
+**Alternatives considered:** Regional pricing (rejected by strategic preference — complexity, brand dilution, and the target segment can afford it); broader subject coverage to increase TAM (not rejected, but sequenced after 9709 is proven); lower price to capture expanding middle-class CIE segment in Pakistan/Nigeria (rejected — focus on who can afford it now, revisit only if premium segment proves insufficient).
+
+**Owner:** Enitan
+
+---
+
 ## 2026-05-16 — Build-in-public extracted to dedicated sub-OS
 
 **Decision:** Extracted the build-in-public on X workstream from `marketing/` into a new top-level sub-OS `build-in-public/`. Previously, X infrastructure was spread across `references/x-build-in-public-strategy.md`, `marketing/templates/x-post.md`, `marketing/templates/x-thread.md`, and X sections inside three `marketing/context/` files (`channel-playbooks.md`, `audience-segments.md`, `funnel-strategy.md`).
@@ -356,5 +386,71 @@ Skills/commands updated: `write-x/SKILL.md` (8 path edits), `repurpose.md` (3 ed
 **Why:** Build-in-public on X was placed inside `marketing/` by path-of-least-resistance when the feature was first built. But by a 5-criteria workstream test (different goal, different audience, different KPIs, different voice, different cadence) it qualifies as a second workstream. The X strategy doc itself states: "It does NOT directly convert students." Keeping it in `marketing/` causes: `/weekly-pulse` conflating student funnel and builder metrics; `channel-playbooks.md` mixing incompatible audiences; future `/tune` parameter drift between workstreams. The workstream test that identified this is now documented in `EXPANSIONS.md`.
 
 **Alternatives considered:** Leave in `marketing/`, add a comment (rejected: cost compounds as X content grows; a half-committed structure is worse than a clean one); partial extract — move only leaf files, leave context sections in `marketing/context/` (rejected: still requires reading two locations to understand the X channel, defeating the purpose).
+
+**Owner:** Enitan
+
+---
+
+## 2026-05-17 — Marketing plan v3.0: channel realignment from target market analysis
+
+**Decision:** Updated marketing plan from v2.0 to v3.0 based on target market analysis (`wiki/marketing/target-market-analysis.md`). The analysis validated premium positioning (CIE = 95%+ private school overlap, EUR29/month = 0.5-7% of school fees) but identified 7 channel misalignments. Six sub-decisions documented below.
+
+**Sub-decisions:**
+
+1. **Reddit repositioned from direct acquisition to SEO/AI citation seeding engine.** P0-P1 direct acquisition target reduced from 15-25 to 5-10 students. Primary role is now indexable content that ranks on Google and gets cited by AI tools. Subreddit priority reordered: r/CambridgeInternational (primary), r/alevel (secondary), r/6thForm (tertiary).
+
+2. **Parent acquisition added as primary channel.** Facebook Groups (COALI 100K+ members, CIE parent communities), parent WhatsApp groups, "For Parents" landing page, parent email sequence in Brevo. Parent is the economic buyer in Tier 1 markets (Pakistan, UAE, Nigeria, Malaysia). New voice guide: `references/voice-parent.md`.
+
+3. **School/teacher B2C2B partnership model added.** Teachers get free access and progress dashboard. They recommend to students/parents. Students purchase individually at consumer price. Not B2B -- no school licensing or institution pricing. New voice guide: `references/voice-teacher.md`. B2B prohibition in voice-house.md amended to: "No B2B school licensing or institution pricing. Consumer-only purchase model. School/teacher content uses referral-partner framing (B2C2B)."
+
+4. **Discord demoted to secondary; WhatsApp Communities promoted.** CIE students in South Asia, Middle East, and West Africa are on WhatsApp, not Discord. WhatsApp has 100+ active student study groups in Pakistan alone. WhatsApp Business App (free) at Phase 0, Wati (~EUR30/month) evaluated at Phase 1.
+
+5. **TikTok updated for region-specific content.** GST-optimized posting times (4pm-9pm GST for Pakistan/UAE after school). No UK slang. Universal exam identifiers (paper codes, topic names). Urdu subtitle consideration for Pakistan content (P2). Regional hashtags added.
+
+6. **Growth projections not revised upward.** School partnerships are not modeled in projections until Phase 2 review when real conversion data exists. Follows OS principle that initial parameters are estimates requiring data-backed adjustment.
+
+**Structural decisions:**
+
+- Parent acquisition and school partnerships stay inside `marketing/` as channels, not sub-OSes. Both fail the EXPANSIONS.md workstream test (1/5 criteria -- only "different voice"). Creating sub-OSes for channels that share the same goal, KPIs, and cadence adds overhead without benefit for a 2-person team.
+- Three new voice guides: voice-parent.md (parent-facing), voice-teacher.md (teacher/school-facing), voice-house.md amended for multi-audience awareness.
+- P0-P1 student acquisition target increased from 40-70 to 50-95 through new channels.
+- Five new GTM signals added: WhatsApp community join, WhatsApp broadcast click, Facebook Group mention, teacher referral click, school cohort signup.
+
+**Why:** The marketing plan v2.0 was built before the target market analysis confirmed that CIE is essentially a private/international school product. Channel mix was optimized for UK domestic students (Reddit, Discord) rather than international private school students and their parents (WhatsApp, Facebook Groups, school partnerships). The micro-funnel architecture (TikTok -> Reddit -> SEO -> AI Search -> Website) remains correct for students; a parallel parent funnel is added alongside it.
+
+**Alternatives considered:** (1) Create sub-OSes for parent acquisition and school partnerships (rejected: fails workstream test, adds management overhead); (2) Revise growth projections upward immediately (rejected: no conversion data for new channels yet); (3) Remove Reddit entirely from P0-P1 targets (rejected: overcorrection, Reddit still generates some organic direct interest); (4) Remove B2B prohibition entirely (rejected: B2C2B is not B2B, the prohibition protects against scope creep into enterprise sales).
+
+**Execution completed:** All 6 waves implemented across 2 sessions. 19 OS files updated/created, 10 wiki articles updated, targeted lint PASS (4 minor issues fixed). Stale reference sweep confirmed zero remaining old targets, old B2B language, or Discord-as-primary references.
+
+**Files touched (OS):** decisions/log.md, references/voice-parent.md (new), references/voice-teacher.md (new), references/voice-house.md, marketing/strategy/marketing-plan-2026-2027.md, marketing/context/audience-segments.md, marketing/context/content-standards.md, marketing/context/channel-playbooks.md, marketing/context/funnel-strategy.md, marketing/gtm-engineering/signal-registry.md, marketing/gtm-engineering/scoring-model.md, marketing/gtm-engineering/trigger-playbook.md, connections.md, CLAUDE.md, references/continuous-improvement.md, .claude/skills/launch-strategy/SKILL.md, .claude/agents/outreach-crafter.md, .claude/commands/landing-write.md, .claude/skills/free-tool-strategy/SKILL.md, .claude/skills/write-article/SKILL.md, marketing/templates/blog-article.md, marketing/references/launch-playbook.md, references/os-coverage-assessment.md.
+
+**Wiki articles touched:** marketing/growth/marketing-plan.md, marketing/growth/gtm-engineering.md, marketing/growth/marketing-machine.md, marketing/INDEX.md, business/competitive/go-to-market.md, business/INDEX.md, product/strategy/beta-acquisition.md, product/INDEX.md, ai-automation-os/marketing-os/marketing-os-overview.md, _session_context.md.
+
+**Skills identified (spec only, build via `/level-up`):** /write-whatsapp, /write-parent, /school-outreach.
+
+---
+
+## 2026-05-17 — LinkedIn added to build-in-public sub-OS, Teresa as primary voice
+
+**Decision:** Added LinkedIn as a second channel inside `build-in-public/`, with Teresa as the primary (and currently only) author. LinkedIn is not a mirror of X — it is the same source material with a different frame: X = founder confession (peer-to-peer), LinkedIn = educator insight (professional authority). Incremental cost: $0 (Postiz Standard already covers LinkedIn).
+
+**Why:** LinkedIn serves the B2C2B acquisition model directly. The teacher outreach already planned (channel-playbooks.md) is cold without a content warm-up layer. A teacher who has read 10 of Teresa's posts on CIE exam prep before receiving a DM is already half-sold. Teresa's educational background gives her natural authority with the teacher/parent audience on LinkedIn — the same authority that Enitan has with the indie hacker audience on X.
+
+**Structural rationale:** LinkedIn sits inside `build-in-public/` (not `marketing/`) because the content source is the same as X — decisions log, milestones, product progress — just reframed. The student-facing content in `marketing/` is structurally incompatible. LinkedIn fails the sub-OS workstream test (only 2/5 criteria: different audience, different voice) so it stays as a second channel within the existing sub-OS.
+
+**What was built:**
+- `build-in-public/references/linkedin-strategy.md` — Full strategy: WHY, audience profiles, content pillars, angle adaptation rule, outreach integration, format guide, algorithm rules, anti-AI rules, timeline
+- `build-in-public/templates/linkedin-post.md` — Post template with 5 post types, format rules, hook patterns
+- `build-in-public/templates/linkedin-article.md` — Native article template for quarterly thought leadership
+- `.claude/skills/write-linkedin/SKILL.md` — 7-step skill: source extraction, angle adaptation, format generation (post/article/carousel-outline), LinkedIn-specific scrub pass, human review gate, save
+- `build-in-public/context/audience.md` — LinkedIn audience profile added (professional educator/parent)
+- `build-in-public/context/channel-rules.md` — LinkedIn channel rules section added
+- `build-in-public/context/funnel.md` — LinkedIn funnel added (content warm-up → outreach → B2C2B referral)
+- `build-in-public/context/repurposing-rules.md` — LinkedIn repurposing rules and [LINKEDIN CANDIDATE] flag added
+- `marketing/context/channel-playbooks.md` — LinkedIn outreach entry updated to reference build-in-public strategy
+
+**Alternatives considered:** (1) LinkedIn as pure outreach channel only, no content (rejected: cold outreach without content warm-up is visibly cold — teacher clicks profile and sees nothing); (2) LinkedIn as a separate sub-OS (rejected: fails workstream test at 2/5 criteria — shares source material and cadence with X); (3) Enitan as primary LinkedIn voice (rejected: his authority with teachers/parents is lower than Teresa's; engineering frame is wrong for the professional educator audience).
+
+**Owner:** Teresa (content + posting), Enitan (infrastructure).
 
 **Owner:** Enitan

@@ -105,7 +105,7 @@ No new tool needed — Coda form + Brevo/WhatsApp trigger.
 
 Current state: PostHog (behavioral events), Brevo (email sequences), Attio (CRM), Dodo Payments (billing). Nothing connects them when events fire.
 
-The activation chain needed at launch: student signs up → PostHog event fires → Attio contact created (with source, exam board, score) → Brevo welcome sequence triggered → Discord alert to Teresa. Right now, each step is manual or requires a custom script per integration.
+The activation chain needed at launch: student signs up → PostHog event fires → Attio contact created (with source, exam board, score) → Brevo welcome sequence triggered → WhatsApp/Discord alert to Teresa. Right now, each step is manual or requires a custom script per integration.
 
 **n8n ($35/mo cloud, or self-hosted free):** The research consensus for bootstrapped SaaS. Unlike Make (per-operation pricing that compounds) or Zapier (expensive at scale), n8n charges flat for unlimited workflows. Has native PostHog, Brevo, and Attio nodes. The trial → activation chain gets built once and runs forever.
 

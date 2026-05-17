@@ -222,7 +222,11 @@ Reddit distribution:
   Timing: post during active revision periods (Jan-April, Aug-Sept resit window)
   Do NOT: post as ExamPilot with a promotional tone. Reddit detects and rejects product promotion dressed as community contribution. [Follow channel-playbooks.md for Reddit rules]
 
-Discord distribution:
+WhatsApp distribution:
+  Share in ExamPilot WhatsApp community and existing CIE student study groups
+  Same value-first framing as Reddit
+
+Discord distribution (secondary):
   Post in relevant student Discord servers: A-Level / Cambridge AS/A Level communities [VERIFY active servers]
   Same value-first framing as Reddit
 

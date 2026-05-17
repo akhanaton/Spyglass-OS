@@ -100,7 +100,7 @@ Every feature update is a mini-launch opportunity.
 
 ## Timing for ExamPilot
 
-- **May/Jun 2026 exam window:** Too close for full launch. Target 15-25 students via direct outreach.
+- **May/Jun 2026 exam window:** Too close for full launch. Target 50-95 students via direct outreach (tutor referrals, WhatsApp, school outreach, Facebook Groups, Reddit, Discord).
 - **August 2026 Results Day:** Key trigger. Resit cohort (Oct/Nov) needs ExamPilot NOW. Content and outreach templates must be ready before this date.
 - **Sep-Nov 2026 resit period:** Active acquisition window. Full launch if product is ready.
 - **Jan-Mar 2027:** Mock season. Organic growth should be compounding by now.

@@ -37,7 +37,7 @@ Use numbers and scores to back claims — but always translate them into what th
 **Avoid:** Metrics without context, hiding behind numbers instead of giving clear guidance.
 
 ### 5. Student-First, Always
-We exist for students, not schools, parents, or investors. Every sentence asks: "Does this help a 16-18 year old study better?"
+Students are the primary audience. Every piece of student-facing content asks: "Does this help a 16-18 year old study better?" Parents are the economic buyer in many target markets. Teachers are referral partners. Neither replaces students as the centre of the product and its voice.
 
 **Avoid:** Talking about students in third person in student-facing content, corporate speak, trying too hard to be "cool."
 
@@ -187,6 +187,20 @@ Ask Sparky is Socratic — it guides through questions, not answers. Available i
 - Thin content under 500 words as standalone articles
 - Keyword stuffing
 - Publish without human review
-- B2B school/institution messaging (consumer only)
+- B2B school licensing or institution pricing (consumer-only purchase model; see `voice-parent.md` and `voice-teacher.md` for non-student audiences)
 - Pricing in GBP or USD (EUR only: EUR29/mo, EUR69/3mo, EUR96/6mo, EUR144/yr)
 - Testimonials from under-18s without parental consent
+
+---
+
+## Multi-Audience Note
+
+ExamPilot speaks to three audiences through three voices:
+
+| Audience | Voice guide | When to use |
+|---|---|---|
+| Students (16-18) | This file (`voice-house.md`) | Default. All student-facing content: blog, product UI, Reddit, TikTok, Discord, WhatsApp student communities |
+| Parents | `references/voice-parent.md` | "For Parents" page, parent email sequences, Facebook Group posts, pricing page trust elements, checkout flow |
+| Teachers/Schools | `references/voice-teacher.md` | Outreach messages, teacher dashboard, school recommendation materials, LinkedIn engagement |
+
+This file (voice-house.md) is the default for any content not explicitly targeting parents or teachers. When in doubt, use the student voice.

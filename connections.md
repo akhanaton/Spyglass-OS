@@ -7,7 +7,7 @@ Registry of every system your AIOS can reach. Filled by `/onboard` from Q4-Q7 an
 | 1 | Revenue / Financials | Dodo Payments | not yet connected | — | — |
 | 2 | Customer interactions | Reddit, TikTok (planned), Gmail, Loom | not yet connected | — | — |
 | 3 | Calendar | Google Calendar (inferred from Gmail) | not yet connected | — | — |
-| 4 | Communication | Discord (internal), Gmail | not yet connected | — | — |
+| 4 | Communication | Discord (internal), Gmail, WhatsApp | not yet connected | — | — |
 | 5 | Project / task tracking | Coda | mcp (claude.ai native) | akhanaton@gmail.com | 2026-05-13 |
 | 6 | Meeting intelligence | Google Workspace | not yet connected | — | — |
 | 7 | Knowledge / files | Google Workspace, Coda, GitHub (second brain) | partial — GitHub via gh cli | PAT in keyring | 2026-05-13 |
@@ -27,6 +27,9 @@ Registry of every system your AIOS can reach. Filled by `/onboard` from Q4-Q7 an
 | 21 | GTM signals — CRM / enrichment | Attio | API | not yet connected | — |
 | 22 | GTM signals — activation | Brevo (sequences) | API | not yet connected | — |
 | 23 | Social scheduling | Postiz (Standard plan) | API + dashboard | not yet connected | — |
+| 24 | Community — WhatsApp | WhatsApp Business App (free P0-P1) → Wati P1+ | manual (P0), API (P1+) | not yet connected | — |
+| 25 | Community — Facebook Groups | Facebook Groups (manual + Coda tracking) | manual | not yet connected | — |
+| 26 | Build-in-public — LinkedIn | LinkedIn (Teresa personal account — content warm-up + teacher/parent outreach) | Postiz (scheduling) + manual (posting) | not yet connected | — |
 
 **Mechanism options:** `mcp` (MCP server), `script` (Python/Bash hitting an API, in `scripts/`), `export` (CSV/JSON dump pipeline), `key+ref` (`.env` key + `references/{tool}-api.md` guide), `not yet connected`.
 

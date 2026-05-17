@@ -103,7 +103,7 @@ Each answer must be complete without reading the rest of the article.
 - [ ] No generic filler ("in today's world", "it's no secret that")
 - [ ] Pricing correct: EUR29/mo, EUR69/3mo, EUR96/6mo, EUR144/yr
 - [ ] Factually accurate for the specific exam board
-- [ ] No B2B school/institution messaging
+- [ ] No B2B school licensing or institution pricing (B2C2B referral partners only)
 
 ## File Output
 

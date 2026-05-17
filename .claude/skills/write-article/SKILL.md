@@ -215,7 +215,7 @@ After writing, before saving, apply these in sequence:
 - Product name is always "ExamPilot" (one word, capital E and P)
 - Feature names: "Ask Sparky", "Smart Review", "Exam Readiness Index (ERI)", "Question DNA" — all capitalised
 - Exam board: "Cambridge International AS & A Level Mathematics 9709" on first mention, "Cambridge 9709" thereafter
-- No B2B school/institution messaging. Consumer only.
+- No B2B school licensing or institution pricing. ExamPilot is always consumer-purchased. Teachers are B2C2B referral partners.
 - Pricing only in EUR: EUR29/mo, EUR69/3mo, EUR96/6mo, EUR144/yr. Never GBP or USD.
 
 **Scrub pass:**

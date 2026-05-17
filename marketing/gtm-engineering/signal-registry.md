@@ -33,6 +33,11 @@ Intent data in proximity to your brand via platforms and community.
 | Study struggle post ("need help with 9709") | Syften / reddit_monitor.py | +5 | Demand signal | Route to `/write-reddit` — respond with value |
 | Competitor comparison thread | Syften | +10 | Intent signal | Flag for positioning response |
 | Tutor referral click | PostHog (UTM: source=tutor) | +18 | High-intent referral | Warm audience — shorten nurture sequence |
+| Teacher referral click | PostHog (UTM: source=teacher) | +18 | High-intent referral | B2C2B — warm audience via teacher recommendation |
+| School cohort signup | PostHog (UTM: source=school-[name]) | +20 | High-intent referral | Track school name in UTM; enrich Attio partner record |
+| WhatsApp community join | WhatsApp Business App / manual | +5 | Engagement | Log manually in Phase 0; Wati auto in Phase 1 |
+| WhatsApp broadcast click | Wati / WhatsApp API | +8 | Engagement | Only available after Wati connected (Phase 1+) |
+| Facebook Group mention | Manual / Syften | +10 | Brand awareness | Flag for response; track in Coda Signals table |
 | Discord question about ExamPilot | Manual | +12 | Brand interest | Log manually when spotted |
 
 ---
@@ -67,7 +72,7 @@ Every signal captured by `signal_processor.py` outputs this structure:
 {
     "signal_id": "str (uuid)",
     "timestamp": "ISO 8601",
-    "source": "posthog | reddit | gsc | dataforseo | calendar | brevo | manual",
+    "source": "posthog | reddit | gsc | dataforseo | calendar | brevo | whatsapp | facebook | manual",
     "category": "first_party | second_party | third_party",
     "type": "behavioral | community | seo | campaign",
     "entity_id": "posthog user_id | reddit thread_id | keyword | date",

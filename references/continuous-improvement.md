@@ -64,11 +64,15 @@ If you can't answer these, the function is a one-shot task, not a repeatable sys
 |---|---|---|---|---|
 | **GTM Engineering** | Signal events + conversion outcomes | Signal weights in `scoring-model.md` | Monthly via `/tune`, full recalibration at Phase 2 (8-12 weeks post-launch) | PostHog, Coda Signals table |
 | **X / Build in Public** | Post type, author, time, format + engagement outcomes | Content pillar ratios (40/25/20/15 initial), posting times, format preferences | Monthly via `/tune` | Postiz analytics, PostHog (UTM) |
+| **LinkedIn / Professional Authority** | Post type, format, time + engagement outcomes, teacher outreach acceptance rate | Content pillar ratios (35/25/20/20 initial), posting times, format mix (post/carousel/article), outreach cadence | Monthly via `/tune` | Postiz analytics, LinkedIn native analytics, PostHog (UTM), Attio CRM (outreach conversion) |
 | **SEO / Content** | Keyword target, quality score, word count + ranking, traffic, time on page | Keyword tier priorities, quality score thresholds, content length targets | Monthly via `/tune` | GSC, DataForSEO, PostHog |
 | **Product** | Feature usage events + retention by cohort | Roadmap priorities, feature investment decisions | Weekly via `/product-pulse` (EP-47) | PostHog |
 | **Customer Support** | Issue type, channel, resolution + insight yield | Template quality, process changes, product insight routing | Weekly via `/feedback-digest` (EP-48) | Coda support log |
 | **Email (Brevo)** | Sequence type, send time + open rate, click rate, conversion | Subject line patterns, send timing, sequence length, segmentation | Monthly via `/tune` | Brevo analytics |
 | **Churn Prevention** | Cancel reason, save offer type + save rate, reactivation rate | Save offer thresholds, pause durations, dunning timing | Monthly via `/tune` | ChurnWard, Dodo Payments |
+| **WhatsApp Communities** | Community joins, broadcast sends + click rate, referral signups | Broadcast frequency (max 2/week initial), content mix, community sub-group structure | Monthly via `/tune` | WhatsApp Business App (P0), Wati analytics (P1+) |
+| **Facebook Groups** | Posts/comments made, parent inquiries generated, page referrals | Posting cadence (2-3/week initial), group selection, content types | Monthly via `/tune` | Manual tracking in Coda Signals table |
+| **School Partnerships** | Schools contacted, conversations started, teachers recommending, students attributed | Outreach cadence (2-3 schools/week initial), messaging, referral incentive structure | Monthly via `/tune` | Attio CRM |
 
 Functions not yet active (marked "not yet connected" in `connections.md`) get their loops defined when wired.
 

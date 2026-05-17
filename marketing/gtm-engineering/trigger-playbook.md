@@ -37,6 +37,19 @@ If→then rules that fire when signal thresholds are crossed. Each trigger has a
 
 ---
 
+## Parent and school triggers
+
+| Threshold | Signal | Action | Destination | Phase 0 | Phase 1 |
+|---|---|---|---|---|---|
+| Facebook Group mention of ExamPilot | Manual / Syften | Flag for response. Check tone. Respond with parent voice. | Coda Signals table | Manual response | Manual (always — parent trust requires human voice) |
+| Teacher referral link generates ≥3 signups | PostHog UTM | Flag teacher as active partner. Enrich Attio (partner tier = Active). | Attio | Manual | Auto: partner enrichment |
+| School cohort signup (≥5 from same UTM) | PostHog UTM | Flag school as converting. Schedule follow-up with referring teacher. | Attio + Coda | Manual | Semi-auto |
+| Parent "For Parents" page visit + trial signup | PostHog | Create contact in Attio with source = parent. Enrol in parent email sequence. | Attio + Brevo | Manual | Auto |
+| WhatsApp community join | WhatsApp Business App | Send welcome message. Log in Coda Signals table. | Coda | Manual | Auto (Wati) |
+| WhatsApp broadcast click | Wati | CRS +8. Track engagement in Coda. | Coda | N/A (Wati not connected) | Auto |
+
+---
+
 ## Community triggers
 
 | Threshold | Signal | Action | Destination | Phase 0 | Phase 1 |
@@ -63,7 +76,7 @@ If→then rules that fire when signal thresholds are crossed. Each trigger has a
 | Threshold | Signal | Action | Destination | Phase 0 | Phase 1 |
 |---|---|---|---|---|---|
 | Results Day − 30 days (CIE: ~Jul 16) | Calendar | Activate Results Day campaign. Begin content sprint. Prepare Brevo campaign. | Coda checklist | Manual | Manual |
-| Results Day − 7 days | Calendar | Final push: Reddit posts, Brevo campaign send, Discord activity. | Coda + Brevo | Manual | Semi-auto (Brevo) |
+| Results Day − 7 days | Calendar | Final push: Reddit posts, Brevo campaign send, WhatsApp broadcast, Facebook Group posts, school partner alerts. | Coda + Brevo + WhatsApp | Manual | Semi-auto (Brevo + Wati) |
 | Mock season start (~Jan 15) | Calendar | Demand gen pulse: increase Reddit activity, push study guides. | Coda | Manual | Manual |
 | Exam month start (~May 1) | Calendar | Acquisition push: conversion emails to warm list, paid-trial offer if applicable. | Brevo | Manual | Semi-auto |
 

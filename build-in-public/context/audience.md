@@ -17,3 +17,23 @@ The target audience for ExamPilot's build-in-public presence on X.
 **Language register:** Direct, conversational, peer-level. Write like you're texting a friend who also runs a startup.
 
 **Channel:** X only. Do not cross-pollinate builder messaging into student channels (Reddit, TikTok, email). Different audience, different voice, different goal.
+
+---
+
+## Professional Educator / Parent (LinkedIn only)
+
+**Who:** CIE and Edexcel maths teachers at international schools. Parents of international school students in professional roles. EdTech professionals, school administrators. Ages 28-55.
+
+**Where they are:** LinkedIn. Not X. Not Reddit.
+
+**What they care about:** Student outcomes, what actually works in exam prep, the gap between traditional tutoring and modern tools, learning science behind maths mastery. They value genuine professional insight and are suspicious of marketing language.
+
+**Messaging angle:** Teresa is an educator and parent who saw the exam prep gap first-hand and is building the solution. Here's what building it has taught her about how students actually learn.
+
+**What NOT to say:** Indie hacker language, MRR targets, founder-to-founder confessions, or anything that sounds like a pitch. This audience responds to educator credibility, not startup hustle.
+
+**Language register:** Professional but human. Conversational expertise — the register of a knowledgeable colleague, not a corporate brand. Shorter sentences than a formal report, longer and more structured than X.
+
+**Primary author:** Teresa. Her educational background gives her the authority this audience expects. Enitan may join later with a product/engineering angle.
+
+**Channel:** LinkedIn only. Do not cross-pollinate professional educator content into X (wrong audience, wrong frame) or student channels (wrong audience entirely).

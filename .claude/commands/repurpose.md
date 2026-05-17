@@ -1,6 +1,6 @@
 ---
 name: repurpose
-description: Converts a published or draft article into channel-specific versions. Outputs Reddit post, 3-email sequence, and TikTok script placeholder.
+description: Converts a published or draft article into channel-specific versions. Outputs Reddit post, 3-email sequence, TikTok script placeholder, X tweet, and LinkedIn post.
 ---
 
 ## Input
@@ -30,7 +30,8 @@ Read the full article. Extract:
 Read these in parallel:
 - `marketing/references/repurposing-playbook.md` — repurposing rules and channel-specific guidelines
 - `marketing/context/channel-playbooks.md` — operational rules per channel (Reddit, email, TikTok)
-- `build-in-public/context/channel-rules.md` — operational rules for X / build-in-public
+- `build-in-public/context/channel-rules.md` — operational rules for X and LinkedIn / build-in-public
+- `build-in-public/context/repurposing-rules.md` — angle adaptation rules for X and LinkedIn
 - `marketing/context/audience-segments.md` — tone and messaging for the target segment
 
 ### Step 3: Generate Reddit version
@@ -203,15 +204,56 @@ date: YYYY-MM-DD
 ---
 ```
 
+### Step 5.6: Generate LinkedIn version (build-in-public, Teresa)
+
+> Target audience: CIE maths teachers, parents in professional roles, edtech professionals. NOT students, NOT the indie hacker audience.
+
+Read `build-in-public/context/repurposing-rules.md` (LinkedIn section). Check `context/.whoami` — LinkedIn is Teresa's channel.
+
+**Apply the angle adaptation rule first.** State explicitly:
+> "X frame would be: [X version]. LinkedIn frame will be: [LinkedIn educator insight]."
+
+Extract the educational insight from the article — what does this topic reveal about how students learn, struggle, or succeed? Frame it as an educator observation, not a product announcement.
+
+**LinkedIn post structure (1,000-1,500 characters):**
+
+- Hook (first 2 lines, under 210 chars — before "see more"): Counter-intuitive claim, specific number, or short observation. Never start with "I". Never start with "Excited to share."
+- Body (3-4 short paragraphs): One idea per paragraph. Line break between each. Specific detail in at least one paragraph (a student behaviour, a data point, a named exam topic).
+- Close (1-2 sentences): One actionable takeaway. Soft mention of ExamPilot only if directly relevant and natural.
+- Hashtags (3 max, at end): Choose from #cambridgeinternational #alevel #mathseducation #examprep #edtech #igcse
+
+Rules:
+- No links in post body. End with "Link in comments." Add `[COMMENT: paste article URL here]` below draft.
+- No em dashes (use commas or periods).
+- No banned phrases: "game-changer", "in today's digital landscape", "proud to announce", "thrilled", "comprehensive".
+- Check for [LINKEDIN CANDIDATE] flag from `build-in-public/context/repurposing-rules.md`.
+
+Save to `build-in-public/pipelines/outreach/linkedin-post-teresa-{slug}-YYYY-MM-DD.md`
+
+```yaml
+---
+type: linkedin-post
+channel: linkedin
+author: teresa
+audience: teacher-parent-edtech
+post-type: insight
+source: repurpose
+source_article: {path}
+status: drafted
+date: YYYY-MM-DD
+---
+```
+
 ### Step 6: Show all outputs and prompt
 
-Display all four versions (Reddit, Email Sequence, TikTok placeholder, X tweet) inline.
+Display all five versions (Reddit, Email Sequence, TikTok placeholder, X tweet, LinkedIn post) inline.
 
-Ask: "Four repurposed assets created from '[article title]'. Which do you want to review first?
+Ask: "Five repurposed assets created from '[article title]'. Which do you want to review first?
 - Reddit post for [subreddit]
 - Email sequence (3 emails for Brevo)
 - TikTok script (P2 placeholder)
-- X tweet (build-in-public)
+- X tweet (build-in-public, founder angle)
+- LinkedIn post (build-in-public, Teresa, educator angle)
 
 Or say 'all look good' to move on."
 

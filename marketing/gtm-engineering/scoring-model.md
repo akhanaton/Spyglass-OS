@@ -17,7 +17,8 @@ Signals that contribute:
 - Website signals (pricing page, free trial click)
 - Activation signals (first session, session depth)
 - Engagement signals (return visits, CTA clicks)
-- Referral signals (tutor referral source)
+- Referral signals (tutor referral, teacher referral, school cohort signup)
+- Community signals (WhatsApp community join, WhatsApp broadcast click, Facebook Group mention)
 
 **CRS is reset at subscription start.** Once paid, track Engagement Health Score instead.
 

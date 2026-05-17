@@ -20,7 +20,10 @@ Before any content moves from `drafts/` to `review/`:
 - [ ] Voice matches `references/voice-house.md` (or voice-enitan.md for personal outreach)
 - [ ] No "AI tutor", "AI wrapper", "AI-powered" language. Use "learning science", "spaced repetition", "active recall", "exam readiness"
 - [ ] Pricing is correct: EUR29/mo, EUR69/3mo, EUR96/6mo, EUR144/yr. EUR only.
-- [ ] No B2B school licensing messaging
+- [ ] No B2B school licensing messaging. School/teacher content uses referral-partner framing (B2C2B). See `references/voice-teacher.md`.
+- [ ] If parent-facing: voice matches `references/voice-parent.md`
+- [ ] If teacher/school-facing: voice matches `references/voice-teacher.md`. No B2B pricing/licensing language.
+- [ ] If Facebook/WhatsApp: platform-appropriate formatting (shorter paragraphs, no markdown headers)
 - [ ] Internal links included (minimum 3 for blog articles — initial estimate, adjust via `/tune`)
 - [ ] CTA present and appropriate for funnel stage
 - [ ] Factually accurate for the specific exam board (Cambridge 9709 vs Edexcel IAL)
@@ -77,7 +80,7 @@ Princeton GEO study visibility boosts (apply these to every article):
 **ExamPilot is NOT:**
 - An "AI tutor" or "AI wrapper"
 - A generic study app
-- A school/institution tool (no B2B messaging at this stage)
+- A school/institution tool (no B2B licensing or pricing -- ExamPilot is always consumer-purchased)
 - A tutoring replacement (it complements tutoring, doesn't replace it)
 
 **Competitor mentions:**

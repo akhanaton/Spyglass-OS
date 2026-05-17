@@ -1,6 +1,6 @@
 ---
 name: outreach-draft
-description: Draft a personalized outreach message for a student or tutor. Supports WhatsApp, Discord, email, and LinkedIn channels.
+description: Draft a personalized outreach message for a student, tutor, or teacher/school. Supports WhatsApp, Discord, email, and LinkedIn channels. For teacher LinkedIn outreach, content warm-up gate applies (see build-in-public/references/linkedin-strategy.md).
 ---
 
 ## Input
@@ -29,6 +29,9 @@ Read these files:
 
 - Student (any channel) → `marketing/templates/outreach-dm.md`
 - Tutor (any channel) → `marketing/templates/tutor-outreach.md`
+- Teacher/school (LinkedIn, email, or WhatsApp) → use teacher voice (`references/voice-teacher.md`), B2C2B framing, low-commitment first ask
+
+**LinkedIn teacher outreach gate:** Before drafting a teacher LinkedIn DM, check: "Does Teresa's LinkedIn profile have 5-10 relevant posts on exam prep or learning science?" If not, flag: "Content warm-up required before teacher LinkedIn outreach — run `/write-linkedin` first. A teacher who sees an empty profile will not respond."
 
 ### Step 3: Determine segment
 
@@ -37,6 +40,7 @@ From the input details:
 - Edexcel IAL student → edexcel-ial
 - Resit student → resit
 - Tutor → tutor
+- Teacher/school → teacher-school (voice: `references/voice-teacher.md`, channel rules: `marketing/context/channel-playbooks.md` School/Teacher section)
 
 ### Step 4: Generate message
 

@@ -33,6 +33,7 @@ cat references/continuous-improvement.md
 cat marketing/gtm-engineering/scoring-model.md
 cat marketing/gtm-engineering/signal-registry.md
 cat build-in-public/references/x-strategy.md
+cat build-in-public/references/linkedin-strategy.md
 cat marketing/context/channel-playbooks.md
 cat marketing/context/content-standards.md
 cat marketing/references/churn-prevention.md
@@ -51,6 +52,7 @@ Read `connections.md`. For each function in the table below, check if the data s
 |---|---|---|
 | GTM Engineering | PostHog (row 17) + Coda Signals (row 20) | Check |
 | X / Build in Public | Postiz (row 23) | Check |
+| LinkedIn / Professional Authority | Postiz (row 23) + LinkedIn native analytics | Check |
 | SEO / Content | GSC (row 10) + DataForSEO (row 12) | Check |
 | Product | PostHog (row 17) | Check |
 | Customer Support | Coda (row 5) | Check |
@@ -79,6 +81,19 @@ If Postiz is connected, query the API. Otherwise ask:
 - "Any inbound DMs or connections from X?"
 
 Compile: engagement by post type, by format (thread vs standalone), by author, by day/time.
+
+**LinkedIn / Professional Authority (Postiz or manual):**
+
+If Postiz is connected, query LinkedIn post data. Otherwise ask:
+- "How many posts did Teresa publish this month?"
+- "Approximate average engagement rate?"
+- "Which post type got the most engagement? (insight/milestone/teaching-moment/educator-recognition/behind-the-scenes)"
+- "Which format performed best? (text post/carousel/article)"
+- "How many teacher or parent connections made?"
+- "Any inbound DMs from teachers or school administrators?"
+- "How many outreach DMs sent? How many responded?"
+
+Compile: engagement by post type, by format, by day/time; outreach acceptance rate; inbound DM rate.
 
 **SEO / Content (GSC + DataForSEO):**
 
@@ -129,6 +144,8 @@ For each function, compare actual performance against the parameter settings:
 **GTM Engineering:** Do the current signal weights predict conversion accurately? Are any signals consistently scored high but never correlating with conversion (overweighted)? Any signals scored low but frequently preceding conversion (underweighted)?
 
 **X / Build in Public:** Current content pillar ratios are 40% progress, 25% decisions, 20% failures, 15% questions (initial estimates). Does actual engagement data support this split? Should any pillar increase or decrease? Are posting times performing as expected?
+
+**LinkedIn / Professional Authority:** Current content pillar ratios are 35% educational insights, 25% behind-the-scenes educator angle, 20% teacher recognition, 20% milestones (initial estimates). Does engagement data support this split? Is teacher outreach acceptance rate above 30% (cold outreach benchmark)? Is the warm-up content sufficient (5-10 relevant posts visible on profile before outreach)? Are posts targeted to teachers outperforming posts targeted to parents, or vice versa?
 
 **SEO / Content:** Are quality score thresholds (e.g., minimum 80 to publish) correlating with ranking performance? Are longer or shorter articles performing better? Which keyword types (informational vs transactional vs navigational) are driving the most traffic?
 
