@@ -77,7 +77,21 @@ The wiki has four skills — they only work when the wiki repo is the CWD. For w
 **After every wiki write operation, without exception:**
 1. Run a targeted `/lint` on any new or modified articles — fix issues before recording state
 2. Append to `log.md` — one-line entry under today's date, include lint result
-3. Update `_session_context.md` — reflect the true end state after any lint fixes
+3. Update `_session_context.md` — wiki state only (see scope below)
+
+**`_session_context.md` scope — wiki state only:**
+- What articles were added or modified (wiki paths only)
+- Current wiki article count
+- What key knowledge areas are now current
+- Last updated date and triggering wiki change
+
+**Never put in `_session_context.md`:**
+- OS file changes, OS skill/command counts, OS infrastructure state
+- Linear issue numbers or task lists
+- OS pending items or OS decisions
+- Anything that belongs in `decisions/log.md` or the OS git history
+
+OS decisions → `decisions/log.md`. OS state → OS git history. Wiki state → `_session_context.md`.
 
 ## Voice
 
