@@ -94,4 +94,20 @@ Two yeses = add. One yes = wait.
 
 ---
 
+---
+
+## Deferred skills — build when the trigger condition is met
+
+Skills that were designed but not built because the data to make them useful doesn't exist yet. Build these via `/level-up` when the trigger fires.
+
+| Skill | What it does | Build when |
+|---|---|---|
+| `/growth-review` | Quarterly strategic review: reads PostHog, Linear, GSC, Coda Signals (90-day window), structures output as Situation / Complication / Recommendation, surfaces one strategic action. Pairs with `/tune` (tactical) as the strategic counterpart. | 8-12 weeks post-Phase 1 soft launch — when you have at least one cohort of PostHog funnel data and channel-to-conversion signal. Building earlier produces generic SaaS frameworks on assumptions, not ExamPilot-specific insight. |
+| `/write-whatsapp` | Draft WhatsApp broadcast messages for ExamPilot community. | When WhatsApp Business App community is live (EP-61 done). |
+| `/write-parent` | Draft parent-facing content: Facebook Group posts, parent email sequences, "For Parents" page copy. | When Facebook Groups joined (EP-60 done) and parent voice guide has real writing samples. |
+| `/school-outreach` | Draft and sequence teacher/school outreach messages for the B2C2B referral pipeline. | After Teresa's LinkedIn profile has 5-10 posts live (EP-59 done). |
+| `/phase-gate` | Score a phase gate on demand, draft a `decisions/log.md` transition entry, and propose the next phase's Linear milestone. | When Phase 0 gate score hits 65%+ with all must-pass criteria met. |
+
+---
+
 > *Your AIOS structure should look like a small, well-run business — not a hoarder's basement. When you can't find something, that's a signal to consolidate, not to add another folder.*

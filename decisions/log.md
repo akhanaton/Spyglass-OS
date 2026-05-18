@@ -512,3 +512,21 @@ Skills/commands updated: `write-x/SKILL.md` (8 path edits), `repurpose.md` (3 ed
 **Key dependency chain:** EP-52 (Brevo) unblocks EP-55/62/63/64. EP-53 (article audit) unblocks EP-67–73. EP-59 (Teresa LinkedIn profile) must be done before Enitan acts on EP-58.
 
 **Owner:** Enitan
+
+---
+
+## 2026-05-18 — /growth-review skill: deferred until post-launch data exists
+
+**Decision:** Decided to build a `/growth-review` skill (quarterly McKinsey-style strategic review) but deferred it until 8-12 weeks post-launch, when real data exists to analyze.
+
+**What the skill will do:** Reads all connected data sources (PostHog, Linear, GSC, Coda Signals, channel metrics from the last 90 days), structures the analysis as Situation / Complication / Recommendation, and outputs a quarterly strategic assessment with one action recommendation. Pairs with `/tune` (tactical parameter changes) as the strategic counterpart — `/tune` asks "how do we execute better?", `/growth-review` asks "are we executing the right things?".
+
+**Why deferred:** Pre-launch with minimal data, a "strategic review" defaults to frameworks applied to assumptions — which feels rigorous but isn't. The skill is only as good as the signal it analyzes. Building it now means it would produce generic SaaS growth advice rather than ExamPilot-specific insight. The real value kicks in when PostHog, conversion, and channel metrics give it something real to analyze.
+
+**What the skill is NOT:** Not an always-on consultant persona. Not a replacement for `/launch-strategy` (launch decisions), `/tune` (tactical monthly review), or `/signal-review` (GTM signals). A quarterly skill invoked when you need strategic direction review, not execution guidance.
+
+**Trigger to build:** 8-12 weeks after Phase 1 soft launch, when you have at least one cohort of PostHog funnel data and channel-to-conversion signal. Parked in `EXPANSIONS.md` with the trigger condition.
+
+**Alternatives considered:** Build now with placeholder data (rejected: frameworks on assumptions is strategy theatre); never build, rely on ad-hoc strategic thinking (rejected: no structured challenge to the strategy direction creates drift risk over time).
+
+**Owner:** Enitan
