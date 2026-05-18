@@ -63,12 +63,22 @@ Princeton GEO study visibility boosts (apply these to every article):
 - [ ] Author bios with exam teaching credentials on blog posts
 - [ ] "Last updated" date prominently displayed
 
+### LLM Chunk Optimization (apply to every article)
+
+Google and other AI systems do not read a page as a whole — they chunk it and attach ancestor heading context to each chunk. A poorly named heading makes that chunk invisible.
+
+- [ ] **Ancestor headings rule**: Every H2 and H3 must be descriptive enough to stand alone. "Conclusion" → "Conclusion: Best Integration Techniques for 9709 P1". "Step 1" → "Step 1: Identify the Integration Method". Test: can a reader with no surrounding context understand the topic from this heading alone?
+- [ ] **Conversational long-tail headers**: AI queries average 23 words. Include at least 2–3 H2s phrased as natural student questions ("How do I know which integration method to use in 9709 Paper 1?")
+- [ ] **Explicit logical connectors for AI parsing**: Where relevant, use "Because X, Y happens." and "Unlike method A, method B does not require C." — these feed cross-attention models that handle causal relationships
+- [ ] **Query fan-out coverage**: Each article should link out to related subtopic pages that would answer adjacent subqueries (e.g., integration article links to: by-parts page, definite integrals page, common mistakes page, past paper examples page)
+
 ### Technical
 
 - [ ] AI crawlers permitted: GPTBot, ClaudeBot, PerplexityBot, Google-Extended in robots.ts
 - [ ] FAQPage and Article schema markup on every blog post
-- [ ] `/pricing.md` and `/llms.txt` files on exampilot.io root (see geo-platform-guide.md)
+- [ ] `/llms.txt` file on exampilot.io root (scope: key landing pages only, exclude /app, /dashboard, /docs)
 - [ ] Page load time under 2 seconds
+- [ ] Bing Webmaster Tools sitemap submitted — ChatGPT browses Bing; not indexed on Bing = invisible to ChatGPT (EP-57)
 
 ## Positioning Rules
 

@@ -530,3 +530,25 @@ Skills/commands updated: `write-x/SKILL.md` (8 path edits), `repurpose.md` (3 ed
 **Alternatives considered:** Build now with placeholder data (rejected: frameworks on assumptions is strategy theatre); never build, rely on ad-hoc strategic thinking (rejected: no structured challenge to the strategy direction creates drift risk over time).
 
 **Owner:** Enitan
+
+---
+
+## 2026-05-18 — SEO Brothers knowledge pipeline: staged evaluation before integration
+
+**Decision:** Adopted a staged approach to ingesting the SEO Brothers YouTube channel (https://www.youtube.com/@OfficialSEOBrothers/videos) as an SEO execution resource. Phase 0 fetches a 5-10 video sample, evaluates content style (tactics vs. frameworks, niche applicability, signal density), and produces a written integration decision before touching any active execution layer.
+
+**Integration model (if Phase 0 green-lights):**
+- Wiki ingest is a staging step, not the end goal
+- Final active destinations: `content-standards.md` updates, skill instruction updates, new `/seo-quality-check` skill as a publishing gate
+- Wiki articles (`wiki/marketing/seo/`) remain as the reference/source layer
+- Topic-consolidated articles (multiple videos on same topic → one article)
+
+**Build:** New Python module `marketing/data_sources/modules/yt_transcript_fetcher.py` — uses `yt-dlp` + `youtube-transcript-api`, outputs wiki-compliant `raw/marketing/seo-brothers/` files. No API keys needed.
+
+**Why staged:** We don't yet know if the content is tactics (embeds cleanly into checklists) or frameworks (harder to operationalize). Integrating into active skills before that's clear risks baking in guidance that doesn't apply to ExamPilot's niche or silently overriding approaches that are already working.
+
+**Alternatives considered:** (1) Wiki-only destination (rejected: passive reference gets underused — low leverage); (2) Immediate active layer integration without evaluation (rejected: wrong until we know what kind of knowledge it is); (3) One article per video instead of topic-consolidated (rejected: produces a video index rather than a coherent knowledge base).
+
+**Plan file:** `/Users/enitan/.claude/plans/jazzy-spinning-snail.md`
+
+**Owner:** Enitan
