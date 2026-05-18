@@ -552,3 +552,17 @@ Skills/commands updated: `write-x/SKILL.md` (8 path edits), `repurpose.md` (3 ed
 **Plan file:** `/Users/enitan/.claude/plans/jazzy-spinning-snail.md`
 
 **Owner:** Enitan
+
+---
+
+## 2026-05-18 — SEO and marketing synthesis overview: wiki over OS duplication
+
+**Decision:** Created a synthesised SEO + marketing strategy overview as a wiki article (`wiki/marketing/seo-and-marketing-overview.md`) rather than a standalone OS file. Added a lightweight pointer at `marketing/references/seo-marketing-overview.md` in the OS for quick access.
+
+**Why wiki:** The OS has an explicit rule against duplicating strategy into local files — the wiki is the source of truth for "what the strategy is" and the OS is for "how to execute." The synthesis article draws entirely from existing wiki articles. Storing it locally would create two sources of truth that drift apart as the strategy evolves.
+
+**Why not OS:** An OS-local strategy file would need manual updates every time the underlying wiki articles change (seo-strategy, marketing-plan, llm-seo-mechanics, etc.). The wiki pointer pattern keeps one canonical home that stays in sync automatically.
+
+**Outcome:** Article marked "Start here" in `wiki/marketing/INDEX.md`. Covers micro-funnel, 4-phase plan, flywheel, GTM measurement, channel-to-stage mapping, all SEO tactical frameworks — 13 cross-references to underlying articles.
+
+**Owner:** Enitan
