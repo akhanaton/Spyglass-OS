@@ -76,9 +76,20 @@ Google and other AI systems do not read a page as a whole — they chunk it and 
 
 - [ ] AI crawlers permitted: GPTBot, ClaudeBot, PerplexityBot, Google-Extended in robots.ts
 - [ ] FAQPage and Article schema markup on every blog post
-- [ ] `/llms.txt` file on exampilot.io root (scope: key landing pages only, exclude /app, /dashboard, /docs)
+- [ ] `/llms.txt` file on exampilot.io root (scope: key landing pages only, exclude /app, /dashboard, /docs) — note: Google doesn't require this for AI Overviews; it benefits ChatGPT, Claude, and Perplexity
 - [ ] Page load time under 2 seconds
 - [ ] Bing Webmaster Tools sitemap submitted — ChatGPT browses Bing; not indexed on Bing = invisible to ChatGPT (EP-57)
+
+### GEO Don'ts (Google's official guardrails)
+
+These are explicitly called out in Google's AI optimization guide as harmful to both traditional Search and AI features:
+
+- [ ] No AI-specific content variants — same content serves people and AI; writing separate AI-targeted versions risks scaled content abuse policy
+- [ ] No content chunked into AI-bait fragments — use normal paragraph + heading structure, not fragmented AI-optimised snippets
+- [ ] No bulk AI-generated thin variations for ranking manipulation — AI-generated content is fine if it meets quality standards; mass-producing variants does not
+- [ ] No inauthentic third-party mentions — real Reddit/Quora participation only; don't fabricate citations or spam communities for AI visibility
+- [ ] AI crawlers not blocked — GPTBot, PerplexityBot, ClaudeBot, Google-Extended must remain unblocked if you want citation (block CCBot only if needed)
+- [ ] Main content visible without JS — agents and AI crawlers see blank if content renders only after heavy JS; content must be in the HTML
 
 ## Positioning Rules
 
