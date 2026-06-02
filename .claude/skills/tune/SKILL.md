@@ -58,6 +58,9 @@ Read `connections.md`. For each function in the table below, check if the data s
 | Customer Support | Coda (row 5) | Check |
 | Email | Brevo (row 13) | Check |
 | Churn Prevention | Dodo Payments (row 1) | Check |
+| Move 37 (strategic plays) | `marketing/pipelines/strategy/` | Always on |
+
+**Move 37 has a different shape than other functions.** Other functions adjust parameters from data. Move 37 captures outcomes on past strategic plays and surfaces patterns about which sediment-breaks work in this business's context. The output is pattern knowledge, not parameter changes. See Move 37-specific notes in Steps 2, 3, 4, 5, 6 below.
 
 Skip disconnected functions. Note them at the end: "These functions have no data source connected yet. Wire them to enable tuning."
 
@@ -137,6 +140,17 @@ If connected:
 - Dunning recovery rate
 - Save offer acceptance rate
 
+**Move 37 (strategic plays):**
+
+Scan `marketing/pipelines/strategy/` for all `move-37-*.md` artifacts. For each, read the frontmatter and group by status:
+
+- `status: proposed` -- not yet chosen. No action this cycle.
+- `status: chosen` or `status: shipped` with `outcome: TBD` -- these need outcome capture. List them.
+- `status: chosen` or `status: shipped` with outcome already filled -- pull into pattern analysis pool.
+- `status: retired` -- include in pattern analysis as a "did not pursue" signal.
+
+For each artifact needing outcome capture, list: artifact filename, frame, the 3 plays, sediment contradicted, ceiling estimate, status.
+
 ### Step 3 -- Compare against current parameters
 
 For each function, compare actual performance against the parameter settings:
@@ -156,6 +170,13 @@ For each function, compare actual performance against the parameter settings:
 **Email:** Which send times produce the highest open rates? Which sequence types (welcome vs re-engagement vs dunning) are performing above/below target?
 
 **Churn Prevention:** Is the dunning timeline (Day 0, 3, 7, 10, 14) performing as expected? Are save offers matching cancel reasons correctly?
+
+**Move 37 (strategic plays):** No parameters to compare. Instead, look across artifacts with known outcomes (`outcome` not TBD) and ask:
+
+- Which kinds of sediment-breaks have won? (e.g. distribution arbitrage, counter-positioning, time-based events, niche-then-expand)
+- Which kinds consistently lost or got retired? Why -- execution failure, wrong frame, or genuinely bad bet?
+- Which altitudes worked best -- whole-business plays or single-artifact plays?
+- After 6+ outcomes exist, summarise: "Move 37 plays in this business tend to work when [X], tend to fail when [Y]." If fewer than 6 outcomes exist, say so and skip the pattern summary.
 
 ### Step 4 -- Generate the tune report
 
@@ -188,6 +209,29 @@ Display one screen per function:
 
 If a function has insufficient data (< 30 data points), say so: "Insufficient data for reliable adjustment. Continue capturing. Review next month."
 
+**Move 37 report format (different shape):**
+
+```
+### Move 37
+
+**Outcome capture needed (status: chosen/shipped, outcome: TBD):**
+- [filename] -- [frame] -- chosen play: [name]
+- [filename] -- [frame] -- chosen play: [name]
+
+**Pattern analysis ([N] artifacts with known outcomes):**
+
+What's working:
+- [Pattern 1 with the artifact references that support it]
+- [Pattern 2]
+
+What's not:
+- [Pattern with references]
+
+Heuristic for future plays: [one sentence the user can use next time `/move-37` runs]
+
+(If N < 6: "Not enough closed outcomes yet to surface reliable patterns. [N] needed before pattern analysis kicks in.")
+```
+
 ### Step 5 -- Human review
 
 After presenting all function reports, ask:
@@ -198,6 +242,17 @@ After presenting all function reports, ask:
 - **Defer** -- need more data, review next month"
 
 Wait for decisions on each proposed adjustment.
+
+**For Move 37 artifacts needing outcome capture, ask separately:**
+
+"For each Move 37 artifact below, mark outcome:
+- **Won** -- the play moved the commercial metric materially
+- **Lost** -- the play shipped but didn't move the metric (or hurt it)
+- **Inconclusive** -- shipped but signal is too noisy to call
+- **Still running** -- in flight, check again next cycle
+- **Retired (never shipped)** -- decided not to pursue; status changes to `retired`"
+
+Also ask: "Anything about *why* it won or lost that's worth recording? One sentence per artifact." This is the pattern fuel.
 
 ### Step 6 -- Apply accepted adjustments
 
@@ -222,6 +277,28 @@ For each accepted adjustment:
 **Owner:** [whoever approved]
 ```
 
+**For Move 37 outcomes:**
+
+1. Edit the artifact frontmatter in `marketing/pipelines/strategy/move-37-{slug}-{date}.md`:
+   - Update `outcome:` from `TBD` to `won` / `lost` / `inconclusive` / `still-running` / `retired`
+   - If status changed (e.g. proposed -> retired), update `status:` too
+2. Append a `## Outcome` section to the artifact body with the one-sentence reason captured in Step 5
+3. Log to `decisions/log.md` as a single grouped entry:
+
+```
+## YYYY-MM-DD -- /tune: Move 37 outcome capture
+
+**Outcomes recorded:**
+- [artifact] -> [outcome]: [reason]
+- [artifact] -> [outcome]: [reason]
+
+**Patterns surfaced this cycle:** [one-line summary, or "none -- need more outcomes"]
+
+**Owner:** [whoever approved]
+```
+
+Do not edit the body of past artifacts beyond appending the `## Outcome` section. The original sediment scan and plays are historical record.
+
 Display summary:
 ```
 ### /tune Summary: [Month Year]
@@ -229,5 +306,6 @@ Display summary:
 - Adjustments proposed: X
 - Accepted: X  |  Rejected: X  |  Deferred: X
 - Skipped (no data): X
+- Move 37 outcomes captured: X  |  TBD remaining: X
 - Next /tune: [last Friday of next month]
 ```
