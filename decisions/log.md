@@ -721,3 +721,19 @@ Skills/commands updated: `write-x/SKILL.md` (8 path edits), `repurpose.md` (3 ed
 `references/youtube-presence-strategy.md` updated with the real issue numbers.
 
 **Owner:** Enitan
+
+---
+
+## 2026-06-02 — OS changes committed + pushed; EP-78 title cleaned up
+
+**Decision:** Committed and pushed all session work to `origin/main` (this repo's direct-to-main convention), split into two logical commits, then dropped the placeholder prefix from the parent epic's title.
+
+**Commits (pushed to `akhanaton/Spyglass-OS`):**
+- `ac8a563` — `feat: align schema doctrine with Ahrefs 2026 + scope YouTube initiative` (schema-markup + seo-quality-check skills, `references/youtube-presence-strategy.md`, this decision log)
+- `59a96fd` — `feat: add move-37 skill + tune integration; stage EP-76 Plan B and tutor flywheel analysis` (pre-existing uncommitted WIP that predated this session: move-37 skill, tune update, content-pipeline Plan B, tutor flywheel analysis)
+
+**Linear:** Renamed parent **EP-78** from "EP-YT: YouTube presence…" to "YouTube presence as a core GEO/citation channel" — the `EP-YT:` was a placeholder made redundant by the real identifier. Slug updated to match. No other fields changed.
+
+**Note:** The wiki `_session_context.md` correction was a separate `spyglass-wiki` commit earlier in the session. Memory (`~/.claude/...`) is updated but lives outside this repo.
+
+**Owner:** Enitan
