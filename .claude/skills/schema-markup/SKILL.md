@@ -1,6 +1,6 @@
 ---
 name: schema-markup
-description: Generate JSON-LD structured data for ExamPilot pages. Produces FAQPage, Article, BreadcrumbList, and EducationalContent schemas. Core to GEO optimization — structured data increases AI Overview citation probability.
+description: Generate JSON-LD structured data for ExamPilot pages. Produces FAQPage, Article, BreadcrumbList, and EducationalContent schemas. Supports traditional rich results, featured snippets, and agent-readability — NOT an AI-citation lever (Ahrefs 2026: schema has no measurable effect on AI citations; the lever is answer-first extractable prose).
 bike-method-phase: 1
 three-ms-attribution: |
   Adapted from The Three Ms of AI™ © 2026 Nate Herk. All rights reserved.
@@ -11,7 +11,11 @@ three-ms-attribution: |
 
 ## What this skill does
 
-Generates JSON-LD structured data markup for ExamPilot pages. Structured data is how Google, Perplexity, and other AI search engines understand what a page is about and whether to cite it in AI Overviews or featured snippets. Every ExamPilot blog article and topic page should have schema markup before it goes live.
+Generates JSON-LD structured data markup for ExamPilot pages. Schema helps Google render traditional **rich results** and **featured snippets**, and makes pages more legible to crawling agents. It is **not** an AI-citation lever: Ahrefs' 2026 controlled study found schema markup has no measurable effect on whether a page is cited in AI Overviews or LLM answers. The AI-citation lever is **answer-first, extractable prose** (see `/seo-quality-check` section B and `seo-strategy` GEO point 13), plus entity and YouTube signals — not JSON-LD.
+
+Schema is still worth generating for every blog article and topic page before it goes live — for rich results and agent-readability, just don't credit it for citations.
+
+> **Doctrine note (2026-06-02):** This skill was reframed after the Ahrefs 2026 AI-search findings. Schema demoted from "core GEO/citation lever" to "rich-results + agent-readability". Don't reintroduce citation-probability claims.
 
 This skill produces ready-to-embed JSON-LD blocks. It does not modify the source article — the developer or content manager pastes the output into the appropriate Sanity field or `<script>` tag.
 
@@ -128,12 +132,12 @@ For each Q&A pair, generate one `mainEntity` entry:
 **Rules:**
 - Maximum 10 Q&A pairs per schema. If the FAQ section has more than 10, select the 10 most specific and informative.
 - Minimum 4 Q&A pairs. If the article has fewer than 4 FAQ pairs, flag this as a Critical issue: "FAQ section has only [n] pairs — minimum 4 required. Add more Q&As before generating schema."
-- Answer text must be under 200 characters for AI Overview inclusion. If any answer is over 200 characters, flag it:
+- Answer text should be concise — aim for under ~200 characters so it can render cleanly as a featured snippet / rich result. This is a display guideline, not an AI-citation lever. If any answer is well over 200 characters, flag it:
 
 ```
-FLAG: Answer to "[question]" is [n] characters — over the 200-character AI Overview limit.
+FLAG: Answer to "[question]" is [n] characters — too long for clean featured-snippet display (~200 char guideline).
 Suggested shortened version: "[condensed version]"
-Offer to shorten: "Should I shorten this answer for AI Overview inclusion? The full answer will still appear on the page."
+Offer to shorten: "Should I shorten this answer for featured-snippet display? The full answer will still appear on the page."
 ```
 
 - Questions must be written as students naturally phrase them (conversational, not keyword-optimised). If a question reads like an SEO keyword rather than a natural question, flag it: "This question reads as keyword-optimised. Consider rewriting as: [natural phrasing suggestion]"

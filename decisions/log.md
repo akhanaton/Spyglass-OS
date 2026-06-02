@@ -20,6 +20,18 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-05-21 — Tutor Distribution Flywheel analysis filed (pre-decision)
+
+**Decision:** Comprehensive strategic analysis of a Tutor Distribution Flywheel addition to the marketing plan filed at `references/tutor-flywheel-analysis.md`. No commitment yet. Document is the basis for a future go/no-go decision and seed for a technical specification.
+
+**Why:** International-market tutoring data (Pakistan, UAE, India) suggests tutors are a primary supplementary education infrastructure that competitors structurally cannot see from a UK-domestic vantage point. Worth a real analysis before any plan change. Filing now so the research is durable and the decision can be made with full context later without re-running the work.
+
+**Alternatives considered:** Treating this as a side-channel within existing tutor referral target (status quo). Skipping analysis and committing directly (rejected — too much engineering opportunity cost without validation).
+
+**Owner:** Enitan (per AIOS context). Decision meeting target: close of Phase 0 (end July 2026) after tutor discovery interviews and engineering review.
+
+---
+
 ## 2026-05-13 — GitHub MCP over git submodule for second brain
 
 **Decision:** Connect the second brain GitHub repo via GitHub MCP server, not as a git submodule inside Spyglass-OS.
@@ -564,5 +576,148 @@ Skills/commands updated: `write-x/SKILL.md` (8 path edits), `repurpose.md` (3 ed
 **Why not OS:** An OS-local strategy file would need manual updates every time the underlying wiki articles change (seo-strategy, marketing-plan, llm-seo-mechanics, etc.). The wiki pointer pattern keeps one canonical home that stays in sync automatically.
 
 **Outcome:** Article marked "Start here" in `wiki/marketing/INDEX.md`. Covers micro-funnel, 4-phase plan, flywheel, GTM measurement, channel-to-stage mapping, all SEO tactical frameworks — 13 cross-references to underlying articles.
+
+**Owner:** Enitan
+
+---
+
+## 2026-05-19 — EP-76 content pipeline: two competing plans to evaluate
+
+**Decision:** PENDING. Two plans exist for EP-76 (content pipeline redesign). Neither has been approved. Both must be compared before implementation begins.
+
+**Plan A (original, in Linear EP-76 description):** Six sequential phases. Phase 4 ("injection bridge") creates a Vercel POST endpoint that "accepts {type, document} JSON body and calls `client.create()`". Treats the endpoint as a simple passthrough. Updates `/write-article` and `/pre-write` to POST to it.
+
+**Plan B (alternate, in `references/content-pipeline-redesign-alt.md`):** Server-side transformation via the same Vercel endpoint, but recognises that `client.create()` is not enough. The existing `scripts/lib/` plugin system (9 plugins, 1,756 lines) must run inside the endpoint to transform content JSON into Sanity portable text. Key additions:
+- Imports `scripts/lib/` directly into the API route (monorepo advantage, zero code duplication)
+- Handles all 9 content types through the existing plugin registry
+- Adds a markdown-to-content-JSON converter for blog posts (`/write-article` outputs markdown, not JSON)
+- Assets arrive as base64 in POST body, decoded and uploaded server-side
+- Reorders EP-76 phases: API endpoint first, then OS skill integration, then Studio UX
+
+**Why two plans:** Investigation of the spyglass repo revealed that `create-content.mjs` does significant transformation (content JSON -> portable text, asset upload with dedup, parent hub linking, plugin-based routing) that Plan A's "calls `client.create()`" does not account for. Plan B addresses this but is a larger scope change.
+
+**What to compare:** (1) Is the plugin import from `scripts/lib/` into a Vercel serverless function reliable, or will build/tracing issues make it fragile? (2) Is the markdown-to-content converter (Plan B Phase 3) worth the complexity, or should `/write-article` just output content JSON directly? (3) Phase ordering: Plan A does Studio UX before injection bridge; Plan B does injection first.
+
+**Files:**
+- Plan A: Linear EP-76 description (https://linear.app/exampilot/issue/EP-76)
+- Plan B: `references/content-pipeline-redesign-alt.md`
+
+**Owner:** Enitan
+
+---
+
+## 2026-05-21 — Added /move-37 skill for off-board strategic thinking
+
+**Decision:** Built `/move-37` as a Spyglass OS skill. Forces the AlphaGo Move 37 thinking pattern — name the cultural sediment in a space, map what it makes invisible, then generate 3 plays that explicitly contradict named assumptions. Stress test (complexity / cost / timeline / ceiling / risk) is mandatory per play.
+
+**Why:** Strategic conversations were producing good off-board ideas but inconsistently — sometimes by accident. The skill captures the discipline: refuse to generate plays until sediment is named. Avoids the failure mode of brainstorming on the same axis as competitors.
+
+**Design choices:**
+- Altitude-invariant (one skill for whole-business strategy down to single artifact angle) — altitude is a question in the interview, not a mode flag.
+- Output to `marketing/pipelines/strategy/` with YAML frontmatter (`status`, `outcome: TBD`) so `/tune` can review historical plays monthly.
+- Auto-consumes wiki marketing strategy + audience segments to ground sediment scan in real ExamPilot context, not generic edtech defaults.
+- Refuses pre-committed answers ("just give me the tutor flywheel plan") — offers to stress-test instead, doesn't pretend to discover what the user already named.
+
+**Continuous improvement hook:** Each Move 37 artifact carries `outcome: TBD`. `/tune` reads these monthly and asks user to mark Won / Lost / Inconclusive. After 6+ outcomes, surfaces patterns about which kinds of sediment-breaks work in ExamPilot's specific context.
+
+**Files:**
+- `.claude/skills/move-37/SKILL.md`
+- `marketing/pipelines/strategy/` (new folder for artifacts)
+
+**Owner:** Enitan
+
+---
+
+## 2026-05-21 — /tune updated to capture Move 37 outcomes monthly
+
+**Decision:** Extended `/tune` to include Move 37 as a tracked function. Each monthly cycle now scans `marketing/pipelines/strategy/` for artifacts with `outcome: TBD`, prompts user to mark them Won / Lost / Inconclusive / Still-running / Retired with a one-sentence reason, then writes the result back into the artifact frontmatter and a `## Outcome` section.
+
+**Why:** Move 37 is the only function in the OS that produces *outcomes*, not parameters. The `/tune` framework was built for parameter adjustment ("change weight X from 0.4 to 0.6"). Move 37 needed a parallel track for outcome capture and pattern surfacing. Without this, the `outcome: TBD` field in Move 37 artifacts would never get filled and the continuous-improvement loop would silently break.
+
+**Shape difference made explicit in the skill:** Other functions adjust parameters from data; Move 37 captures outcomes and surfaces patterns about which sediment-breaks work in this business. Pattern analysis is gated at ≥6 closed outcomes — below that, the skill says so and skips pattern summary to avoid false signal.
+
+**Files:**
+- `.claude/skills/tune/SKILL.md` (function table + Steps 2, 3, 4, 5, 6 all extended)
+
+**Owner:** Enitan
+
+---
+
+## 2026-06-02 — Aligned schema skills with the v3.1 schema-demotion doctrine (pipeline catch-up)
+
+**Decision:** Reframed the OS-side schema rationale to match the wiki's 2026-06-02 doctrine change. Schema is now documented as a lever for traditional rich results, featured snippets, and agent-readability — **not** an AI-citation driver. The AI-citation lever is answer-first extractable prose plus entity/YouTube signals.
+
+**Why:** Ahrefs' 2026 controlled study found schema markup has no measurable effect on AI citations. The wiki was updated 2026-06-02 (marketing-plan v3.1 decision 20; llm-seo-mechanics; seo-strategy) but the pipeline still encoded the retired "schema drives citations" rationale — the wiki was ahead of the code.
+
+**Important scope correction:** The wiki's open-action wording ("schema-markup skill + composite scorer in github.com/akhanaton/spyglass") was inaccurate on two counts:
+1. The `schema-markup` skill and the content scorers live in **this OS repo** (`akhanaton/Spyglass-OS`), not the product repo.
+2. The composite scorer (`marketing/data_sources/modules/content_scorer.py` + `seo_quality_rater.py`) does **not** weight schema at all — its SEO sub-score is keyword/meta/H1/word-count. There was no schema weight to re-weight. The retired rationale lived only in the `schema-markup` skill text and one `seo-quality-check` checklist row.
+
+**Files changed (OS):**
+- `.claude/skills/schema-markup/SKILL.md` — description + "What this skill does" reframed; FAQ 200-char rule reframed from "AI Overview inclusion" to "featured-snippet display"; added a dated doctrine note
+- `.claude/skills/seo-quality-check/SKILL.md` — section F renamed "GEO Technical" → "Rich Results & Technical"; FAQPage row reframed; note added that the citation lever is answer-first (section B) + entity (section D); optional video-embed/VideoObject check added
+
+**Still open (product repo, separate session):** Whatever JSON-LD injection and quality scoring exist in the exampilot.io app (`$SPYGLASS_PRODUCT_REPO` / `github.com/akhanaton/spyglass`) — de-emphasise schema as a citation signal there too. Doctrine is de-emphasise, **not remove**: schema still ships for rich results.
+
+**Owner:** Enitan
+
+---
+
+## 2026-06-02 — Deferred YouTube presence as a scoped initiative (spec + Linear epic), not piecemeal
+
+**Decision:** YouTube presence is being treated as a cross-cutting initiative with its own spec (`references/youtube-presence-strategy.md`) and a Linear epic (EP-YT, to create once Linear is authed), mirroring the EP-77 pattern — not absorbed piecemeal into existing skills. Execution is **gated on a production-model decision** (faceless screencast / on-camera Teresa / hybrid / seed-only) that Enitan + Teresa must make before any skill is built.
+
+**Why:** Ahrefs 2026 found YouTube mentions are the strongest measured correlate of AI brand visibility (0.737). The marketing plan absorbed the strategy (v3.1, decision 19) but YouTube touches 11 OS surfaces — content pipeline, frontmatter type enum, 5 skills, weekly-pulse KPIs, GTM signals, connections, channel playbooks, and the build-in-public boundary. Bolting it on without a spec would create drift. The real blocker is production capacity, not strategy — neither founder produces video today.
+
+**Recommended starting model (to confirm):** Seed-only (D) in parallel with faceless screencast (A) — capture the citation signal fast at zero production cost while standing up owned 9709 explainers to embed in blog posts. Escalate to hybrid (C, add Teresa authority pieces) once cadence is proven.
+
+**Boundary clarified:** YouTube is a student-facing marketing/GEO channel → lives in `marketing/`, NOT in the `build-in-public/` sub-OS (which is X + LinkedIn, founder-facing, only).
+
+**Files:**
+- `references/youtube-presence-strategy.md` (new spec — 11-surface map, skills list, KPI/signal integration, phasing, Linear epic shell, success criteria)
+
+**Owner:** Enitan + Teresa (production-model decision); Enitan (execution)
+
+---
+
+## 2026-06-02 — YouTube production model chosen: seed-only + faceless screencast (gate lifted)
+
+**Decision:** Production model = **D (seed-only) in parallel with A (faceless screencast)**, escalating to **C (hybrid — add Teresa on-camera authority pieces)** once cadence is proven. This lifts the gate on `references/youtube-presence-strategy.md`; Phase 0 execution (EP-YT-2 onward) is unblocked. EP-YT-1 (the decision sub-issue) is resolved.
+
+**Why:** Captures the 0.737 AI-visibility signal fastest at zero production cost (seed mentions on established 9709 channels) while building an owned, scalable explainer library (faceless screencasts) to embed in blog posts. Defers the high-cost on-camera track until volume/trust justify it.
+
+**Files:**
+- `references/youtube-presence-strategy.md` (gating section + EP-YT-1 marked DECIDED)
+
+**Owner:** Enitan + Teresa
+
+---
+
+## 2026-06-02 — Product repo for schema work is not accessible from this environment
+
+**Finding (not a decision — flag for follow-up):** The product-repo schema work (de-emphasise schema as a citation signal in the exampilot.io app's JSON-LD) **cannot be actioned from the OS environment.** `akhanaton/spyglass` does not resolve, `$SPYGLASS_PRODUCT_REPO` is unset, and no repo reachable by the `akhanaton` gh login is the exampilot.io Next.js/Sanity app (`seomachine` = SEO content workspace; `SocraticLM` = unrelated ML repo). The frontend is documented only in the wiki (`wiki/engineering/frontend/frontend-component-system.md`: `JsonLd.tsx` exports 5 JSON-LD components injecting `<script type="application/ld+json">`, base URL `https://www.exampilot.io`) but lives in a codebase this account can't see (private/other-owner/not-on-this-account).
+
+**To unblock:** provide the correct repo path, grant the `akhanaton` login access, or clone it locally and set `$SPYGLASS_PRODUCT_REPO`. The change itself is scoped from the wiki doc (review the 5 `JsonLd.tsx` components; keep them for rich results, stop justifying them as a citation lever; consider adding a VideoObject component for embedded explainers).
+
+**Owner:** Enitan
+
+---
+
+## 2026-06-02 — YouTube epic + schema-repo task created in Linear (all assigned to Enitan)
+
+**Decision:** Created the YouTube initiative in Linear under team Exampilot, and converted every production/gh follow-up into a Linear issue assigned to Enitan (per request: "make any production gh task a Linear issue for now and assign to me").
+
+**Issues created:**
+- **EP-78** (parent) — YouTube presence as a core GEO/citation channel
+- EP-79 — Choose production model (✅ Done: D+A, escalate to C)
+- EP-80 — Seed mentions on 9709 tutorial channels (Todo)
+- EP-81 — Produce + embed faceless 9709 explainers (Todo)
+- EP-82 — VideoObject schema on video-hosting pages (Todo, **blocked by EP-86**)
+- EP-83 — YouTube channel + KPIs into /weekly-pulse + signals (Todo)
+- EP-84 — [Phase 1] Build /youtube-script + extend /repurpose (Backlog)
+- EP-85 — [Phase 1] Wire YouTube Data API into connections + /signal-review (Backlog)
+- **EP-86** (standalone) — Product repo: de-emphasise schema as an AI-citation signal in `JsonLd.tsx` (Todo, blocked on product-repo access)
+
+`references/youtube-presence-strategy.md` updated with the real issue numbers.
 
 **Owner:** Enitan

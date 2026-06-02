@@ -80,11 +80,14 @@ Score each item: ✅ Pass / ⚠️ Fix / ❌ Fail / N/A
 | No orphan risk | New page will be linked from ≥1 existing page | |
 | Pillar link | Blog articles link to their parent pillar/hub page | |
 
-### F. GEO Technical
+### F. Rich Results & Technical
+
+> The AI-citation lever lives in section B (answer-first extractable structure) and section D (entity naming), **not** here. Schema and the checks below earn traditional rich results, featured snippets, and agent-readability — Ahrefs 2026 found schema has no measurable effect on AI citations. Don't score schema as a GEO/citation signal.
 
 | Check | Standard | Score |
 |-------|----------|-------|
-| FAQPage schema | Present (auto-generated from Sanity faq array) | |
+| FAQPage schema | Present (auto-generated from Sanity faq array) — for rich results, not citations | |
+| Video embed (where a matching explainer exists) | Relevant YouTube explainer embedded + VideoObject schema present. N/A if no video exists yet | |
 | Image alt text | All images have descriptive alt text including target keyword | |
 | Last updated date | Visible on page | |
 | CTA present | Appropriate for funnel stage | |
