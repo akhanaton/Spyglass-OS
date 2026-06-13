@@ -20,6 +20,20 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-06-13 — Informational pages measured by citation share, not CTR (AI-era); AIO check baked in
+
+**Decision:** Informational content is judged by citation share and brand-search lift, not clicks/CTR — reaffirming `wiki/marketing/seo/seo-strategy.md` GEO point 13. AI Overview presence is the per-query determinant of which KPI applies: AIO present → citation share + GEO optimisation; AIO absent → CTR/title work and clicks (navigational, comparison, niche long-tail). AIO presence is now checked live in two places: `/research-serp` (per-keyword, pre-writing) and `/signal-review` Step 3b (weekly, on top ranking queries).
+
+**Why:** The 2026-06-13 GSC site analysis first benchmarked our 0.8% CTR against a pre-AI 2-4% standard and recommended title rewrites for a 3.8x gain. That ignored AI-Overview suppression (Ahrefs: ~58% click loss to #1; Seer: ~61% on informational queries) and cut against our own re-baselined doctrine. Per-query AIO measurement (DataForSEO SERP) showed presence is mixed and geography-varying: our biggest pages (trigonometry, functions, differentiation) are AIO-suppressed in the UK, while integration, "9709 syllabus", past papers, the paper-code tail, and brand are AIO-free. Pakistan shows fewer AIOs than the UK, so our international audience faces milder suppression than UK-centric studies imply.
+
+**Actions taken:** Corrected the GSC site-analysis report (CTR section + AIO-presence table + revision note). Built `serp_analyzer.py` (DataForSEO SERP: live AIO presence, SERP features, PAA, who-ranks) — resolves the phantom-module gap. Wired it into `/research-serp` Step 2 (measured AIO, not estimated) and `/signal-review` Step 3b (weekly AIO monitoring; flags KPI flips and the "ranking held but clicks fell" pattern). Added the keyword-selection principle to `target-keywords.md` (never gate on ad-volume; a `0` = below planner floor; a Move 37 distribution-arbitrage instance). Updated `connections.md` row 12.
+
+**Still open:** Sibling-skill pointers (`/research-gaps`, `/cluster`, `/priorities`) to the keyword-selection principle, and logging the Move 37 outcome — both deferred pending decision.
+
+**Owner:** Enitan
+
+---
+
 ## 2026-06-13 — Keyword research is OS-native; seomachine stays superseded
 
 **Decision:** All keyword research lives in Spyglass OS, not the seomachine repo. This reaffirms the 2026-05-16 supersession ("seomachine is now superseded by Spyglass OS for all ExamPilot marketing work") against an ambiguity that surfaced today. `keyword_volume.py` is the canonical OS keyword-research tool — two modes: lookup (volume + difficulty for a known list) and seed expansion (seed → related-keyword cluster). The never-built `keyword_researcher.py` name is retired.
@@ -28,7 +42,7 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 **Actions taken:** Built `keyword_volume.py` (lookup + `--seed` expansion via DataForSEO Labs). Repointed `/research-keywords`, `/optimize`, `/landing-research` off the phantom `keyword_researcher.py` to the real module. Fixed the GSC OAuth-rewrite fallout in `signal_processor.py` + `data_aggregator.py` (both gated GSC on the removed `GSC_CREDENTIALS_PATH`). Updated `connections.md` (GWS CLI, GSC OAuth, DataForSEO now live), `seo-analytics-stack.md`, `target-keywords.md`.
 
-**Still open (deferred, not done):** (1) Stale seomachine pointers — `wiki/marketing/growth/marketing-plan.md` still lists seomachine as a live connection; Linear EP-67–73 reference research briefs that physically sit in the old repo. (2) Seed-expansion `serp_analyzer.py` referenced by `/landing-research` is another phantom module, unbuilt.
+**Still open (deferred, not done):** Stale seomachine pointers — `wiki/marketing/growth/marketing-plan.md` still lists seomachine as a live connection; Linear EP-67–73 reference research briefs that physically sit in the old repo (tracked as EP-93). [Update 2026-06-13: the `serp_analyzer.py` phantom is now built — see the CTR/AIO entry above.]
 
 **Alternatives considered:** (1) Keep expansion in seomachine, OS tooling lookup-only (rejected — refuted by the supersession decision and breaks Teresa's access); (2) rename the new module `keyword_researcher.py` to match old references (rejected — it does lookup + expansion, not the full original spec; accurate name avoids overclaiming).
 

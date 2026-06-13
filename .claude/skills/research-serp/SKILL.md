@@ -31,17 +31,21 @@ Read `marketing/context/content-standards.md` for:
 - Positioning rules (ExamPilot = "learning science tool", not "AI tutor")
 - Competitor naming conventions
 
-### Step 2: Check DataForSEO connection
+### Step 2: Pull the live SERP (DataForSEO is connected)
 
-Read `connections.md` and check if DataForSEO is connected.
-
-**If connected:** Run SERP analysis:
+DataForSEO is live (connections.md row 12). Run the SERP analyzer — it returns **live AI Overview presence**, SERP features, People-Also-Ask questions, and who ranks:
 ```bash
-python3 marketing/data_sources/modules/serp_analyzer.py --keyword "[keyword]" --location 2826 --language en --results 10
+python3 marketing/data_sources/modules/serp_analyzer.py --keyword "[keyword]" --location uk --results 10
 ```
-Use live data for steps below.
 
-**If not connected:** Proceed with manual structured analysis (Step 3).
+**AI Overview presence varies by geography and reshuffles every ~2 days.** For high-stakes pages, also check a core CIE market, since our audience is international and AIO exposure differs:
+```bash
+python3 marketing/data_sources/modules/serp_analyzer.py --keyword "[keyword]" --location pakistan --results 10
+```
+
+The AIO result drives the KPI decision (Step 4): AIO present → manage by citation share, optimise for GEO; AIO absent → CTR/title work and clicks are live. Use the live data for the steps below.
+
+**If DataForSEO returns no data** (auth/credit issue): fall back to the manual structured analysis in Step 3, marking AIO presence as "Likely" rather than measured.
 
 ### Step 3: SERP analysis
 
@@ -79,8 +83,8 @@ Note: ExamPilot's current domain authority is low — this affects realistic ran
 
 Identify which SERP features are likely present:
 - Featured snippet (answer box)
-- AI Overview (appears for many educational how-to queries — HIGH priority if yes)
-- People Also Ask (PAA) box — list up to 5 PAA questions if identifiable
+- AI Overview — read directly from `serp_analyzer.py` output (`ai_overview_present`), not estimated. HIGH priority if yes.
+- People Also Ask (PAA) box — the analyzer returns these in `paa_questions`; list up to 5
 - Video carousel
 - Image pack
 - Knowledge panel

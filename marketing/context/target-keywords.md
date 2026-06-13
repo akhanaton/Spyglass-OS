@@ -1,6 +1,6 @@
 # Target Keywords
 
-Last updated: 2026-05-16
+Last updated: 2026-06-13
 
 ## How this file works
 
@@ -13,6 +13,17 @@ python3 marketing/data_sources/modules/keyword_volume.py --file <keywords.txt> -
 ```
 
 Pull worldwide first (default), then a core-market cut (`--location pakistan` etc.) where geo matters. Promote a keyword to a higher tier if real KD comes in below the estimate.
+
+---
+
+## Keyword selection principle
+
+Select keywords by **intent and competition, never by ad-search-volume**. This is doctrine, not preference — `wiki/marketing/seo/seo-strategy.md` establishes paper codes as near-zero-competition, high-intent terms that incumbents ignore.
+
+- A `0` from `keyword_volume.py` (Google Ads data) means "below the ad planner's floor", **not** "no demand". The planner is an ad-buying tool, blind to the informational long tail.
+- The truer demand signal is live GSC impressions (`gsc_analyzer.py --dimension query`) plus SERP/clickstream data (DataForSEO Labs seed expansion), not ad volume.
+- **Never add a volume floor to keyword selection.** Filtering out low-/zero-volume terms would discard our highest-intent, lowest-competition wins — the exact distribution arbitrage the strategy runs on (a Move 37 sediment pattern; see `/move-37`).
+- Verified live 2026-06-13: pages rank page-1 for "9709 trigonometry / functions / integration" (0 reported volume, 900-3,000 GSC impressions each). Evidence: `marketing/pipelines/research/2026-06-13-gsc-site-analysis.md`.
 
 ---
 

@@ -15,7 +15,7 @@ Registry of every system your AIOS can reach. Filled by `/onboard` from Q4-Q7 an
 | 9 | Second brain / knowledge base | GitHub (`akhanaton/spyglass-wiki`) | gh cli | PAT in keyring | 2026-05-13 |
 | 10 | SEO analytics | Google Search Console | script (gsc_analyzer.py) | OAuth (enitan@exampilot.io, token at ~/.config/gws/gsc_token.json) | 2026-06-13 |
 | 11 | SEO analytics | GA4 | script (ga4_analyzer.py) | not yet connected | — |
-| 12 | Keyword research | DataForSEO | script (keyword_volume.py, competitor_gap_analyzer.py, content_length_comparator.py, data_aggregator.py) | DATAFORSEO_LOGIN + DATAFORSEO_PASSWORD in marketing/data_sources/.env (apps@exampilot.io) | 2026-06-13 |
+| 12 | Keyword research + SERP | DataForSEO | script (keyword_volume.py, serp_analyzer.py, competitor_gap_analyzer.py, content_length_comparator.py, data_aggregator.py) | DATAFORSEO_LOGIN + DATAFORSEO_PASSWORD in marketing/data_sources/.env (apps@exampilot.io) | 2026-06-13 |
 | 13 | Email marketing | Brevo | API | not yet connected | — |
 | 14 | Community monitoring | Reddit API | script (reddit_monitor.py) | not yet connected | — |
 | 15 | Blog CMS | Sanity | API | not yet connected | — |

@@ -43,6 +43,28 @@ The processor outputs four sections:
 
 **Campaign signals:** Exam calendar events within 30 days. Campaign activation checklist.
 
+### Step 3b: AIO-presence monitoring on top ranking queries (SEO signal)
+
+AI Overview presence decides the KPI for each ranking page (citation share vs CTR) and it reshuffles every ~2 days. Track it weekly so KPI choice and CTR/impression swings are explained, not guessed.
+
+1. Pull the top ranking queries from GSC (these have real demand):
+```bash
+python3 marketing/data_sources/modules/gsc_analyzer.py --days 7 --top 10 --dimension query
+```
+2. Check current AIO presence for each (UK by default; spot-check a core CIE market like `--location pakistan` for high-impression queries, since AIO exposure varies by geography):
+```bash
+python3 marketing/data_sources/modules/serp_analyzer.py --keyword "[query]" --location uk
+```
+(~$0.0035/query; ~$0.04 for the top 10.)
+
+3. Produce the AIO map and flag **changes vs last week**:
+- **AIO present** → manage by citation share + brand search; action = GEO optimisation (answer-first, FAQ, query fan-out), not title tweaks.
+- **AIO absent** → real click capture; action = CTR/title work, comparison/`/vs/` and pricing pages.
+- **Newly gained an AIO** → expect CTR/impressions-to-clicks to drop; reframe that page's KPI to citation share. This is the signal that most often explains a "ranking held but clicks fell" pattern.
+- **Newly lost an AIO** → a CTR/click opportunity reopened.
+
+Feed the most material change into the "Top SEO Signal" in Step 6. Per-query AIO is a snapshot; SERP-API detection can undercount AIOs that load on interaction.
+
 ### Step 4: Write to Coda Signals table
 
 For each actionable signal, write a row to the Coda Signals table using the Coda MCP:
