@@ -20,6 +20,53 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-06-10 — Payments processor = Dodo (Stripe references superseded)
+
+**Decision:** Dodo Payments is the processor of record (confirmed; originally selected 2026-05-11). All "Stripe" references across the stack are stale and superseded.
+
+**Actions taken:** Linear EP-22 repurposed from the empty "Stripe Payment" stub → "Dodo Payments — checkout + webhook + subscription integration" (High, engineering). Production Readiness matrix §H5 annotated: processor = Dodo, and flagged that H5 actually covers *Sparx credit-pack* purchases (distinct from the €29/mo subscription model in EP-22), and that EP-41 proposes removing Sparx top-up purchasing — resolve before building.
+
+**Open sub-decision:** Free-beta-end policy (fixed date / 14-day trial / first-N-free) — shapes Dodo checkout urgency.
+
+**Owner:** Enitan
+
+---
+
+## 2026-06-10 — QLP go-live: six decisions from the go-live assessment
+
+Source: `references/qlp-go-live-assessment.md` (2026-06-09, 32-agent assessment) + code trace of `github.com/akhanaton/spyglass` @ commit 2026-04-23 (2026-06-10). Canonical current-state article: `wiki/engineering/backend/qlp-current-state.md`. Two of the six are DECIDED; four are OPEN (recommendation captured, decision pending the named owner).
+
+**1. Launch scope — DECIDED.** August launch gates on Phase 10 exit + 50 moderated CIE 9709 Pure 1 (Algebra) QLPs *retrievable in a live session*; SRS ships at Stage 0/1 (topic-based). SRS Stages 2–4, PMC, per-QLP mastery tracking, Tier 3 synthesis, cache-key migration, and Examiner-as-a-Service taxonomy are explicitly deferred to post-Phase-1-gate.
+
+> **Correction (2026-06-10):** ERI is NOT deferred. The Production Readiness matrix (the canonical launch plan, `docs/operations/PRODUCTION_READINESS_TEST_MATRIX.md`) lists ERI as **P1.5 — Must Verify & Complete Before MVP**: expose the API endpoint (`GET /exam-readiness/...`), surface it on the dashboard/exam-lens page, and validate the formula against real 9709 data. ERI is in MVP scope. What's genuinely deferred is **PMC** (matrix: open decision — likely insufficient data by August) and **per-QLP mastery tracking** (matrix P3). The copy guardrail in decision #6 still applies: surface the score, don't overclaim predictive confidence.
+- *Why:* QLP-seeded content is launch-critical; QLP-as-SRS-substrate is not. Every week on the cutover backlog is stolen from the only thing that can fail the launch (seeded, vetted content) against an immovable August Results Day window. Now reflected as canonical wiki state (product-current-state, path-to-revenue, qlp-current-state).
+- *What would change it:* serving-path wiring proves larger than the content lift, or seeding slips far enough that there's no content to gate on.
+- *Owner:* Enitan.
+
+**2. IP posture for Cambridge-derived QLPs — OPEN (decide before any real-paper extraction).** Recommended line: QLPs are transformative parameterized analysis; student-facing output exercises the same logic patterns with original questions, never verbatim Cambridge text, figures, or mark schemes. Encode as a hard reject criterion in the moderation rubric; scrub marketing copy that implies reproduction ("built FROM past papers and mark schemes", not "real past paper questions").
+- *Why:* The entire June plan ingests CIE papers; no runbook currently states a posture. One hour of real legal review is the cheapest insurance on the critical path.
+- *Owner:* Enitan + one hour of legal review. **Blocks the first real extraction run.**
+
+**3. Canonical QLPQuestionContext contract — OPEN (one-day decision before SRS/seeding code).** The spec contract and the implemented `qlp_phase3_contracts.py` schema have forked. Recommended: pick one canonical contract (likely a merge — keep traceability fields, add the payload fields the card composer needs), verify the extraction pipeline emits that format so seed data needs no re-extraction, then collapse the wiki to one contract + one backlog.
+- *Why:* Seeding against the wrong contract means re-extracting 50 QLPs later. Cheaper to settle the shape first.
+- *Owner:* Enitan (eng). Prerequisite: dump the actual model from code and diff against both wiki specs.
+
+**4. FSRS grain — OPEN.** Target is per-QLP FSRS signals; FSRS currently operates at topic level. Decision needed: commit to the per-QLP target and define interim handling if launch ships topic-level (which it will, per #1).
+- *Why:* PMC and per-QLP ERI need per-QLP grain (a `spaced_repetition_reviews` schema migration). Not launch-critical, but the target should be recorded so interim choices don't harden into the wrong default.
+- *Owner:* Enitan (eng). Can be decided post-launch, but log the target now.
+
+**5. Synthesizer model for the seed run — OPEN (decide before the seed run).** The terminal extraction stage (Pattern Synthesizer) runs on DeepSeek V3.2, the weakest math model in the stack (flagged for P1 upgrade). Decide the model before extracting 50 QLPs.
+- *Why:* Re-extracting after a model swap doubles cost and re-triggers Tier 1 moderation. Also run the P0 Gemini Flash-Lite deprecation check and pre-stage the fallback.
+- *Owner:* Enitan (eng). **Blocks the seed run.**
+
+**6. No readiness/predicted-grade language until calibration — DECIDED (guardrail adopted).** No "exam readiness", predicted-grade, or "90% predictive confidence" claims in any user-facing or marketing copy until the Oct/Nov 2026 calibration study validates ERI against real exam outcomes. "90% predictive confidence" struck from all copy now. This guardrail bans *overclaiming* (predicted-grade / "90% predictive confidence"), **not** surfacing ERI itself — the Production Readiness matrix requires ERI surfaced in MVP (P1.5). Surface the readiness score with honest framing; withhold the predictive-confidence claim until the calibration study.
+- *Why:* ERI's predictive confidence is an unvalidated assertion with zero calibration against actual outcomes. Shipping a grade claim we can't stand behind is both a churn risk and a trust/compliance risk.
+- *Owner:* Enitan + Teresa (copy audit pending).
+
+**Alternatives considered (set-level):** Logging all six as ratified (rejected — four aren't decided yet; recording them as decisions would be false). Holding the log until all six resolve (rejected — the two settled ones and the four owners/deadlines are worth capturing now so nothing stalls silently).
+
+---
+
 ## 2026-05-21 — Tutor Distribution Flywheel analysis filed (pre-decision)
 
 **Decision:** Comprehensive strategic analysis of a Tutor Distribution Flywheel addition to the marketing plan filed at `references/tutor-flywheel-analysis.md`. No commitment yet. Document is the basis for a future go/no-go decision and seed for a technical specification.
