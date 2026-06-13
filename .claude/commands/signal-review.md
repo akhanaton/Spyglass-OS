@@ -16,7 +16,7 @@ Optional: `--days N` to override the lookback window (default 7 days). Example: 
 Read `connections.md` to confirm which GTM signal sources are connected:
 - PostHog (row 17 — GTM signals): POSTHOG_API_KEY set?
 - Reddit Monitor (row 14): REDDIT_CLIENT_ID set?
-- GSC (row 10): GSC_CREDENTIALS_PATH set?
+- GSC (row 10): OAuth token at ~/.config/gws/gsc_token.json present?
 - DataForSEO (row 12): DATAFORSEO_LOGIN set?
 
 ### Step 2: Run the signal processor

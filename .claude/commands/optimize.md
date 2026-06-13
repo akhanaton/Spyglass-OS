@@ -31,11 +31,11 @@ Read the file at the provided path. Extract:
 
 Read `connections.md` and check if DataForSEO is connected.
 
-If connected, run:
+DataForSEO is connected (row 12). Pull live volume + difficulty for the primary keyword (worldwide is the default and truest for CIE/IAL; add `--location <country>` for a market cut):
 ```bash
-python3 marketing/data_sources/modules/keyword_researcher.py --seed "[primary_keyword]" --location 2826 --language en
+python3 marketing/data_sources/modules/keyword_volume.py --keywords "[primary_keyword]" --kd
 ```
-Use live volume and KD data in the audit. If not connected, proceed with structural analysis only.
+Use live volume and KD data in the audit. If DataForSEO returns no data, proceed with structural analysis only.
 
 ### Step 3: Run 6-dimension SEO analysis
 

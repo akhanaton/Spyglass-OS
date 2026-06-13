@@ -6,7 +6,13 @@ Last updated: 2026-05-16
 
 This is the living keyword register for ExamPilot's SEO content programme. Update it after every `/research-keywords` run and every time an article is published. The `/write-article`, `/seo-audit`, and `/research-gaps` skills all reference this file.
 
-Keyword difficulty (KD) estimates are sourced from DataForSEO. Update when real data is available — current estimates are based on topic difficulty signals and competitor domain authority.
+Keyword difficulty (KD) estimates are sourced from DataForSEO. Many entries below are still estimates based on topic difficulty signals and competitor domain authority — refresh them with real data via:
+
+```bash
+python3 marketing/data_sources/modules/keyword_volume.py --file <keywords.txt> --kd
+```
+
+Pull worldwide first (default), then a core-market cut (`--location pakistan` etc.) where geo matters. Promote a keyword to a higher tier if real KD comes in below the estimate.
 
 ---
 

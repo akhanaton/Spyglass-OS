@@ -60,13 +60,12 @@ Map to funnel stage:
 
 Read `connections.md` and check if DataForSEO is connected.
 
-If connected, run keyword and SERP analysis:
+DataForSEO is connected (row 12). Pull live volume + difficulty for the page's keyword cluster (worldwide default; add `--location <country>` for a market cut):
 ```bash
-python3 marketing/data_sources/modules/keyword_researcher.py --seed "[page topic]" --location 2826 --language en
-python3 marketing/data_sources/modules/serp_analyzer.py --keyword "[primary keyword]" --location 2826 --language en --results 5
+python3 marketing/data_sources/modules/keyword_volume.py --keywords "[page topic]" "[variation]" "..." --kd
 ```
 
-If not connected, proceed with manual competitive analysis.
+If DataForSEO returns no data, proceed with manual competitive analysis.
 
 ### Step 4: Competitor analysis
 

@@ -3,8 +3,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-GSC_PROPERTY = os.getenv("GSC_PROPERTY", "https://exampilot.io")
-GSC_CREDENTIALS_PATH = os.getenv("GSC_CREDENTIALS_PATH", "")
+GSC_PROPERTY = os.getenv("GSC_PROPERTY", "https://www.exampilot.io/")
 
 REDDIT_CLIENT_ID = os.getenv("REDDIT_CLIENT_ID", "")
 REDDIT_CLIENT_SECRET = os.getenv("REDDIT_CLIENT_SECRET", "")

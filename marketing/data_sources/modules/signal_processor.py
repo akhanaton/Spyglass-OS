@@ -17,7 +17,7 @@ Output:
 Connections required (graceful skip if missing):
     - PostHog: POSTHOG_API_KEY + POSTHOG_PROJECT_ID env vars
     - Reddit: REDDIT_CLIENT_ID + REDDIT_CLIENT_SECRET env vars
-    - GSC: GSC_CREDENTIALS_PATH + GSC_PROPERTY env vars
+    - GSC: OAuth token at ~/.config/gws/gsc_token.json (run gsc_analyzer.py once to create)
     - DataForSEO: DATAFORSEO_LOGIN + DATAFORSEO_PASSWORD env vars
 """
 
@@ -143,9 +143,10 @@ def ingest_reddit(days: int, dry_run: bool) -> list[dict]:
 def ingest_seo(days: int, dry_run: bool) -> list[dict]:
     if dry_run:
         return DRY_RUN_SAMPLE["seo_signals"]
-    gsc_creds = os.getenv("GSC_CREDENTIALS_PATH")
-    if not gsc_creds:
-        print("[SEO] SKIP — GSC_CREDENTIALS_PATH not set. Run gsc_analyzer.py first.")
+    from pathlib import Path
+    gsc_token = Path.home() / ".config" / "gws" / "gsc_token.json"
+    if not gsc_token.exists():
+        print("[SEO] SKIP — GSC not authenticated. Run gsc_analyzer.py once to complete OAuth.")
         return []
     # Delegate to gsc_analyzer.py output file if available
     gsc_output = "marketing/data_sources/outputs/gsc_latest.json"

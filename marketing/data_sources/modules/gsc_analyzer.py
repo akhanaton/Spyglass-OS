@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Google Search Console analyzer for ExamPilot marketing.
 
-Pulls query and page performance data from GSC.
-Requires: GSC_CREDENTIALS_PATH and GSC_PROPERTY env vars.
+Pulls query and page performance data from GSC using OAuth credentials
+shared with the GWS CLI (client_secret.json at ~/.config/gws/).
+
+On first run, opens a browser for consent. Token is cached at
+~/.config/gws/gsc_token.json for subsequent runs.
 
 Usage:
     python3 gsc_analyzer.py --days 28 --top 20
@@ -11,11 +14,19 @@ Usage:
 
 import argparse
 import json
+import os
 import sys
 from datetime import datetime, timedelta
+from pathlib import Path
+
+# Windows consoles default to cp1252, which chokes on non-Latin query text.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 try:
-    from google.oauth2 import service_account
+    from google.oauth2.credentials import Credentials
+    from google_auth_oauthlib.flow import InstalledAppFlow
+    from google.auth.transport.requests import Request
     from googleapiclient.discovery import build
 except ImportError:
     print("ERROR: google-api-python-client not installed.")
@@ -23,19 +34,32 @@ except ImportError:
     sys.exit(1)
 
 sys.path.insert(0, "..")
-from config import GSC_PROPERTY, GSC_CREDENTIALS_PATH
+from config import GSC_PROPERTY
+
+SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
+CLIENT_SECRET = Path.home() / ".config" / "gws" / "client_secret.json"
+TOKEN_FILE = Path.home() / ".config" / "gws" / "gsc_token.json"
 
 
 def get_gsc_service():
-    if not GSC_CREDENTIALS_PATH:
-        print("ERROR: GSC_CREDENTIALS_PATH not set. See connections.md row 10.")
+    if not CLIENT_SECRET.exists():
+        print(f"ERROR: client_secret.json not found at {CLIENT_SECRET}")
+        print("Expected the same file used by the GWS CLI.")
         sys.exit(1)
 
-    credentials = service_account.Credentials.from_service_account_file(
-        GSC_CREDENTIALS_PATH,
-        scopes=["https://www.googleapis.com/auth/webmasters.readonly"],
-    )
-    return build("searchconsole", "v1", credentials=credentials)
+    creds = None
+    if TOKEN_FILE.exists():
+        creds = Credentials.from_authorized_user_file(str(TOKEN_FILE), SCOPES)
+
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(str(CLIENT_SECRET), SCOPES)
+            creds = flow.run_local_server(port=0)
+        TOKEN_FILE.write_text(creds.to_json())
+
+    return build("searchconsole", "v1", credentials=creds)
 
 
 def query_gsc(service, days, top, dimension="query"):

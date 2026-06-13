@@ -36,16 +36,26 @@ gh api repos/akhanaton/spyglass-wiki/contents/wiki/marketing/seo/seo-strategy.md
 Read `marketing/context/content-standards.md` for entity naming rules (full exam board names).
 Read `marketing/references/geo-platform-guide.md` for content types that get cited most (comparison articles ~33%, definitive guides ~15%, original research ~12%) and platform-specific optimization priorities.
 
-### Step 2: Check for DataForSEO connection
+### Step 2: Build + price the keyword cluster (DataForSEO is connected)
 
-Read `connections.md` and check if DataForSEO (row 12) is connected.
+DataForSEO is live (connections.md row 12, creds in `marketing/data_sources/.env`). The OS-native tool is `keyword_volume.py` — it both expands seeds and prices keywords. Use the two modes together:
 
-**If connected:** Run keyword research via data module:
+**a. Expand the seed into a related-keyword cluster:**
 ```bash
-python3 marketing/data_sources/modules/keyword_researcher.py --seed "[keyword]" --location 2826 --language en
+python3 marketing/data_sources/modules/keyword_volume.py --seed "[seed keyword]" --limit 40
+```
+Returns distinct related keywords (permutations collapsed) with worldwide volume + difficulty. Good for head terms that have real keyword-database coverage.
+
+**b. For niche international exam terms, expansion will be thin** (CIE 9709 long-tail barely exists in any single-country keyword DB). There, generate 10-15 candidate variations yourself (see Step 3 patterns) and price them directly:
+```bash
+python3 marketing/data_sources/modules/keyword_volume.py --keywords "9709 pure 1 integration questions" "..." --kd
 ```
 
-**If not connected:** Proceed with manual SERP analysis (Step 3).
+**Always pull worldwide first** (the default). CIE 9709 and Edexcel IAL are international exams — a UK-only lens understates true demand by ~100x+ (e.g. "9709 syllabus" is 20/mo UK vs 3,600/mo worldwide). Add `--location pakistan` (or india/uae/malaysia/egypt) for a core-market cut when geo-targeting matters.
+
+Treat a reported `0` as "below the planner's floor", not "no demand" — the Google Ads planner is blind to the informational long tail. **Always cross-reference with live GSC impressions** (`gsc_analyzer.py --dimension query`) — that is the truest demand signal for our long-tail terms, and it catches what the planner misses.
+
+**If DataForSEO ever returns no data** (auth/credit issue): fall back to the manual SERP analysis in Step 3.
 
 ### Step 3: Manual SERP analysis guidance
 

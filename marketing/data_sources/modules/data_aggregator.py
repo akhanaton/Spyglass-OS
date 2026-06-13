@@ -8,7 +8,7 @@ GA4 is pageview-ONLY for ExamPilot marketing routes. No custom events or convers
 
 Authentication env vars:
   GA4: GA4_PROPERTY_ID + GA4_CREDENTIALS_PATH
-  GSC: GSC_PROPERTY + GSC_CREDENTIALS_PATH
+  GSC: OAuth token at ~/.config/gws/gsc_token.json (run gsc_analyzer.py once to create)
   DataForSEO: DATAFORSEO_LOGIN + DATAFORSEO_PASSWORD
 """
 
@@ -69,7 +69,7 @@ def _sources_configured() -> dict:
     """Return which data sources have credentials configured."""
     return {
         "ga4": bool(os.getenv("GA4_PROPERTY_ID") and os.getenv("GA4_CREDENTIALS_PATH")),
-        "gsc": bool(os.getenv("GSC_PROPERTY") and os.getenv("GSC_CREDENTIALS_PATH")),
+        "gsc": (Path.home() / ".config" / "gws" / "gsc_token.json").exists(),
         "dataforseo": bool(os.getenv("DATAFORSEO_LOGIN") and os.getenv("DATAFORSEO_PASSWORD")),
     }
 

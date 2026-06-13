@@ -20,6 +20,22 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-06-13 — Keyword research is OS-native; seomachine stays superseded
+
+**Decision:** All keyword research lives in Spyglass OS, not the seomachine repo. This reaffirms the 2026-05-16 supersession ("seomachine is now superseded by Spyglass OS for all ExamPilot marketing work") against an ambiguity that surfaced today. `keyword_volume.py` is the canonical OS keyword-research tool — two modes: lookup (volume + difficulty for a known list) and seed expansion (seed → related-keyword cluster). The never-built `keyword_researcher.py` name is retired.
+
+**Why:** While wiring DataForSEO I inferred the unbuilt keyword-expansion capability "lived in seomachine" and proposed leaving OS tooling lookup-only. The decision log and wiki refute that: seomachine was consolidated into the OS specifically so Teresa can access the flow (she couldn't reach the separate repo; commands were CWD-dependent). Leaving expansion out would have reopened the split-brain the consolidation closed. Building it in the OS completes the job. Standing geography rule baked into the tool: pull worldwide first — CIE 9709 / Edexcel IAL are international exams and a UK lens understates demand ~100x+; cross-reference GSC impressions for the long tail the keyword planner can't see.
+
+**Actions taken:** Built `keyword_volume.py` (lookup + `--seed` expansion via DataForSEO Labs). Repointed `/research-keywords`, `/optimize`, `/landing-research` off the phantom `keyword_researcher.py` to the real module. Fixed the GSC OAuth-rewrite fallout in `signal_processor.py` + `data_aggregator.py` (both gated GSC on the removed `GSC_CREDENTIALS_PATH`). Updated `connections.md` (GWS CLI, GSC OAuth, DataForSEO now live), `seo-analytics-stack.md`, `target-keywords.md`.
+
+**Still open (deferred, not done):** (1) Stale seomachine pointers — `wiki/marketing/growth/marketing-plan.md` still lists seomachine as a live connection; Linear EP-67–73 reference research briefs that physically sit in the old repo. (2) Seed-expansion `serp_analyzer.py` referenced by `/landing-research` is another phantom module, unbuilt.
+
+**Alternatives considered:** (1) Keep expansion in seomachine, OS tooling lookup-only (rejected — refuted by the supersession decision and breaks Teresa's access); (2) rename the new module `keyword_researcher.py` to match old references (rejected — it does lookup + expansion, not the full original spec; accurate name avoids overclaiming).
+
+**Owner:** Enitan
+
+---
+
 ## 2026-06-10 — Payments processor = Dodo (Stripe references superseded)
 
 **Decision:** Dodo Payments is the processor of record (confirmed; originally selected 2026-05-11). All "Stripe" references across the stack are stale and superseded.

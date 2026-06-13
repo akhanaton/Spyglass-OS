@@ -55,7 +55,7 @@ This is not a dashboard exercise. The output of each `/strategy-review` run shou
 | On-page/NLP audits | Per new article | ~$2-5 |
 | **Total** | | **~$12-28/mo** |
 
-**Module to build:** `keyword_researcher.py` (already specced in P2 roadmap at `marketing/data_sources/modules/`).
+**Module status:** The volume + keyword-difficulty lookup half is built and live as `keyword_volume.py` (2026-06-13, DataForSEO connected). Still unbuilt: seed-expansion (seed keyword → related-keyword ideas via DataForSEO Labs keyword_ideas). The original `keyword_researcher.py` name is retired — use `keyword_volume.py` for lookups; build expansion as a separate mode/module if needed.
 
 **Implementation note:** DataForSEO has a sandbox environment for testing. Wire sandbox first, verify output format, then switch to live credentials.
 
