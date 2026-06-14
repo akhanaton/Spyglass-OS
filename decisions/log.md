@@ -20,6 +20,24 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-06-14 — Work-tracking rationalization: Linear is the single actionable surface
+
+**Decision:** Reverse the 2026-06-10 "matrix-stays-tracker, Linear not mirrored" stance. Linear is now the single source of truth for actionable work; the Production Readiness matrix is a status dashboard (flow PASS/FAIL, launch readiness); the Coda mirror is retired. This realigns practice with the three-tool execution model already adopted 2026-05-17 (`references/execution-model.md`).
+
+**Why:** A catch-up audit found work fragmented across four surfaces with no coherent view. 27 of 72 active Linear issues had no project; ~12 P0/P1 launch-blocking *code* items lived ONLY in the matrix with no Linear issue (so invisible from the task board); Coda was a one-way script mirror of the matrix that nobody reads. The matrix's "these blockers live only here, by decision" section had become a visibility hole on the critical path to an immovable August launch.
+
+**Actions taken (all executed, verified):**
+- Created Linear **Post-MVP** project; created **EP-94–EP-105** (the matrix-only P0/P1 blockers, Engineering) + **EP-106** (free-beta-end policy decision → blocks EP-22). EP-101/EP-102 = the two QLP code blockers, linked to EP-87/EP-90 as seed-run gates; EP-99→EP-100 sequenced.
+- Reassigned all 27 projectless issues (Engineering / Alpha Launch / Post-MVP / Content & Growth + new "YouTube / GEO" milestone). **0 projectless active issues remain** (Alpha Launch 38, Engineering 29, Content & Growth 11, Post-MVP 7).
+- Product repo PR `akhanaton/spyglass#618`: matrix "Open Flags / Awareness" section now maps each blocker to its Linear issue; matrix header notes Coda retired; `scripts/coda-sync-test-matrix.mjs` marked DEPRECATED. Coda doc `hWFDV3mysB` left as a frozen snapshot (not deleted).
+- Updated memory `project-launch-readiness-flags`; added `project-linear-rationalization`.
+
+**Alternatives considered:** (1) Umbrella Linear issues pointing back to the matrix (rejected — keeps detail in markdown, defeats single-surface goal); (2) keep blockers matrix-only (rejected — the visibility hole was the original problem); (3) keep Coda as a maintained read-view (rejected — no reader; pure sync overhead). YouTube cluster placed in Content & Growth rather than Post-MVP (it is an active GEO channel, gated only on the already-decided production model).
+
+**Owner:** Enitan
+
+---
+
 ## 2026-06-13 — Informational pages measured by citation share, not CTR (AI-era); AIO check baked in
 
 **Decision:** Informational content is judged by citation share and brand-search lift, not clicks/CTR — reaffirming `wiki/marketing/seo/seo-strategy.md` GEO point 13. AI Overview presence is the per-query determinant of which KPI applies: AIO present → citation share + GEO optimisation; AIO absent → CTR/title work and clicks (navigational, comparison, niche long-tail). AIO presence is now checked live in two places: `/research-serp` (per-keyword, pre-writing) and `/signal-review` Step 3b (weekly, on top ranking queries).
