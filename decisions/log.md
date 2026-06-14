@@ -20,6 +20,22 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-06-14 — QLP synthesizer model: Opus 4.8 for seed, Kimi K2.5 A/B for scale (closes OPEN decision #5, EP-90)
+
+**Decision:** The Pattern Synthesizer (agent 4 of the 5-agent QLP extraction pipeline) runs on **Claude Opus 4.8** for the CIE 9709 Pure 1 seed run, replacing DeepSeek V3.2. **Kimi K2.5** is the designated value-model to A/B against Opus on a held-out set of 9709 templates *before* scaling extraction beyond the seed. Flash-Lite deprecation check (the ticket's P0 sub-task): Gemini 2.5 Flash-Lite is deprecated, hard shutdown 2026-10-16; replacement is `gemini-3.1-flash-lite`.
+
+**Why:** Live research (6 parallel agents, model landscape as of 2026-06-14) established that Pure 1 math is *saturated* across every current reasoning model (all score 80–99% on AIME, far above Pure 1 difficulty), so raw math ceiling is not a discriminator. The synthesizer's real job — reverse-engineering a parameterizable template, encoding mark-scheme logic, grounding distractors in misconceptions, emitting schema-valid JSON — is gated by structured-output reliability, instruction-following, and low hallucination. Opus 4.8 leads on the best proxy for that (GPQA Diamond 93.6%, highest verified) and on structured-output reliability. Seed-run cost is trivial (~$19 for all 50 QLPs at standard rates; cheapest-to-priciest candidate spread is only ~$17), so the foundation is bought on quality, not price. Cost only compounds at scaled extraction (≈10x ratio Opus→Kimi across hundreds–thousands of QLPs) — which is exactly what the Kimi A/B de-risks.
+
+**DeepSeek rejected on merit, not geography:** its JSON mode has a documented "occasionally returns empty content" defect — disqualifying for a schema-bound foundational pipeline. (China hosting and provider-integration lift were both explicitly ruled non-issues by the founder.)
+
+**Alternatives considered:** Gemini 3.5 Flash (stable, ~$7/run — best balanced/cheap pick, but Flash-tier with unconfirmed GPQA and "verbose" output; its eye-catching AIME ~99.7% is the *3 Flash preview* SKU, not 3.5 Flash); Gemini 3.1 Pro (GPQA ~94.3%, ~$9/run — Gemini quality-max, but still preview); Kimi K2.5 as the *primary* (near-frontier, 8x cheaper, exposes `reasoning_content` for the moderator — assigned to the scale A/B instead of the seed); Kimi K2.7 (ruled out — it is K2.7 *Code*, coding-specialized, no math benchmarks, forced always-on verbose thinking).
+
+**Consequences / follow-ups (Linear):** (1) implementation ticket — swap agent 4 (DeepSeek V3.2 → Opus 4.8) + build the Kimi K2.5 A/B harness; (2) migration ticket — move Gemini 2.5 Pro (pipeline agents 1 & 2: Question Parser + Mark Scheme Analyzer) and any Gemini 2.5 Flash-Lite usage off the 2026-10-16 deprecation *before* the seed run (locate Flash-Lite usage in code; pre-stage `gemini-3.1-flash-lite`).
+
+**Owner:** Enitan. EP-90 closed.
+
+---
+
 ## 2026-06-14 — Canonical QLPQuestionContext contract: code is canonical (closes OPEN decision #3)
 
 **Decision:** Adopt the implemented `qlp_phase3_contracts.py` `QLPQuestionContext` as the canonical contract, unchanged. It is a thin post-retrieval identity/traceability envelope: `qlp_id`, `qlp_version`, `instance_id`, `reproducibility_seed`, `trace_id`, plus retrieval context (`topic_id`, `subject_code`, `qualification_level`, `exam_board`, `specification_id`, `tier`) plus `targeted_misconceptions`, `evaluation_logic`, `estimated_seconds`. The wiki "fat" contract (template_body, distractor_logic, evaluation_steps, prerequisites, exam_appearances, difficulty_hint, predictive_weight) is rejected — those are QLP *document* fields, not context-envelope fields.
