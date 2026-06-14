@@ -20,6 +20,18 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-06-14 — PMC (Projected Mastery Coverage) deferred to post-launch
+
+**Decision:** PMC is deferred to post-launch (Phase 8+). Not in the August MVP. Tracked as Linear EP-121 (Post-MVP). The 593-line spec is kept; implementation waits.
+
+**Why:** PMC forward-projects mastery of unseen QLPs from accumulated per-QLP mastery data + a prerequisite graph. Neither exists in sufficient volume before launch, so any projection would be meaningless. Closes the "open decision" left in the 2026-06-10 QLP go-live entry. Depends on EP-120 (per-QLP mastery tracking, also Post-MVP).
+
+**What would change it:** enough real student interaction data post-launch to make projections meaningful, plus EP-120 shipped.
+
+**Owner:** Enitan
+
+---
+
 ## 2026-06-14 — Work-tracking rationalization: Linear is the single actionable surface
 
 **Decision:** Reverse the 2026-06-10 "matrix-stays-tracker, Linear not mirrored" stance. Linear is now the single source of truth for actionable work; the Production Readiness matrix is a status dashboard (flow PASS/FAIL, launch readiness); the Coda mirror is retired. This realigns practice with the three-tool execution model already adopted 2026-05-17 (`references/execution-model.md`).
