@@ -33,7 +33,7 @@ Start with a relatable student pain point or observation. No preamble.
 The actual helpful content. This is the whole point. Be specific:
 - Name exact topics, paper codes, mark scheme patterns
 - Give actionable steps, not vague advice
-- Reference real past paper questions where possible
+- Reference past paper topics and question types (not verbatim questions or mark scheme text)
 - [VERIFY] any exam board claims
 
 **Soft mention (optional, last paragraph only)**

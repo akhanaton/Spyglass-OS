@@ -20,6 +20,47 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-06-14 — Canonical QLPQuestionContext contract: code is canonical (closes OPEN decision #3)
+
+**Decision:** Adopt the implemented `qlp_phase3_contracts.py` `QLPQuestionContext` as the canonical contract, unchanged. It is a thin post-retrieval identity/traceability envelope: `qlp_id`, `qlp_version`, `instance_id`, `reproducibility_seed`, `trace_id`, plus retrieval context (`topic_id`, `subject_code`, `qualification_level`, `exam_board`, `specification_id`, `tier`) plus `targeted_misconceptions`, `evaluation_logic`, `estimated_seconds`. The wiki "fat" contract (template_body, distractor_logic, evaluation_steps, prerequisites, exam_appearances, difficulty_hint, predictive_weight) is rejected — those are QLP *document* fields, not context-envelope fields.
+
+**Why:** A direct code trace of every producer and consumer of `QLPQuestionContext` in `akhanaton/spyglass` settled it. The origin spec (impact report) and the code agree on a thin envelope; only the synthesized wiki article drifted into a content-bearing envelope by pulling fields out of the QLP document schema. Code is ground truth and is already deployed; the runtime composes QLP content separately. Adopting code = zero re-extraction risk for the seed run.
+
+**Contested fields, resolved by the trace:**
+- `topic_id` stays Optional. The sole producer (`qlp_runtime_service.build_qlp_question_context`) always sets it, because `retrieve_assessment_payload` already gates on a present topic_id upstream. The only consumer that reads it (promotion lineage) tolerates None. Making it required buys nothing and would break deserialization of already-persisted `qlp_context` blobs.
+- Course-context fields (`qualification_code`/`qualification_title`) NOT added. The course-context injection convention is real but lives in the prompt/resolver layer (sourced from the curriculum spec), not on this runtime envelope. Nothing reads them off `QLPQuestionContext`.
+- Field names: keep code names (`instance_id`, `targeted_misconceptions`), not the spec variants.
+
+**Consequences:**
+- Wiki Spec A (`engineering/backend/qlp-srs-integration.md`) corrected to the canonical contract (done this session).
+- Two follow-ups filed in Linear: tier typing hardening (`Optional[str]`→`Literal`); promotion path sets `exam_board` but not `qualification_code`/`title` on promoted ContentItems (retrieval-parity gap).
+- Product repo: no code change required to the contract itself. EP-87 (whether a *promoted* QLP renders richly via the live `topic_id` path) remains open — needs a content-render-layer trace, separate ticket.
+
+**Alternatives considered:** Merge the spec's content fields into the contract (rejected — duplicates the QLP document, no consumer needs them inline); make `topic_id` required (rejected — see above).
+
+**Owner:** Enitan. EP-89 closed.
+
+---
+
+## 2026-06-14 — Cambridge IP posture for QLPs adopted (closes OPEN decision #2)
+
+**Decision:** QLPs are transformative parameterised analysis. Student-facing output exercises the same logic patterns with original questions — never verbatim Cambridge text, figures, or mark schemes. This line is adopted as the canonical IP posture.
+
+**Why:** The entire June plan ingests CIE papers. No runbook stated a posture before this. Transformative-use is the defensible line: ExamPilot's output parameterises the underlying mathematical structure, it does not reproduce Cambridge IP. The hard constraint (no verbatim reproduction) also maps cleanly to a moderation criterion.
+
+**Consequences adopted with this decision:**
+- Hard reject criterion for Tier-1 moderation rubric: reject any QLP output containing verbatim Cambridge text, figures, or mark-scheme language.
+- Marketing copy rule: "built FROM past papers and mark schemes", not "real past paper questions". `marketing/templates/reddit-value-post.md` line 36 flagged for scrub.
+- Moderation rubric lives in the product repo (`akhanaton/spyglass`) — criterion must be encoded there before the first real extraction run.
+
+**What would change it:** Legal advice that explicitly contradicts the transformative-use rationale, or a C&D from Cambridge Assessment.
+
+**Alternatives considered:** Full licensing (rejected — cost and timeline incompatible with August launch); abstain from ingesting past papers entirely (rejected — the content layer is the product; abstaining kills the launch).
+
+**Owner:** Enitan. EP-88 closed.
+
+---
+
 ## 2026-06-14 — PMC (Projected Mastery Coverage) deferred to post-launch
 
 **Decision:** PMC is deferred to post-launch (Phase 8+). Not in the August MVP. Tracked as Linear EP-121 (Post-MVP). The 593-line spec is kept; implementation waits.
