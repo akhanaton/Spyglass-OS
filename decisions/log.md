@@ -20,6 +20,18 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-06-15 — ExamPilot greenfield brand: "Flight Deck" identity + strategy foundation
+
+**Decision:** Adopted a greenfield brand for ExamPilot, "Flight Deck" (your exam, on instruments). Full package committed to the product repo at `spyglass/brand/` (`BRAND-GUIDELINES.md`, `exampilot-theme.css`, `README.md`, `assets/`) on branch `brand/flight-deck-identity`. Part I (strategy): mission = "give every student sitting an international exam the precision and confidence that used to belong only to those who could afford a private tutor"; vision = "exam readiness is something you can know, not something you hope for"; values = Precision over guesswork + Evidence first; offer = 14-day no-card free trial, cancel anytime, EUR-only plans, consumer-only. Part II (expression): Ink Navy `#0B1A2D` + Signal Lime `#B8F23D` + Instrument Amber + contained Heading Cyan; Geist + Geist Mono; heading-caret-in-aperture mark; typographic, no mascot (Sparky = spark glyph); dark mode as first-class "flight deck at night". Supersedes `exampilot/DESIGN.md` (violet/rose). Token-mapped to the existing Tailwind v4 `@theme` + shadcn for a clean Claude Design handoff. Also seeded into a claude.ai/design project for execution.
+
+**Why:** Differentiates hardest from the two category clichés (pastel "friendly learning" and purple "AI magic"), owns the shared Pilot+Spyglass navigation metaphor, and matches the locked positioning ("know exactly where you stand"). Student-first core with a parent/teacher trust layer fits the B2C2-parent model. The palette is ownable, premium-yet-energetic, and pops on social, which matters under organic-only acquisition. Grounded entirely in the wiki + voice guides; stale `raw/` wiki data (GBP pricing, school licensing, "AI tutor" language) was deliberately rejected in favour of `CLAUDE.md`/voice-guide truth.
+
+**Alternatives considered:** Concept territories "Calm Clarity" (minimal/trust-led, risked feeling under-powered to teens) and "Kinetic Momentum" (gamified, risked undercutting parent/teacher trust). Audience weighting: balanced or parent-first core (rejected; student-first is the winning B2C2-parent pattern). Character: light or full mascot (rejected; typographic protects learning-science credibility). Type: keep Satoshi/JetBrains (retained as fallback) vs Geist (chosen primary). Colour: electric azure/aqua instead of Signal Lime (offered as a swap if lime reads too hot).
+
+**Owner:** Enitan.
+
+---
+
 ## 2026-06-14 — QLP synthesizer model: Opus 4.8 for seed, Kimi K2.5 A/B for scale (closes OPEN decision #5, EP-90)
 
 **Decision:** The Pattern Synthesizer (agent 4 of the 5-agent QLP extraction pipeline) runs on **Claude Opus 4.8** for the CIE 9709 Pure 1 seed run, replacing DeepSeek V3.2. **Kimi K2.5** is the designated value-model to A/B against Opus on a held-out set of 9709 templates *before* scaling extraction beyond the seed. Flash-Lite deprecation check (the ticket's P0 sub-task): Gemini 2.5 Flash-Lite is deprecated, hard shutdown 2026-10-16; replacement is `gemini-3.1-flash-lite`.
