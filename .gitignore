@@ -9,3 +9,4 @@ audits/
 context/.whoami
 .vscode/
 memory/
+.gstack/
