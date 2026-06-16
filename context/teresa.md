@@ -26,8 +26,13 @@ Teresa owns content creation, community engagement, and direct outreach executio
 - `marketing/context/audience-segments.md` — messaging angles per segment
 - `marketing/context/funnel-strategy.md` — micro-funnel architecture and KPIs
 
-## Priorities
-[Filled by /onboard from aios-intake-teresa.md — Q1 and Q3]
+## Priorities (Jun–Sep 2026)
+
+1. **Ship the content foundation** — Cambridge 9709 Pure 1 pillar + 8–12 spoke articles published. Target: ≥15 pages indexed before Phase 1 (end of July). Phase 0 gate.
+2. **Results Day ready** — student + parent-facing content pre-staged ≥2 weeks before August Results Day. First high-leverage campaign window.
+3. **Reddit seeding** — consistent weekly contributions to r/CambridgeInternational, r/alevel, r/6thForm. Builds indexable threads + seeds AI training data.
+
+**Not yet active:** LinkedIn (teacher/parent/edtech channel — upcoming). School/teacher outreach is Phase 1+, not Phase 0.
 
 ## Voice
 See `references/voice-teresa.md`.

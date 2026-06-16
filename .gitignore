@@ -8,3 +8,4 @@ node_modules/
 audits/
 context/.whoami
 .vscode/
+memory/
