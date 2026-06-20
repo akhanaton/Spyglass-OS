@@ -36,6 +36,7 @@ Given a completed article draft, generate:
 - Generic openers ("Everything You Need to Know About...")
 - Promises that over-sell ("Guarantee an A* in...")
 - Exam board mistakes (never confuse Cambridge and Edexcel specs)
+- Brand name in the title — do not include "ExamPilot" by default. Exception: Comparison pattern ("ExamPilot vs Past Papers...") or when explicitly instructed.
 
 ## Meta Description Rules
 

@@ -59,6 +59,7 @@ Read `connections.md`. For each function in the table below, check if the data s
 | Email | Brevo (row 13) | Check |
 | Churn Prevention | Dodo Payments (row 1) | Check |
 | Move 37 (strategic plays) | `marketing/pipelines/strategy/` | Always on |
+| Design System Sync | Claude Design (connections.md row 27) | Quarterly only — run on March, June, September, December cycles; skip all other months |
 
 **Move 37 has a different shape than other functions.** Other functions adjust parameters from data. Move 37 captures outcomes on past strategic plays and surfaces patterns about which sediment-breaks work in this business's context. The output is pattern knowledge, not parameter changes. See Move 37-specific notes in Steps 2, 3, 4, 5, 6 below.
 
@@ -140,6 +141,15 @@ If connected:
 - Dunning recovery rate
 - Save offer acceptance rate
 
+**Design System Sync (quarterly only — skip if not a March/June/September/December run):**
+
+Open Claude Design (connections.md row 27). Compare the current `@theme {}` token values against `brand/exampilot-theme.css` in the product repo. Ask:
+- Are there any token values in Claude Design that differ from what's in `brand/exampilot-theme.css`?
+- Are there new tokens in Claude Design not yet in the repo?
+- Does `exampilot/app/globals.css` still match `brand/exampilot-theme.css` on the shared token values (excluding product-specific tokens)?
+
+This check has no "data" in the PostHog sense — it's a manual diff exercise.
+
 **Move 37 (strategic plays):**
 
 Scan `marketing/pipelines/strategy/` for all `move-37-*.md` artifacts. For each, read the frontmatter and group by status:
@@ -170,6 +180,8 @@ For each function, compare actual performance against the parameter settings:
 **Email:** Which send times produce the highest open rates? Which sequence types (welcome vs re-engagement vs dunning) are performing above/below target?
 
 **Churn Prevention:** Is the dunning timeline (Day 0, 3, 7, 10, 14) performing as expected? Are save offers matching cancel reasons correctly?
+
+**Design System Sync (quarterly):** Is the repo in sync with Claude Design? Note any drifted token values or new tokens not yet committed. If in sync: one line confirming. If out of sync: list the diffs.
 
 **Move 37 (strategic plays):** No parameters to compare. Instead, look across artifacts with known outcomes (`outcome` not TBD) and ask:
 
@@ -208,6 +220,26 @@ Display one screen per function:
 ```
 
 If a function has insufficient data (< 30 data points), say so: "Insufficient data for reliable adjustment. Continue capturing. Review next month."
+
+**Design System Sync report format (quarterly only):**
+
+```
+### Design System Sync
+
+**Checked:** Claude Design vs brand/exampilot-theme.css vs exampilot/app/globals.css
+
+**Status:** In sync | Out of sync
+
+**Drifted tokens (if any):**
+- [token name]: Claude Design = [value] / repo = [value]
+
+**Missing tokens (if any):**
+- [token name]: in Claude Design, not yet in brand/exampilot-theme.css
+
+**Action required:** [None — in sync] OR [File issue / sync now]
+```
+
+If a sync is needed and straightforward (paste-and-commit), offer to do it in this session. Otherwise file a Linear issue.
 
 **Move 37 report format (different shape):**
 

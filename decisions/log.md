@@ -20,6 +20,30 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-06-16 — Design system sync cadence: quarterly via /tune
+
+**Decision:** Claude Design → repo token sync is checked quarterly (March/June/September/December `/tune` cycles), not monthly or ad hoc. Added as a named check in `tune/SKILL.md` Steps 1–4. If a sync is needed and straightforward, it runs in-session; otherwise a Linear issue is filed.
+
+**Why:** Token drift is low-risk between design iterations — the palette won't change monthly. A quarterly gate catches drift before it compounds without adding monthly overhead. The quarterly cadence matches the strategic review cadence in `references/continuous-improvement.md`.
+
+**Alternatives considered:** Monthly (too frequent for a stable identity system); ad hoc / on demand (no enforcement, drift guaranteed).
+
+**Owner:** Enitan.
+
+---
+
+## 2026-06-16 — Claude Design integration approach for ExamPilot design system
+
+**Decision:** Claude Design (claude.ai) is the source of truth for the ExamPilot Design System. Integration follows Option B: `brand/exampilot-theme.css` in the product repo is the Claude Design output landing zone; `exampilot/app/globals.css` applies those tokens plus product-specific additions that Claude Design won't generate; one wiki article for decisions/rationale; `connections.md` entry for the Claude Design URL. No copies of token values in the wiki or OS. Full analysis at `references/design-system-integration-report-2026-06-16.md`.
+
+**Why:** Minimises drift (Claude Design stays authoritative) while giving developers local token access. The alternative — wiki as design doc hub (Option D) — carries the highest drift risk and maintenance burden. The `brand/flight-deck-identity` branch already structures the product repo correctly for this approach.
+
+**Alternatives considered:** Option A (URL reference only — no local tokens, developers need claude.ai access); Option C (Vercel MCP import pipeline — good enhancement but Vercel-specific, doesn't cover general branding); Option D (wiki as design hub — most duplication, most drift risk).
+
+**Owner:** Enitan.
+
+---
+
 ## 2026-06-15 — ExamPilot greenfield brand: "Flight Deck" identity + strategy foundation
 
 **Decision:** Adopted a greenfield brand for ExamPilot, "Flight Deck" (your exam, on instruments). Full package committed to the product repo at `spyglass/brand/` (`BRAND-GUIDELINES.md`, `exampilot-theme.css`, `README.md`, `assets/`) on branch `brand/flight-deck-identity`. Part I (strategy): mission = "give every student sitting an international exam the precision and confidence that used to belong only to those who could afford a private tutor"; vision = "exam readiness is something you can know, not something you hope for"; values = Precision over guesswork + Evidence first; offer = 14-day no-card free trial, cancel anytime, EUR-only plans, consumer-only. Part II (expression): Ink Navy `#0B1A2D` + Signal Lime `#B8F23D` + Instrument Amber + contained Heading Cyan; Geist + Geist Mono; heading-caret-in-aperture mark; typographic, no mascot (Sparky = spark glyph); dark mode as first-class "flight deck at night". Supersedes `exampilot/DESIGN.md` (violet/rose). Token-mapped to the existing Tailwind v4 `@theme` + shadcn for a clean Claude Design handoff. Also seeded into a claude.ai/design project for execution.

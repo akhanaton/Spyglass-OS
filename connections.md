@@ -30,6 +30,7 @@ Registry of every system your AIOS can reach. Filled by `/onboard` from Q4-Q7 an
 | 24 | Community — WhatsApp | WhatsApp Business App (free P0-P1) → Wati P1+ | manual (P0), API (P1+) | not yet connected | — |
 | 25 | Community — Facebook Groups | Facebook Groups (manual + Coda tracking) | manual | not yet connected | — |
 | 26 | Build-in-public — LinkedIn | LinkedIn (Teresa personal account — content warm-up + teacher/parent outreach) | Postiz (scheduling) + manual (posting) | not yet connected | — |
+| 27 | Design system | Claude Design — ExamPilot Design System ([link](https://claude.ai/design/p/090ebfc2-4823-47c0-8425-4544c7b21b1c)) | claude.ai design project (source of truth for Flight Deck tokens; output pastes to `brand/exampilot-theme.css` in product repo) | akhanaton@gmail.com | 2026-06-16 |
 
 **Mechanism options:** `mcp` (MCP server), `script` (Python/Bash hitting an API, in `scripts/`), `export` (CSV/JSON dump pipeline), `key+ref` (`.env` key + `references/{tool}-api.md` guide), `not yet connected`.
 
