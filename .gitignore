@@ -10,3 +10,5 @@ context/.whoami
 .vscode/
 memory/
 .gstack/
+archives/session-summary-*.md
+connections.md

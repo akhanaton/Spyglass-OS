@@ -880,6 +880,54 @@ Skills/commands updated: `write-x/SKILL.md` (8 path edits), `repurpose.md` (3 ed
 
 ---
 
+## 2026-06-16 — Canonical host for ExamPilot set to non-www (exampilot.io)
+
+**Decision:** `https://exampilot.io` (non-www) is the canonical host. `www.exampilot.io` redirects via a 301 at Vercel. All code references aligned.
+
+**Why:** Three files disagreed on the canonical host, splitting Google ranking signals. Non-www was already the majority in the codebase and is the modern standard. The Vercel www→non-www redirect was already configured, so the change carries no redirect risk.
+
+**Alternatives considered:** Canonicalise on www instead — rejected; minority usage in the codebase, no SEO advantage, more files to change.
+
+**Owner:** Enitan (deploy) / Teresa (GSC + Sanity + OAuth verification)
+
+---
+
+## 2026-06-16 — Bucket 1 SEO content applied to Cambridge 9709 Pure 1 cluster
+
+**Decision:** Custom meta descriptions and Key Takeaways blocks added to all 7 Cambridge 9709 Pure 1 pages in Sanity Studio. Meta titles corrected on trigonometry, binomial-series, and functions.
+
+**Why:** Meta descriptions were the top audit gap — the fallback (`definition.slice(0, 160)`) was not keyword-optimised and had no CTA. Key Takeaways blocks are the primary GEO lever: answer-first, extractable prose for AI citations. Highest-ROI changes from the 76.7/100 batch audit.
+
+**Alternatives considered:** Defer Sanity edits until a content template was formalised — rejected; the audit spec is sufficient, and waiting blocks measurable score improvement.
+
+**Owner:** Teresa
+
+---
+
+## 2026-06-16 — SEO audit run on Cambridge 9709 Pure 1 cluster
+
+**Decision:** Run a structured 6-dimension SEO audit across all 7 published Cambridge 9709 Pure 1 pages. Batch score: 76.7/100 (Good). Priority gaps: missing meta descriptions, no external authority links on 5 of 7 pages, hub missing two topic cards.
+
+**Why:** Phase 0 is building the SEO foundation that Phase 2 compounds. Auditing before building more spoke pages is correct sequencing — it anchors the improvement backlog against a measurable score rather than ad hoc intuition.
+
+**Alternatives considered:** Defer audit until more pages exist — rejected; fixing the first 7 well is cheaper than fixing 30 later, and the scoring baseline is more useful early.
+
+**Owner:** Teresa
+
+---
+
+## 2026-06-16 — Three repo-side SEO fixes applied (Bucket 3 of audit)
+
+**Decision:** Applied three code/config fixes to `akhanaton/spyglass`: updated `llms.txt` with Cambridge 9709 Pure 1 content and corrected board references, added AI bot crawl rules to `robots.ts`, added a temporary 307 redirect `/past-papers` → `/cambridge/9709/pure-1`.
+
+**Why:** These are the audit action items that live in the repo rather than Sanity. Shipping them separately keeps content edits (Teresa, Sanity) and code changes (Enitan, deploy) on independent tracks with no cross-dependency.
+
+**Alternatives considered:** Bundle repo fixes with Bucket 1 Sanity edits into one deploy — rejected; different owners and deploy cycles, decoupling reduces coordination cost.
+
+**Owner:** Enitan (deploy) / Teresa (Sanity edits remain Bucket 1)
+
+---
+
 ## 2026-06-02 — YouTube production model chosen: seed-only + faceless screencast (gate lifted)
 
 **Decision:** Production model = **D (seed-only) in parallel with A (faceless screencast)**, escalating to **C (hybrid — add Teresa on-camera authority pieces)** once cadence is proven. This lifts the gate on `references/youtube-presence-strategy.md`; Phase 0 execution (EP-YT-2 onward) is unblocked. EP-YT-1 (the decision sub-issue) is resolved.
