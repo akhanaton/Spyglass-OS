@@ -844,70 +844,51 @@ Skills/commands updated: `write-x/SKILL.md` (8 path edits), `repurpose.md` (3 ed
 
 ---
 
-## 2026-06-16 — Canonical host settled as exampilot.io (non-www); host inconsistency resolved
+## 2026-06-16 — Canonical host for ExamPilot set to non-www (exampilot.io)
 
-**Decision:** `https://exampilot.io` (non-www) is the canonical host for ExamPilot. `www.exampilot.io` redirects to it via a 301 at the Vercel level (already configured). All code references are now aligned.
+**Decision:** `https://exampilot.io` (non-www) is the canonical host. `www.exampilot.io` redirects via a 301 at Vercel. All code references aligned.
 
-**Why:** Three files disagreed on the canonical host — `layout.tsx` used `exampilot.io` (no www), `sitemap.ts` and `robots.ts` used `www.exampilot.io`. Google treats these as different websites, splitting ranking signals. Non-www is the modern standard, shorter, and was already the majority usage across the codebase. Vercel was confirmed as already routing correctly (www redirects to non-www).
+**Why:** Three files disagreed on the canonical host, splitting Google ranking signals. Non-www was already the majority in the codebase and is the modern standard. The Vercel www→non-www redirect was already configured, so the change carries no redirect risk.
 
-**Code changes made (7 files in `akhanaton/spyglass`):**
-- `app/sitemap.ts` — `BASE_URL` → `https://exampilot.io`
-- `app/robots.ts` — sitemap pointer → `https://exampilot.io/sitemap.xml`
-- `components/seo/JsonLd.tsx` — `BASE_URL` → `https://exampilot.io` (affects all JSON-LD structured data)
-- `app/cambridge/layout.tsx` — 2 waitlist CTA links
-- `app/cambridge/9709/pure-1/page.tsx` — hub CTA fallback
-- `app/cambridge/9709/pure-1/[topicSlug]/page.tsx` — topic CTA
-- `public/llms.txt` — website URL + canonical URL
-
-**What was not changed:** `lib/auth.ts` `trustedOrigins` still lists both `exampilot.io` and `www.exampilot.io` — intentional safety net during the transition period. `auth-client.ts` has a comment referencing www — comment only, no functional URL. Can clean up post-deploy.
-
-**Follow-up actions (Teresa):** Submit updated sitemap `https://exampilot.io/sitemap.xml` to Google Search Console; verify Sanity CORS includes `https://exampilot.io`; verify OAuth redirect URIs. Push pending (Enitan).
+**Alternatives considered:** Canonicalise on www instead — rejected; minority usage in the codebase, no SEO advantage, more files to change.
 
 **Owner:** Enitan (deploy) / Teresa (GSC + Sanity + OAuth verification)
 
 ---
 
-## 2026-06-16 — Bucket 1 content applied to Cambridge 9709 Pure 1 cluster (Sanity Studio)
+## 2026-06-16 — Bucket 1 SEO content applied to Cambridge 9709 Pure 1 cluster
 
-**Decision:** Custom meta descriptions and Key Takeaways blocks added to all 7 Cambridge 9709 Pure 1 pages in Sanity Studio. Also corrected meta titles on trigonometry (64 chars → 51 chars) and binomial-series (77-char fallback → 51-char custom title), and shortened functions title from 61 to 52 chars.
+**Decision:** Custom meta descriptions and Key Takeaways blocks added to all 7 Cambridge 9709 Pure 1 pages in Sanity Studio. Meta titles corrected on trigonometry, binomial-series, and functions.
 
-**What was applied:**
-- `seo.metaDescription` set on all 7 pages (previously falling back to `definition.slice(0, 160)`)
-- Key Takeaways blocks (3-4 standalone bullets each) added to top of `introduction` field (hub) and top of `body`/Additional Content field (6 topic pages)
-- `seo.metaTitle` corrected on trigonometry, binomial-series, and functions
+**Why:** Meta descriptions were the top audit gap — the fallback (`definition.slice(0, 160)`) was not keyword-optimised and had no CTA. Key Takeaways blocks are the primary GEO lever: answer-first, extractable prose for AI citations. Highest-ROI changes from the 76.7/100 batch audit.
 
-**Why:** Meta descriptions were the top audit gap (D2, On-Page Optimization). The fallback — first 160 chars of the `definition` field — was not keyword-optimised and had no CTA. Key Takeaways blocks are the primary GEO lever (answer-first, extractable prose for AI citations per `llm-seo-mechanics` wiki article). Together these are the highest-ROI changes from the 76.7/100 batch audit.
-
-**Audit score impact (estimated):** D2 On-Page moves from 10/25 to ~20/25 across the cluster; D3 Content Quality moves from 15/25 to ~20/25. Expected batch score improvement: 76.7 → ~87/100 (Healthy band).
+**Alternatives considered:** Defer Sanity edits until a content template was formalised — rejected; the audit spec is sufficient, and waiting blocks measurable score improvement.
 
 **Owner:** Teresa
 
 ---
 
-## 2026-06-16 — SEO audit of Cambridge 9709 Pure 1 cluster (all 7 published pages)
+## 2026-06-16 — SEO audit run on Cambridge 9709 Pure 1 cluster
 
-**Decision:** Ran a structured 6-dimension SEO audit across all 7 published Cambridge 9709 Pure 1 pages. Batch score: 76.7/100 (Good). All pages fall in the 70-84 band. Top three gaps: meta descriptions missing or using fallback text, no external authority links on 5 of 7 pages, hub page missing quadratics + binomial-series topic cards.
+**Decision:** Run a structured 6-dimension SEO audit across all 7 published Cambridge 9709 Pure 1 pages. Batch score: 76.7/100 (Good). Priority gaps: missing meta descriptions, no external authority links on 5 of 7 pages, hub missing two topic cards.
 
-**Why:** Phase 0 (now) is building the SEO foundation that Phase 2 compounds. Getting these 7 pages right before building more spoke pages is correct sequencing. The audit anchors the content improvement backlog against a measurable score rather than ad hoc fixes.
+**Why:** Phase 0 is building the SEO foundation that Phase 2 compounds. Auditing before building more spoke pages is correct sequencing — it anchors the improvement backlog against a measurable score rather than ad hoc intuition.
 
-**Files:**
-- `marketing/pipelines/research/seo-audit-batch-2026-06-16.md` — full audit report with scores, action list, and ready-to-paste meta description drafts
+**Alternatives considered:** Defer audit until more pages exist — rejected; fixing the first 7 well is cheaper than fixing 30 later, and the scoring baseline is more useful early.
 
 **Owner:** Teresa
 
 ---
 
-## 2026-06-16 — Three SEO fixes shipped to spyglass repo (Bucket 3 of audit)
+## 2026-06-16 — Three repo-side SEO fixes applied (Bucket 3 of audit)
 
-**Decision:** Applied three repo-side fixes from the audit action list to `akhanaton/spyglass` (`exampilot/` app):
+**Decision:** Applied three code/config fixes to `akhanaton/spyglass`: updated `llms.txt` with Cambridge 9709 Pure 1 content and corrected board references, added AI bot crawl rules to `robots.ts`, added a temporary 307 redirect `/past-papers` → `/cambridge/9709/pure-1`.
 
-1. **`public/llms.txt`** — added Cambridge 9709 Pure 1 section listing all 7 topic pages; fixed URL pattern example (was using AQA as example — unsupported board); fixed Content Accuracy line (was listing AQA and OCR).
-2. **`app/robots.ts`** — added explicit allow rules for GPTBot, ClaudeBot, PerplexityBot, Google-Extended; explicit disallow for CCBot. Satisfies GEO checklist item from `content-standards.md` and `llm-seo-mechanics` wiki article.
-3. **`next.config.ts`** — added temporary 307 redirect `/past-papers` → `/cambridge/9709/pure-1`. The `pastPaperPage` schema exists in Sanity but no Next.js route exists yet; the integration page links to `/past-papers` which would 404. `permanent: false` so it's trivially swapped once the real past-papers page (`/past-papers/9709/[paper-code]/[year]/`) ships.
+**Why:** These are the audit action items that live in the repo rather than Sanity. Shipping them separately keeps content edits (Teresa, Sanity) and code changes (Enitan, deploy) on independent tracks with no cross-dependency.
 
-**Why:** All three are code/config changes (not Sanity content). The remaining audit fixes (meta descriptions, hub topic cards, cross-links, key takeaways blocks) require Sanity Studio edits and are tracked as Bucket 1 (Teresa drafts content, pastes into Sanity).
+**Alternatives considered:** Bundle repo fixes with Bucket 1 Sanity edits into one deploy — rejected; different owners and deploy cycles, decoupling reduces coordination cost.
 
-**Owner:** Teresa (Sanity edits) / Enitan (verify deploy)
+**Owner:** Enitan (deploy) / Teresa (Sanity edits remain Bucket 1)
 
 ---
 
