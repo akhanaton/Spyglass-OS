@@ -9,3 +9,5 @@ audits/
 context/.whoami
 .vscode/
 memory/
+archives/session-summary-*.md
+connections.md

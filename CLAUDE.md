@@ -47,6 +47,8 @@ See `EXPANSIONS.md` for what to add as you grow.
 
 ## Knowledge base
 
+Read `references/wiki-operating-guide.md`
+
 At session start, read `_session_context.md` from `akhanaton/spyglass-wiki` for current project state:
 
 ```bash
