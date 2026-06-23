@@ -15,6 +15,7 @@ import argparse
 import json
 import sys
 from datetime import datetime, timedelta
+from pathlib import Path
 
 try:
     import praw
@@ -23,7 +24,7 @@ except ImportError:
     print("Run: pip install -r marketing/data_sources/requirements.txt")
     sys.exit(1)
 
-sys.path.insert(0, "..")
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import (
     BRAND_KEYWORDS,
     REDDIT_CLIENT_ID,

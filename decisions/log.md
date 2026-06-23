@@ -20,6 +20,80 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-06-23 — Marketing data modules: file-relative imports + DataForSEO seeding fix
+
+**Decision:** Fixed three bugs in `marketing/data_sources/modules/`: (1) replaced the cwd-relative `sys.path.insert(0, "..")` in `gsc_analyzer.py` and `reddit_monitor.py` with a file-relative `Path(__file__).resolve().parent.parent` so `from config import …` resolves regardless of working directory; (2) hardened `data_aggregator._fetch_dataforseo` against DataForSEO's explicit-`null` response fields (`tasks`/`result`/`items`) with `or []` guards plus an early return when there are no keywords (skips the paid call); (3) reseeded the DataForSEO fetch from the GSC **query** dimension (real keywords) instead of GSC page URLs. Added `marketing/data_sources/cache/` to `.gitignore`.
+
+**Why:** Surfaced when verifying the new DataForSEO password — `data_aggregator.py` errored on both sources from repo root. The cwd-relative import was a footgun: it only worked when run from inside `modules/`, but the aggregator (and its callers `/priorities`, performance agent) run from repo root. The seeding flaw was latent behind the GSC crash — once GSC worked, seeding DataForSEO with page URLs would have fired a paid SERP call returning meaningless results. Verified GSC fetch (12 pages) and real keyword seeds without any paid call.
+
+**Alternatives considered:** Leave the seeding as-is and just flag it (rejected — would silently waste API spend on every aggregator run). Rewrite the aggregator's data model to track keywords properly (deferred — out of scope; query-seed fix is sufficient).
+
+**Owner:** Enitan.
+
+---
+
+## 2026-06-23 — EP-146 Atlas credential: dev-only, no rotation required
+
+**Decision:** The hardcoded MongoDB Atlas credential in `test_mongodb_repositories.py` is a dev credential with no prod exposure. No rotation was performed. The fix removes the hardcoded fallback and adds a clean skip — credential hygiene resolved without rotation overhead.
+
+**Why:** Enitan confirmed the credential belongs to a dev/test Atlas cluster only. Prod was never exposed. The code fix (remove fallback, add `pytest.skip`) achieves the security goal; rotation would add overhead with no material benefit given the scope.
+
+**Alternatives considered:** Rotate regardless (rejected — unnecessary given dev-only scope).
+
+**Owner:** Enitan.
+
+---
+
+## 2026-06-23 — Combined post-654 fix branch strategy
+
+**Decision:** All post-PR#654 code fixes (EP-146, EP-145, EP-148, EP-127, EP-163, EP-149) are stacked on a single branch `akhanaton/ep-post-654-fixes` (PR #672, merged to `main` 2026-06-23 as `f5022d52`) rather than per-ticket branches.
+
+**Why:** The fixes are tightly related (all spawned from the same PR #654 merge) and small enough to review together. Per-ticket branches would fragment a coherent bug-fix pass into 6+ PRs with no cross-PR context. A standalone EP-146 PR (#671) was opened then closed and folded in when the combined approach was chosen.
+
+**Alternatives considered:** Per-ticket branches (rejected — too fragmented for a batch of related post-merge fixes).
+
+**Owner:** Enitan.
+
+---
+
+## 2026-06-22 — Park MSLQ cognitive profiling
+
+**Decision:** Park MSLQ cognitive profiling — stop further investment, do not build the student-facing MSLQ onboarding gate UI, and stop positioning it as a launch feature. No code change is required to park it: it is already inert.
+
+**Why:** Code verification (2026-06-22, two agents) confirmed MSLQ has no effect on the current or launching product — parking formalizes the de facto state. The live serving path (`GET /learning-sessions/{id}` → `QLPRuntimeService.retrieve_assessment_payload`) and session creation never read MSLQ; the MSLQ → `CardTypeSelector` → personalized-drill chain lives in `SessionPhaseAIService`, which is dormant (zero importers under `app/api/`, tests-only); the onboarding gate endpoints (`onboarding.py:137,167`) are mounted but enforced nowhere, and there is no student-facing MSLQ intake UI in `exampilot/` (only an admin read-only analytics page). Every profile consumer defaults to `profile_bucket="default"` with no NPE. The only thing forgone is future personalization — specifically the MSLQ-bias half of EP-159 (SRS card-type bias), whose launch path (`srs_batch_generation_service.py`) already runs MSLQ-free. The deterministic misconception capture (Move 37 workstream, EP-156) is the stronger, real personalization signal to invest in instead. **Revival trigger:** revisit only if we both (a) want learning-style-based card weighting and (b) have a student-facing intake that won't add onboarding friction; evidence that style-matched cards lift retention/conversion would change the mind.
+
+**Alternatives considered:** (1) Build the MSLQ frontend onboarding gate for launch — rejected; adds onboarding friction for an unproven, unwired personalization lever. (2) Keep investing in MSLQ as the "dual-profile primary differentiator" (as the wiki framed it) — rejected; it was never wired, and deterministic misconception capture is the real signal.
+
+**Owner:** Enitan.
+
+---
+
+## 2026-06-22 — Pull deterministic misconception capture hook into EP-87 scope
+
+**Decision:** The submit-side deterministic misconception capture hook is pulled into EP-87 (first slice of the lean MCQ question engine), not deferred to post-launch. On answer submit, the engine reads the selected option's tagged `misconception_id` (already present on every served question via `QLPRuntimeService._build_options` → `distractor_logic`) and writes `misconceptions_hit`. Zero AI, zero added latency. This is the prerequisite that makes Drills (and every other adaptive consumer) have a real per-student signal at launch.
+
+**Why:** Investigation of the live code (3 parallel agents, 2026-06-22) found that the "deterministic misconception capture in a ScoringService" the wiki described **does not exist**. The deterministic distractor→misconception map is built but write-only at generation time; nothing reads it back on submit. The only capture that runs is AI-inferred, on the legacy `/ai` conversation endpoint (gated on `extracted_work`), default-off. So no launching MCQ feature captures anything today. The hook is small because the data already sits on the served question — deferring it would leave Drills' core value proposition ("ramps as you improve") with no signal to consume. What would change the mind: if seed QLPs ship with poorly-tagged `distractor_logic`, the signal is thin and the hook's value drops until tagging QA improves.
+
+**Alternatives considered:** (1) Keep Drills a post-launch consumer and ship it as a non-adaptive practice mode first — rejected, it guts the differentiator. (2) Revive the AI `StudentWorkEvaluator` capture path — rejected, expensive, legacy, default-off, and overkill when a deterministic lookup suffices.
+
+**Update 2026-06-22 (reconciliation):** Full git-history trace confirmed EP-87 is correctly Done — it shipped Phase 0 **render-only** (commit `92ce2c24`, PR #624). The scoring engine (`ScoringService`/`AttemptRepository`/`question_delivery`) was always Phase 1, never built, and exists only in design docs — no hidden branch/worktree. Rather than reopen EP-87 (founder choice, AskUserQuestion), filed **EP-162 "QLP serving Phase 1"** as the real foundation; EP-156 (capture hook) is now blocked-by EP-162. `misconceptions_hit` persistence is a named line item inside Phase 1's `AttemptRepository`.
+
+**Owner:** Enitan.
+
+---
+
+## 2026-06-22 — Move 37: supermemory as the personalization spine
+
+**Decision:** Adopt "capture once, personalize everywhere" as the architecture for launch adaptivity. The committed capture hook writes each misconception hit to supermemory (`student_{userId}`) as a durable student memory; `SUPERMEMORY_ENABLED` is flipped on; every AI consumer (Drills explanation generator first, then knowledge-state one-liner, Socratic hints, future coaching) reads the same container. MongoDB stays system-of-record; supermemory is a rebuildable, AI-facing read layer. Full analysis at `references/move-37-supermemory-personalization-spine-2026-06-22.md` (status: proposed). Three stacked plays: B (zero-AI capture, now/EP-87) → A (supermemory spine, first Drills slice) → C (ERI readiness narrative, Phase 1).
+
+**Why:** The conventional move wires misconception consumption into each feature separately — N integrations that grow with every new feature. The off-board move writes the signal once into the student-keyed memory layer already built and shelved, and lets every current and future AI feature read it for free. It turns the single committed hook into compounding, cross-session personalization — maximum leverage, minimal new dev, which was the explicit constraint. Reframes supermemory from deferred-legacy to the actual spine. What would change the mind: if supermemory's latency/cost/availability on the personalization path proves unworkable at scale, fall back to reading misconceptions directly from MongoDB per feature (the conventional path) — the capture hook and MongoDB records make that fallback always available.
+
+**Alternatives considered:** Per-feature point-to-point wiring (the convention — rejected as non-compounding); reviving the AI evaluator as the signal source (rejected — see EP-87 entry above).
+
+**Owner:** Enitan.
+
+---
+
 ## 2026-06-16 — Design system sync cadence: quarterly via /tune
 
 **Decision:** Claude Design → repo token sync is checked quarterly (March/June/September/December `/tune` cycles), not monthly or ad hoc. Added as a named check in `tune/SKILL.md` Steps 1–4. If a sync is needed and straightforward, it runs in-session; otherwise a Linear issue is filed.

@@ -121,6 +121,22 @@ def _fetch_gsc(days: int) -> dict:
         return {}
 
 
+def _fetch_gsc_top_queries(days: int, limit: int = 30) -> list[str]:
+    """Fetch top GSC search queries (real keywords) to seed DataForSEO. Returns [] on failure.
+
+    DataForSEO's SERP endpoint needs search keywords, not page URLs — seeding it from
+    gsc page data produced meaningless lookups, so pull the query dimension instead.
+    """
+    try:
+        from gsc_analyzer import get_gsc_service, query_gsc
+        service = get_gsc_service()
+        rows = query_gsc(service, days=days, top=limit, dimension="query")
+        return [row["keys"][0] for row in rows if row.get("keys")]
+    except Exception as e:
+        print(f"  GSC query fetch failed: {e}")
+        return []
+
+
 def _fetch_dataforseo(keywords: list[str]) -> dict:
     """Fetch keyword rankings from DataForSEO for tracked keywords. Returns {} on failure."""
     import base64
@@ -129,6 +145,9 @@ def _fetch_dataforseo(keywords: list[str]) -> dict:
     login = os.getenv("DATAFORSEO_LOGIN", "")
     password = os.getenv("DATAFORSEO_PASSWORD", "")
     if not login or not password:
+        return {}
+    if not keywords:
+        # No seeds to look up — skip the (paid) API call entirely.
         return {}
 
     try:
@@ -152,15 +171,18 @@ def _fetch_dataforseo(keywords: list[str]) -> dict:
             data = json.loads(resp.read().decode())
 
         result = {}
-        for task in data.get("tasks", []):
-            for res in task.get("result", []):
-                for item in res.get("items", []):
+        # DataForSEO returns explicit null (not an absent key) for tasks/result/items
+        # when a query yields nothing, so `.get(k, [])` is not enough — guard with `or []`.
+        for task in (data.get("tasks") or []):
+            for res in (task.get("result") or []):
+                items = res.get("items") or []
+                for item in items:
                     if item.get("type") == "organic":
                         url = _normalise_url(item.get("url", ""))
                         rank = item.get("rank_absolute", None)
                         features = [
                             i.get("type")
-                            for i in res.get("items", [])
+                            for i in items
                             if i.get("type") not in ("organic",) and i.get("rank_absolute", 99) < (rank or 99)
                         ]
                         if url:
@@ -240,8 +262,9 @@ def aggregate(days: int = 30, force_refresh: bool = False) -> dict:
 
     if configured["dataforseo"]:
         print("  Fetching DataForSEO...")
-        # Use GSC pages as keyword seeds if available
-        seed_keywords = list(gsc_data.keys())[:30]
+        # Seed from real GSC search queries (not page URLs). Skips the paid call
+        # when GSC isn't connected or returns no queries.
+        seed_keywords = _fetch_gsc_top_queries(days) if configured["gsc"] else []
         dfs_data = _fetch_dataforseo(seed_keywords)
 
     # Merge by normalised URL
