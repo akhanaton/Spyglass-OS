@@ -32,11 +32,11 @@ Your child knows what they need to improve. ExamPilot shows them exactly how.
 **Body (3–4 sentences):**
 The October/November resit is 10 weeks away. That's not much time, and generic revision won't be enough. ExamPilot identifies the specific topics holding your child back on Cambridge 9709 and builds a targeted practice plan around them. Every session closes a real gap — not just covers material they already know.
 
+**Trust line before CTA:**
+GDPR compliant. Built for under-18s. No credit card required to start.
+
 **CTA button:**
 Start a free trial for your child →
-
-**Trust line beneath CTA:**
-GDPR compliant. Built for under-18s. No credit card required to start.
 
 ---
 
