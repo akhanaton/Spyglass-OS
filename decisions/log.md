@@ -20,6 +20,18 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-06-23 — Free beta end policy: 14-day trial
+
+**Decision:** Each user gets 14 days from signup before hitting the paywall. Trial-based, not fixed-date or first-N-free.
+
+**Why:** Industry default. Fair to all users regardless of signup date. Makes conversion math predictable. Fixed date punishes late beta joiners; first-N-free creates a permanent two-tier cohort.
+
+**Alternatives considered:** Fixed cutoff date (punishes late joiners, harder to communicate); first-N-free (permanent free cohort is a management burden).
+
+**Owner:** Enitan. Closes EP-106. Unblocks EP-22 (Dodo checkout). Implementation: `trial_started_at` per user, paywall check compares `now - trial_started_at > 14 days`.
+
+---
+
 ## 2026-06-23 — Marketing data modules: file-relative imports + DataForSEO seeding fix
 
 **Decision:** Fixed three bugs in `marketing/data_sources/modules/`: (1) replaced the cwd-relative `sys.path.insert(0, "..")` in `gsc_analyzer.py` and `reddit_monitor.py` with a file-relative `Path(__file__).resolve().parent.parent` so `from config import …` resolves regardless of working directory; (2) hardened `data_aggregator._fetch_dataforseo` against DataForSEO's explicit-`null` response fields (`tasks`/`result`/`items`) with `or []` guards plus an early return when there are no keywords (skips the paid call); (3) reseeded the DataForSEO fetch from the GSC **query** dimension (real keywords) instead of GSC page URLs. Added `marketing/data_sources/cache/` to `.gitignore`.
@@ -1015,16 +1027,6 @@ Skills/commands updated: `write-x/SKILL.md` (8 path edits), `repurpose.md` (3 ed
 
 ---
 
-## 2026-06-02 — Product repo for schema work is not accessible from this environment
-
-**Finding (not a decision — flag for follow-up):** The product-repo schema work (de-emphasise schema as a citation signal in the exampilot.io app's JSON-LD) **cannot be actioned from the OS environment.** `akhanaton/spyglass` does not resolve, `$SPYGLASS_PRODUCT_REPO` is unset, and no repo reachable by the `akhanaton` gh login is the exampilot.io Next.js/Sanity app (`seomachine` = SEO content workspace; `SocraticLM` = unrelated ML repo). The frontend is documented only in the wiki (`wiki/engineering/frontend/frontend-component-system.md`: `JsonLd.tsx` exports 5 JSON-LD components injecting `<script type="application/ld+json">`, base URL `https://www.exampilot.io`) but lives in a codebase this account can't see (private/other-owner/not-on-this-account).
-
-**To unblock:** provide the correct repo path, grant the `akhanaton` login access, or clone it locally and set `$SPYGLASS_PRODUCT_REPO`. The change itself is scoped from the wiki doc (review the 5 `JsonLd.tsx` components; keep them for rich results, stop justifying them as a citation lever; consider adding a VideoObject component for embedded explainers).
-
-**Owner:** Enitan
-
----
-
 ## 2026-06-02 — YouTube epic + schema-repo task created in Linear (all assigned to Enitan)
 
 **Decision:** Created the YouTube initiative in Linear under team Exampilot, and converted every production/gh follow-up into a Linear issue assigned to Enitan (per request: "make any production gh task a Linear issue for now and assign to me").
@@ -1044,18 +1046,3 @@ Skills/commands updated: `write-x/SKILL.md` (8 path edits), `repurpose.md` (3 ed
 
 **Owner:** Enitan
 
----
-
-## 2026-06-02 — OS changes committed + pushed; EP-78 title cleaned up
-
-**Decision:** Committed and pushed all session work to `origin/main` (this repo's direct-to-main convention), split into two logical commits, then dropped the placeholder prefix from the parent epic's title.
-
-**Commits (pushed to `akhanaton/Spyglass-OS`):**
-- `ac8a563` — `feat: align schema doctrine with Ahrefs 2026 + scope YouTube initiative` (schema-markup + seo-quality-check skills, `references/youtube-presence-strategy.md`, this decision log)
-- `59a96fd` — `feat: add move-37 skill + tune integration; stage EP-76 Plan B and tutor flywheel analysis` (pre-existing uncommitted WIP that predated this session: move-37 skill, tune update, content-pipeline Plan B, tutor flywheel analysis)
-
-**Linear:** Renamed parent **EP-78** from "EP-YT: YouTube presence…" to "YouTube presence as a core GEO/citation channel" — the `EP-YT:` was a placeholder made redundant by the real identifier. Slug updated to match. No other fields changed.
-
-**Note:** The wiki `_session_context.md` correction was a separate `spyglass-wiki` commit earlier in the session. Memory (`~/.claude/...`) is updated but lives outside this repo.
-
-**Owner:** Enitan
