@@ -1,0 +1,652 @@
+{
+  "additional_keywords": {
+    "a level maths coordinate geometry": {
+      "keyword": "a level maths coordinate geometry",
+      "volume": 110,
+      "source": "pass2:a level maths coordinate geometry"
+    },
+    "coordinate geometry a level maths": {
+      "keyword": "coordinate geometry a level maths",
+      "volume": 110,
+      "source": "pass2:a level maths coordinate geometry"
+    },
+    "a level maths coordinate geometry questions": {
+      "keyword": "a level maths coordinate geometry questions",
+      "volume": 20,
+      "source": "pass2:a level maths coordinate geometry"
+    },
+    "coordinate geometry a level maths questions": {
+      "keyword": "coordinate geometry a level maths questions",
+      "volume": 20,
+      "source": "pass2:a level maths coordinate geometry"
+    },
+    "a level maths coordinate geometry circles": {
+      "keyword": "a level maths coordinate geometry circles",
+      "volume": 10,
+      "source": "pass2:a level maths coordinate geometry"
+    },
+    "aqa a level maths coordinate geometry questions": {
+      "keyword": "aqa a level maths coordinate geometry questions",
+      "volume": 10,
+      "source": "pass2:a level maths coordinate geometry"
+    },
+    "a level maths coordinate geometry exam questions": {
+      "keyword": "a level maths coordinate geometry exam questions",
+      "volume": 10,
+      "source": "pass2:a level maths coordinate geometry"
+    },
+    "a level further maths vectors questions": {
+      "keyword": "a level further maths vectors questions",
+      "volume": 70,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "a level maths vectors questions": {
+      "keyword": "a level maths vectors questions",
+      "volume": 70,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "vectors a level maths questions": {
+      "keyword": "vectors a level maths questions",
+      "volume": 50,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "vectors a level maths exam questions": {
+      "keyword": "vectors a level maths exam questions",
+      "volume": 40,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "a level maths vectors exam questions": {
+      "keyword": "a level maths vectors exam questions",
+      "volume": 40,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "a level maths vectors questions and answers pdf": {
+      "keyword": "a level maths vectors questions and answers pdf",
+      "volume": 40,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "3d vectors a level maths exam questions": {
+      "keyword": "3d vectors a level maths exam questions",
+      "volume": 30,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "edexcel a level maths vectors exam questions": {
+      "keyword": "edexcel a level maths vectors exam questions",
+      "volume": 30,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "a level maths edexcel vectors exam questions": {
+      "keyword": "a level maths edexcel vectors exam questions",
+      "volume": 20,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "vectors questions a level maths": {
+      "keyword": "vectors questions a level maths",
+      "volume": 20,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "a level maths vectors questions pdf": {
+      "keyword": "a level maths vectors questions pdf",
+      "volume": 10,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "3d vectors a level maths questions": {
+      "keyword": "3d vectors a level maths questions",
+      "volume": 10,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "vectors a level maths questions edexcel": {
+      "keyword": "vectors a level maths questions edexcel",
+      "volume": 10,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "edexcel a level further maths vectors questions": {
+      "keyword": "edexcel a level further maths vectors questions",
+      "volume": 10,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "a level maths vectors questions edexcel": {
+      "keyword": "a level maths vectors questions edexcel",
+      "volume": 10,
+      "source": "pass2:a level maths vectors questions"
+    },
+    "a level maths trigonometry": {
+      "keyword": "a level maths trigonometry",
+      "volume": 210,
+      "source": "pass2:a level maths trigonometry"
+    },
+    "trigonometry a level maths": {
+      "keyword": "trigonometry a level maths",
+      "volume": 210,
+      "source": "pass2:a level maths trigonometry"
+    },
+    "a level maths trigonometry questions": {
+      "keyword": "a level maths trigonometry questions",
+      "volume": 70,
+      "source": "pass2:a level maths trigonometry"
+    },
+    "trigonometry a level maths questions": {
+      "keyword": "trigonometry a level maths questions",
+      "volume": 40,
+      "source": "pass2:a level maths trigonometry"
+    },
+    "maths genie trigonometry a level": {
+      "keyword": "maths genie trigonometry a level",
+      "volume": 20,
+      "source": "pass2:a level maths trigonometry"
+    },
+    "a level maths trigonometry exam questions": {
+      "keyword": "a level maths trigonometry exam questions",
+      "volume": 20,
+      "source": "pass2:a level maths trigonometry"
+    },
+    "trigonometry and modelling a level maths": {
+      "keyword": "trigonometry and modelling a level maths",
+      "volume": 20,
+      "source": "pass2:a level maths trigonometry"
+    },
+    "aqa a level maths trigonometry questions": {
+      "keyword": "aqa a level maths trigonometry questions",
+      "volume": 20,
+      "source": "pass2:a level maths trigonometry"
+    },
+    "edexcel a level maths trigonometry": {
+      "keyword": "edexcel a level maths trigonometry",
+      "volume": 10,
+      "source": "pass2:a level maths trigonometry"
+    },
+    "a level maths edexcel trigonometry questions": {
+      "keyword": "a level maths edexcel trigonometry questions",
+      "volume": 10,
+      "source": "pass2:a level maths trigonometry"
+    },
+    "trigonometry a level maths year 1": {
+      "keyword": "trigonometry a level maths year 1",
+      "volume": 10,
+      "source": "pass2:a level maths trigonometry"
+    },
+    "a level maths trigonometry year 1": {
+      "keyword": "a level maths trigonometry year 1",
+      "volume": 10,
+      "source": "pass2:a level maths trigonometry"
+    },
+    "a level maths trigonometry questions and answers": {
+      "keyword": "a level maths trigonometry questions and answers",
+      "volume": 10,
+      "source": "pass2:a level maths trigonometry"
+    },
+    "functions maths a level": {
+      "keyword": "functions maths a level",
+      "volume": 260,
+      "source": "pass2:a level maths functions"
+    },
+    "a-level maths functions": {
+      "keyword": "a-level maths functions",
+      "volume": 260,
+      "source": "pass2:a level maths functions"
+    },
+    "functions a level maths": {
+      "keyword": "functions a level maths",
+      "volume": 260,
+      "source": "pass2:a level maths functions"
+    },
+    "a level maths functions": {
+      "keyword": "a level maths functions",
+      "volume": 260,
+      "source": "pass2:a level maths functions"
+    },
+    "modulus functions a level maths": {
+      "keyword": "modulus functions a level maths",
+      "volume": 170,
+      "source": "pass2:a level maths functions"
+    },
+    "functions a level maths questions": {
+      "keyword": "functions a level maths questions",
+      "volume": 70,
+      "source": "pass2:a level maths functions"
+    },
+    "a level maths functions questions": {
+      "keyword": "a level maths functions questions",
+      "volume": 70,
+      "source": "pass2:a level maths functions"
+    },
+    "trigonometric functions a level maths": {
+      "keyword": "trigonometric functions a level maths",
+      "volume": 70,
+      "source": "pass2:a level maths functions"
+    },
+    "trig functions a level maths": {
+      "keyword": "trig functions a level maths",
+      "volume": 70,
+      "source": "pass2:a level maths functions"
+    },
+    "inverse functions a level maths": {
+      "keyword": "inverse functions a level maths",
+      "volume": 50,
+      "source": "pass2:a level maths functions"
+    },
+    "modulus functions a level maths questions": {
+      "keyword": "modulus functions a level maths questions",
+      "volume": 50,
+      "source": "pass2:a level maths functions"
+    },
+    "increasing and decreasing functions a level maths": {
+      "keyword": "increasing and decreasing functions a level maths",
+      "volume": 40,
+      "source": "pass2:a level maths functions"
+    },
+    "algebra and functions a level maths": {
+      "keyword": "algebra and functions a level maths",
+      "volume": 40,
+      "source": "pass2:a level maths functions"
+    },
+    "functions and graphs a level maths": {
+      "keyword": "functions and graphs a level maths",
+      "volume": 40,
+      "source": "pass2:a level maths functions"
+    },
+    "integrating trig functions a level maths": {
+      "keyword": "integrating trig functions a level maths",
+      "volume": 30,
+      "source": "pass2:a level maths functions"
+    },
+    "hidden quadratics a level maths": {
+      "keyword": "hidden quadratics a level maths",
+      "volume": 70,
+      "source": "pass2:a level maths quadratics"
+    },
+    "quadratics a level maths": {
+      "keyword": "quadratics a level maths",
+      "volume": 50,
+      "source": "pass2:a level maths quadratics"
+    },
+    "a level maths quadratics": {
+      "keyword": "a level maths quadratics",
+      "volume": 40,
+      "source": "pass2:a level maths quadratics"
+    },
+    "disguised quadratics a level maths": {
+      "keyword": "disguised quadratics a level maths",
+      "volume": 40,
+      "source": "pass2:a level maths quadratics"
+    },
+    "hidden quadratics a level maths questions": {
+      "keyword": "hidden quadratics a level maths questions",
+      "volume": 30,
+      "source": "pass2:a level maths quadratics"
+    },
+    "a level maths modelling with quadratics": {
+      "keyword": "a level maths modelling with quadratics",
+      "volume": 20,
+      "source": "pass2:a level maths quadratics"
+    },
+    "quadratics a level maths questions": {
+      "keyword": "quadratics a level maths questions",
+      "volume": 20,
+      "source": "pass2:a level maths quadratics"
+    },
+    "a level maths quadratics questions": {
+      "keyword": "a level maths quadratics questions",
+      "volume": 20,
+      "source": "pass2:a level maths quadratics"
+    },
+    "maths genie quadratics a level": {
+      "keyword": "maths genie quadratics a level",
+      "volume": 10,
+      "source": "pass2:a level maths quadratics"
+    },
+    "sketching quadratics a level maths": {
+      "keyword": "sketching quadratics a level maths",
+      "volume": 10,
+      "source": "pass2:a level maths quadratics"
+    },
+    "a level maths quadratics notes": {
+      "keyword": "a level maths quadratics notes",
+      "volume": 10,
+      "source": "pass2:a level maths quadratics"
+    },
+    "a level maths hidden quadratics": {
+      "keyword": "a level maths hidden quadratics",
+      "volume": 10,
+      "source": "pass2:a level maths quadratics"
+    },
+    "modelling with quadratics a level maths questions": {
+      "keyword": "modelling with quadratics a level maths questions",
+      "volume": 10,
+      "source": "pass2:a level maths quadratics"
+    },
+    "how to revise for a level maths": {
+      "keyword": "how to revise for a level maths",
+      "volume": 170,
+      "source": "pass2:how to revise a level maths"
+    },
+    "how to revise a level maths": {
+      "keyword": "how to revise a level maths",
+      "volume": 170,
+      "source": "pass2:how to revise a level maths"
+    },
+    "how to revise maths a level": {
+      "keyword": "how to revise maths a level",
+      "volume": 170,
+      "source": "pass2:how to revise a level maths"
+    },
+    "how to revise for maths a level": {
+      "keyword": "how to revise for maths a level",
+      "volume": 170,
+      "source": "pass2:how to revise a level maths"
+    },
+    "how to revise for a level maths in one day": {
+      "keyword": "how to revise for a level maths in one day",
+      "volume": 10,
+      "source": "pass2:how to revise a level maths"
+    },
+    "how to revise a level maths last minute": {
+      "keyword": "how to revise a level maths last minute",
+      "volume": 10,
+      "source": "pass2:how to revise a level maths"
+    },
+    "how to revise further maths a level": {
+      "keyword": "how to revise further maths a level",
+      "volume": 10,
+      "source": "pass2:how to revise a level maths"
+    },
+    "how to revise for further maths a level": {
+      "keyword": "how to revise for further maths a level",
+      "volume": 10,
+      "source": "pass2:how to revise a level maths"
+    },
+    "how to revise for a level maths edexcel": {
+      "keyword": "how to revise for a level maths edexcel",
+      "volume": 10,
+      "source": "pass2:how to revise a level maths"
+    },
+    "edexcel a level maths past papers by topic": {
+      "keyword": "edexcel a level maths past papers by topic",
+      "volume": 20,
+      "source": "pass2:a level maths past papers by topic"
+    },
+    "a level maths past papers by topic": {
+      "keyword": "a level maths past papers by topic",
+      "volume": 20,
+      "source": "pass2:a level maths past papers by topic"
+    },
+    "a level edexcel maths past papers by topic": {
+      "keyword": "a level edexcel maths past papers by topic",
+      "volume": 10,
+      "source": "pass2:a level maths past papers by topic"
+    },
+    "best a level maths resources": {
+      "keyword": "best a level maths resources",
+      "volume": 30,
+      "source": "pass2:best a level maths resources"
+    },
+    "best resources for a level maths": {
+      "keyword": "best resources for a level maths",
+      "volume": 10,
+      "source": "pass2:best a level maths resources"
+    },
+    "a level maths practice questions": {
+      "keyword": "a level maths practice questions",
+      "volume": 390,
+      "source": "pass2:a level maths practice questions"
+    },
+    "maths a level practice questions": {
+      "keyword": "maths a level practice questions",
+      "volume": 390,
+      "source": "pass2:a level maths practice questions"
+    },
+    "edexcel a level maths practice questions": {
+      "keyword": "edexcel a level maths practice questions",
+      "volume": 30,
+      "source": "pass2:a level maths practice questions"
+    },
+    "a level further maths practice questions": {
+      "keyword": "a level further maths practice questions",
+      "volume": 30,
+      "source": "pass2:a level maths practice questions"
+    },
+    "a level maths edexcel practice questions": {
+      "keyword": "a level maths edexcel practice questions",
+      "volume": 20,
+      "source": "pass2:a level maths practice questions"
+    },
+    "aqa a level maths practice questions": {
+      "keyword": "aqa a level maths practice questions",
+      "volume": 20,
+      "source": "pass2:a level maths practice questions"
+    },
+    "a level maths practice questions free": {
+      "keyword": "a level maths practice questions free",
+      "volume": 10,
+      "source": "pass2:a level maths practice questions"
+    },
+    "a level maths practice questions by topic": {
+      "keyword": "a level maths practice questions by topic",
+      "volume": 10,
+      "source": "pass2:a level maths practice questions"
+    },
+    "ocr a level maths practice questions": {
+      "keyword": "ocr a level maths practice questions",
+      "volume": 10,
+      "source": "pass2:a level maths practice questions"
+    },
+    "a level maths mock exam": {
+      "keyword": "a level maths mock exam",
+      "volume": 10,
+      "source": "pass2:a level maths mock exam"
+    },
+    "a level maths mock exam papers": {
+      "keyword": "a level maths mock exam papers",
+      "volume": 10,
+      "source": "pass2:a level maths mock exam"
+    },
+    "cambridge international a level maths past papers": {
+      "keyword": "cambridge international a level maths past papers",
+      "volume": 20,
+      "source": "pass2:cambridge international maths past papers"
+    },
+    "a level maths tips": {
+      "keyword": "a level maths tips",
+      "volume": 30,
+      "source": "pass2:a level maths tips"
+    },
+    "tips for a level maths": {
+      "keyword": "tips for a level maths",
+      "volume": 30,
+      "source": "pass2:a level maths tips"
+    },
+    "a level maths revision tips": {
+      "keyword": "a level maths revision tips",
+      "volume": 10,
+      "source": "pass2:a level maths tips"
+    },
+    "tips for a level maths exam": {
+      "keyword": "tips for a level maths exam",
+      "volume": 10,
+      "source": "pass2:a level maths tips"
+    },
+    "a level maths exam tips": {
+      "keyword": "a level maths exam tips",
+      "volume": 10,
+      "source": "pass2:a level maths tips"
+    }
+  },
+  "paa_questions": {
+    "What is integration in a level Maths?": {
+      "question": "What is integration in a level Maths?",
+      "source_keyword": "a level maths integration"
+    },
+    "What grade is 67% in a level Maths?": {
+      "question": "What grade is 67% in a level Maths?",
+      "source_keyword": "a level maths integration"
+    },
+    "Is integration the hardest A-level Maths topic?": {
+      "question": "Is integration the hardest A-level Maths topic?",
+      "source_keyword": "a level maths integration"
+    },
+    "Is Maths integration hard?": {
+      "question": "Is Maths integration hard?",
+      "source_keyword": "a level maths integration"
+    },
+    "Is differentiation a level math hard?": {
+      "question": "Is differentiation a level math hard?",
+      "source_keyword": "a level maths differentiation"
+    },
+    "What is differentiation used for in a level maths?": {
+      "question": "What is differentiation used for in a level maths?",
+      "source_keyword": "a level maths differentiation"
+    },
+    "What grade is 67% in a level maths?": {
+      "question": "What grade is 67% in a level maths?",
+      "source_keyword": "a level maths practice questions"
+    },
+    "What is basic differentiation in a level maths?": {
+      "question": "What is basic differentiation in a level maths?",
+      "source_keyword": "a level maths differentiation"
+    },
+    "Is a grade 7 enough for a level maths?": {
+      "question": "Is a grade 7 enough for a level maths?",
+      "source_keyword": "a level maths practice questions"
+    },
+    "How many get an A* in a level maths?": {
+      "question": "How many get an A* in a level maths?",
+      "source_keyword": "a level maths practice questions"
+    },
+    "How to get an A* in a level in mathematics?": {
+      "question": "How to get an A* in a level in mathematics?",
+      "source_keyword": "a level maths practice questions"
+    }
+  },
+  "geo_volumes": {
+    "a level maths revision": {
+      "UK": 0,
+      "UAE": 0,
+      "Pakistan": 0,
+      "Malaysia": 0,
+      "Singapore": 0,
+      "Nigeria": 0,
+      "Spain": 0,
+      "France": 0,
+      "Germany": 0,
+      "Portugal": 0,
+      "EU_aggregate": 0
+    },
+    "a level maths integration": {
+      "UK": 0,
+      "UAE": 0,
+      "Pakistan": 0,
+      "Malaysia": 0,
+      "Singapore": 0,
+      "Nigeria": 0,
+      "Spain": 0,
+      "France": 0,
+      "Germany": 0,
+      "Portugal": 0,
+      "EU_aggregate": 0
+    },
+    "a level maths differentiation": {
+      "UK": 0,
+      "UAE": 0,
+      "Pakistan": 0,
+      "Malaysia": 0,
+      "Singapore": 0,
+      "Nigeria": 0,
+      "Spain": 0,
+      "France": 0,
+      "Germany": 0,
+      "Portugal": 0,
+      "EU_aggregate": 0
+    },
+    "cambridge 9709 past papers": {
+      "UK": 0,
+      "UAE": 0,
+      "Pakistan": 0,
+      "Malaysia": 0,
+      "Singapore": 0,
+      "Nigeria": 0,
+      "Spain": 0,
+      "France": 0,
+      "Germany": 0,
+      "Portugal": 0,
+      "EU_aggregate": 0
+    },
+    "a level maths questions by topic": {
+      "UK": 0,
+      "UAE": 0,
+      "Pakistan": 0,
+      "Malaysia": 0,
+      "Singapore": 0,
+      "Nigeria": 0,
+      "Spain": 0,
+      "France": 0,
+      "Germany": 0,
+      "Portugal": 0,
+      "EU_aggregate": 0
+    },
+    "cambridge a level maths": {
+      "UK": 0,
+      "UAE": 0,
+      "Pakistan": 0,
+      "Malaysia": 0,
+      "Singapore": 0,
+      "Nigeria": 0,
+      "Spain": 0,
+      "France": 0,
+      "Germany": 0,
+      "Portugal": 0,
+      "EU_aggregate": 0
+    },
+    "a level maths past papers": {
+      "UK": 0,
+      "UAE": 0,
+      "Pakistan": 0,
+      "Malaysia": 0,
+      "Singapore": 0,
+      "Nigeria": 0,
+      "Spain": 0,
+      "France": 0,
+      "Germany": 0,
+      "Portugal": 0,
+      "EU_aggregate": 0
+    },
+    "a level maths practice questions": {
+      "UK": 0,
+      "UAE": 0,
+      "Pakistan": 0,
+      "Malaysia": 0,
+      "Singapore": 0,
+      "Nigeria": 0,
+      "Spain": 0,
+      "France": 0,
+      "Germany": 0,
+      "Portugal": 0,
+      "EU_aggregate": 0
+    },
+    "9709 past papers": {
+      "UK": 0,
+      "UAE": 0,
+      "Pakistan": 0,
+      "Malaysia": 0,
+      "Singapore": 0,
+      "Nigeria": 0,
+      "Spain": 0,
+      "France": 0,
+      "Germany": 0,
+      "Portugal": 0,
+      "EU_aggregate": 0
+    },
+    "a level maths trigonometry": {
+      "UK": 0,
+      "UAE": 0,
+      "Pakistan": 0,
+      "Malaysia": 0,
+      "Singapore": 0,
+      "Nigeria": 0,
+      "Spain": 0,
+      "France": 0,
+      "Germany": 0,
+      "Portugal": 0,
+      "EU_aggregate": 0
+    }
+  }
+}

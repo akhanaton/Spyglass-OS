@@ -1,0 +1,60 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "seomachine",
+  "elements": [
+    {
+      "id": "title",
+      "type": "text",
+      "x": 100,
+      "y": 10,
+      "width": 400,
+      "height": 25,
+      "text": "f(x) and f⁻¹(x) — Reflection in y = x",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "center"
+    },
+    {
+      "id": "axes-note",
+      "type": "text",
+      "x": 40,
+      "y": 50,
+      "width": 500,
+      "height": 60,
+      "text": "Draw this in Excalidraw:\n• Axes with origin O\n• A curve f(x) (e.g., y = x² for x ≥ 0)\n• Its inverse f⁻¹(x) (e.g., y = √x) as the reflection\n• Dashed line y = x as the mirror\n• Label key points: e.g., (2, 4) on f maps to (4, 2) on f⁻¹\n• Show that (a, b) on f becomes (b, a) on f⁻¹",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#868e96"
+    },
+    {
+      "id": "key-points",
+      "type": "rectangle",
+      "x": 40,
+      "y": 140,
+      "width": 500,
+      "height": 80,
+      "strokeColor": "#5c7cfa",
+      "backgroundColor": "#dbe4ff",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": { "type": 3 }
+    },
+    {
+      "id": "key-text",
+      "type": "text",
+      "x": 60,
+      "y": 150,
+      "width": 460,
+      "height": 60,
+      "text": "Key features to include:\n1. f(x) curve (solid, colour 1)\n2. f⁻¹(x) curve (solid, colour 2)\n3. y = x dashed mirror line\n4. Corresponding points (a,b) and (b,a) with dotted connector\n5. Domain of f⁻¹ = Range of f (annotate on axes)",
+      "fontSize": 12,
+      "fontFamily": 1
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}

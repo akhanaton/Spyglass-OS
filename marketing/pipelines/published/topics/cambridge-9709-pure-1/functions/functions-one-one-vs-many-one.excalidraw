@@ -1,0 +1,36 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "seomachine",
+  "elements": [
+    {
+      "id": "title",
+      "type": "text",
+      "x": 100,
+      "y": 10,
+      "width": 500,
+      "height": 25,
+      "text": "One-One vs Many-One: The Horizontal Line Test",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "center"
+    },
+    {
+      "id": "instructions",
+      "type": "text",
+      "x": 40,
+      "y": 50,
+      "width": 580,
+      "height": 100,
+      "text": "Draw this in Excalidraw — two side-by-side diagrams:\n\nLEFT PANEL: One-one function (e.g., f(x) = 2x + 1, straight line)\n• Draw the line\n• Draw a horizontal dashed line — it crosses ONCE\n• Label: \"One-one ✓ — inverse EXISTS\"\n• Green border\n\nRIGHT PANEL: Many-one function (e.g., f(x) = x², full parabola)\n• Draw the parabola\n• Draw a horizontal dashed line — it crosses TWICE\n• Label: \"Many-one ✗ — inverse does NOT exist (without domain restriction)\"\n• Red border\n\nBottom note: \"Restrict domain of x² to x ≥ 0 → now it's one-one → inverse exists (f⁻¹(x) = √x)\"",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#868e96"
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}

@@ -1,0 +1,19 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#a5d8ff', 'primaryTextColor': '#1e1e1e', 'primaryBorderColor': '#1e1e1e', 'lineColor': '#1e1e1e'}}}%%
+flowchart LR
+    Y(("y<br/><i>what you<br/>want</i>")) -->|"dy/dx"| X(("x<br/><i>connecting<br/>variable</i>")) -->|"dx/dt"| T(("t<br/><i>time</i>"))
+
+    FORMULA["dy/dt = dy/dx × dx/dt"]
+
+    style Y fill:#a5d8ff,stroke:#1e1e1e,stroke-width:2px
+    style X fill:#d0bfff,stroke:#1e1e1e,stroke-width:2px
+    style T fill:#ffd8a8,stroke:#1e1e1e,stroke-width:2px
+    style FORMULA fill:#dbe4ff,stroke:#5c7cfa,stroke-width:2px
+
+    subgraph " "
+        direction LR
+        EX_A(("A = 4πr²<br/><i>area</i>")) -->|"dA/dr = 8πr"| EX_R(("r<br/><i>radius</i>")) -->|"dr/dt = 0.5"| EX_T(("t<br/><i>time</i>"))
+    end
+
+    style EX_A fill:#e9ecef,stroke:#868e96,stroke-width:1px
+    style EX_R fill:#e9ecef,stroke:#868e96,stroke-width:1px
+    style EX_T fill:#e9ecef,stroke:#868e96,stroke-width:1px

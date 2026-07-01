@@ -1,0 +1,193 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "seomachine",
+  "elements": [
+    {
+      "id": "title",
+      "type": "text",
+      "x": 150,
+      "y": 10,
+      "width": 500,
+      "height": 25,
+      "text": "Graph Transformations of y = f(x) — Summary",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "center"
+    },
+    {
+      "id": "row1-box",
+      "type": "rectangle",
+      "x": 40,
+      "y": 60,
+      "width": 360,
+      "height": 60,
+      "strokeColor": "#2f9e44",
+      "backgroundColor": "#d3f9d8",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": { "type": 3 }
+    },
+    {
+      "id": "row1-text",
+      "type": "text",
+      "x": 60,
+      "y": 70,
+      "width": 320,
+      "height": 40,
+      "text": "y = f(x) + a  →  Shift UP by a\ny = f(x) - a  →  Shift DOWN by a",
+      "fontSize": 14,
+      "fontFamily": 1
+    },
+    {
+      "id": "row1-label",
+      "type": "text",
+      "x": 420,
+      "y": 75,
+      "width": 200,
+      "height": 30,
+      "text": "VERTICAL translation\n(does what you expect)",
+      "fontSize": 12,
+      "fontFamily": 1,
+      "strokeColor": "#2f9e44"
+    },
+    {
+      "id": "row2-box",
+      "type": "rectangle",
+      "x": 40,
+      "y": 140,
+      "width": 360,
+      "height": 60,
+      "strokeColor": "#e8590c",
+      "backgroundColor": "#fff4e6",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": { "type": 3 }
+    },
+    {
+      "id": "row2-text",
+      "type": "text",
+      "x": 60,
+      "y": 150,
+      "width": 320,
+      "height": 40,
+      "text": "y = f(x + a)  →  Shift LEFT by a\ny = f(x - a)  →  Shift RIGHT by a",
+      "fontSize": 14,
+      "fontFamily": 1
+    },
+    {
+      "id": "row2-label",
+      "type": "text",
+      "x": 420,
+      "y": 155,
+      "width": 200,
+      "height": 30,
+      "text": "HORIZONTAL translation\n(OPPOSITE to what you expect!)",
+      "fontSize": 12,
+      "fontFamily": 1,
+      "strokeColor": "#e8590c"
+    },
+    {
+      "id": "row3-box",
+      "type": "rectangle",
+      "x": 40,
+      "y": 220,
+      "width": 360,
+      "height": 60,
+      "strokeColor": "#2f9e44",
+      "backgroundColor": "#d3f9d8",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": { "type": 3 }
+    },
+    {
+      "id": "row3-text",
+      "type": "text",
+      "x": 60,
+      "y": 230,
+      "width": 320,
+      "height": 40,
+      "text": "y = af(x)  →  Vertical stretch, factor a\ny = -f(x)  →  Reflect in x-axis",
+      "fontSize": 14,
+      "fontFamily": 1
+    },
+    {
+      "id": "row3-label",
+      "type": "text",
+      "x": 420,
+      "y": 235,
+      "width": 200,
+      "height": 30,
+      "text": "VERTICAL stretch/reflect\n(does what you expect)",
+      "fontSize": 12,
+      "fontFamily": 1,
+      "strokeColor": "#2f9e44"
+    },
+    {
+      "id": "row4-box",
+      "type": "rectangle",
+      "x": 40,
+      "y": 300,
+      "width": 360,
+      "height": 60,
+      "strokeColor": "#e8590c",
+      "backgroundColor": "#fff4e6",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": { "type": 3 }
+    },
+    {
+      "id": "row4-text",
+      "type": "text",
+      "x": 60,
+      "y": 310,
+      "width": 320,
+      "height": 40,
+      "text": "y = f(ax)  →  Horiz stretch, factor 1/a\ny = f(-x)  →  Reflect in y-axis",
+      "fontSize": 14,
+      "fontFamily": 1
+    },
+    {
+      "id": "row4-label",
+      "type": "text",
+      "x": 420,
+      "y": 315,
+      "width": 200,
+      "height": 30,
+      "text": "HORIZONTAL stretch/reflect\n(OPPOSITE: factor is 1/a!)",
+      "fontSize": 12,
+      "fontFamily": 1,
+      "strokeColor": "#e8590c"
+    },
+    {
+      "id": "rule-box",
+      "type": "rectangle",
+      "x": 100,
+      "y": 385,
+      "width": 500,
+      "height": 45,
+      "strokeColor": "#5c7cfa",
+      "backgroundColor": "#dbe4ff",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": { "type": 3 }
+    },
+    {
+      "id": "rule-text",
+      "type": "text",
+      "x": 120,
+      "y": 393,
+      "width": 460,
+      "height": 25,
+      "text": "Rule: Changes INSIDE f( ) affect x (horizontal, opposite)\nChanges OUTSIDE f( ) affect y (vertical, as expected)",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "textAlign": "center"
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}

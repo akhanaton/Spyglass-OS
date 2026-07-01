@@ -1,0 +1,20 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#a5d8ff', 'primaryTextColor': '#1e1e1e', 'primaryBorderColor': '#1e1e1e', 'lineColor': '#1e1e1e', 'secondaryColor': '#b2f2bb', 'tertiaryColor': '#ffd8a8'}}}%%
+flowchart TD
+    START{"What does the<br/>expression look like?"}
+
+    START -->|"Individual terms:<br/>xⁿ, constants, sums"| B1["Power Rule<br/>Bring power down,<br/>subtract one"]
+    START -->|"Bracket with power:<br/>(ax + b)ⁿ"| B2["Chain Rule<br/>Power rule on outside,<br/>× derivative of inside"]
+    START -->|"Roots, fractions,<br/>or products"| B3["Rewrite First<br/>Convert to power form,<br/>then power rule"]
+
+    B1 --> CHECK["Check: differentiate<br/>your integration answer<br/>to verify"]
+    B2 --> CHECK
+    B3 --> CHECK
+
+    SPECIAL["Special case:<br/>'Show that f'(x) = ...'<br/>→ First Principles"]
+
+    style START fill:#a5d8ff,stroke:#1e1e1e,stroke-width:2px
+    style B1 fill:#b2f2bb,stroke:#2f9e44,stroke-width:2px
+    style B2 fill:#ffd8a8,stroke:#e8590c,stroke-width:2px
+    style B3 fill:#ffc9c9,stroke:#c92a2a,stroke-width:2px
+    style CHECK fill:#f8f9fa,stroke:#868e96,stroke-width:1px,stroke-dasharray: 5 5
+    style SPECIAL fill:#dbe4ff,stroke:#5c7cfa,stroke-width:2px,stroke-dasharray: 5 5

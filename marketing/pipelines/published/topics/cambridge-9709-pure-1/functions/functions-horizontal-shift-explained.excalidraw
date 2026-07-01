@@ -1,0 +1,61 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "seomachine",
+  "elements": [
+    {
+      "id": "title",
+      "type": "text",
+      "x": 80,
+      "y": 10,
+      "width": 500,
+      "height": 25,
+      "text": "Why Does f(x + 3) Move LEFT (Not Right)?",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "center"
+    },
+    {
+      "id": "explanation",
+      "type": "text",
+      "x": 40,
+      "y": 50,
+      "width": 580,
+      "height": 120,
+      "text": "Draw this in Excalidraw:\n\nNumber line with key x values marked.\n\nFor y = f(x): the output f(5) happens at x = 5\nFor y = f(x+3): the output f(5) happens at x = 2 (because 2+3 = 5)\n\nThe SAME output occurs 3 units to the LEFT.\nThat's why f(x+3) shifts the graph LEFT by 3.\n\nShow two number lines stacked:\n  Top:    x = 5 → f(5)     [original]\n  Bottom: x = 2 → f(2+3) = f(5)  [shifted, arrow showing 3 units left]",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "strokeColor": "#868e96"
+    },
+    {
+      "id": "insight-box",
+      "type": "rectangle",
+      "x": 80,
+      "y": 190,
+      "width": 500,
+      "height": 45,
+      "strokeColor": "#e8590c",
+      "backgroundColor": "#fff4e6",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roundness": { "type": 3 }
+    },
+    {
+      "id": "insight-text",
+      "type": "text",
+      "x": 100,
+      "y": 200,
+      "width": 460,
+      "height": 25,
+      "text": "The +3 makes the input reach the target value SOONER\n→ the graph reaches each y-value 3 units earlier (further left)",
+      "fontSize": 13,
+      "fontFamily": 1,
+      "textAlign": "center"
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
