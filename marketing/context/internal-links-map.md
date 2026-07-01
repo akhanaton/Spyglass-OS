@@ -1,6 +1,6 @@
 # Internal Links Map
 
-Last updated: 2026-05-16
+Last updated: 2026-06-23
 
 ## How this file works
 
@@ -16,7 +16,7 @@ Maps ExamPilot's URL architecture and internal linking targets. The `/write-arti
 https://exampilot.io/
 
 /blog/[slug]                     → Blog articles (SEO content)
-/cambridge/[topic-slug]          → Cambridge topic hub pages (product + SEO)
+/cambridge/9709/[topic-slug]     → Cambridge 9709 topic hub pages (product + SEO)
 /cambridge-a-level-maths/        → Main Cambridge hub (pillar landing page)
 /edexcel/[topic-slug]            → Edexcel IAL topic hub pages
 /edexcel-ial-maths/              → Main Edexcel hub (pillar landing page)
@@ -52,11 +52,11 @@ Add to this table as Cambridge topic pages are built in Sanity CMS.
 
 | Topic | URL | Paper Code | Status |
 |-------|-----|------------|--------|
-| Pure Mathematics 1 | /cambridge/pure-1/ | 9709 Paper 1 | Planned |
-| Pure Mathematics 3 | /cambridge/pure-3/ | 9709 Paper 3 | Planned |
-| Statistics 1 | /cambridge/statistics-1/ | 9709 Paper 5 | Planned |
-| Mechanics 1 | /cambridge/mechanics-1/ | 9709 Paper 4 | Planned |
-| Pure Mathematics 2 | /cambridge/pure-2/ | 9709 Paper 2 | Planned |
+| Pure Mathematics 1 | /cambridge/9709/pure-1/ | 9709 Paper 1 | Live (spokes: circular-measure, integration, trigonometry confirmed) |
+| Pure Mathematics 3 | /cambridge/9709/pure-3/ | 9709 Paper 3 | Planned |
+| Statistics 1 | /cambridge/9709/statistics-1/ | 9709 Paper 5 | Planned |
+| Mechanics 1 | /cambridge/9709/mechanics-1/ | 9709 Paper 4 | Planned |
+| Pure Mathematics 2 | /cambridge/9709/pure-2/ | 9709 Paper 2 | Planned |
 
 ---
 
@@ -89,8 +89,8 @@ Hub-and-spoke architecture. Each pillar article should link to all its spoke art
 
 | Pillar Article | Target URL | Spoke Articles | Spoke URLs | Status |
 |----------------|------------|----------------|------------|--------|
-| Cambridge 9709 Pure 1 Complete Guide | /cambridge/pure-1/ | Integration by parts guide, Differentiation from first principles, Coordinate geometry worked examples, Binomial expansion questions | /blog/[slug] per article | Planned |
-| Cambridge 9709 Statistics 1 Complete Guide | /cambridge/statistics-1/ | Normal distribution guide, Probability distributions, Hypothesis testing | /blog/[slug] per article | Planned |
+| Cambridge 9709 Pure 1 Complete Guide | /cambridge/9709/pure-1/ | Integration by parts guide, Differentiation from first principles, Coordinate geometry worked examples, Binomial expansion questions | /blog/[slug] per article | Planned |
+| Cambridge 9709 Statistics 1 Complete Guide | /cambridge/9709/statistics-1/ | Normal distribution guide, Probability distributions, Hypothesis testing | /blog/[slug] per article | Planned |
 | How to revise for Cambridge 9709 | /blog/[slug] | All topic-specific guides | /blog/[slug] per article | Planned |
 
 ---

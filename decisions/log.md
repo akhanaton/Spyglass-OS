@@ -20,6 +20,82 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 ---
 
+## 2026-06-30 — EP-62 waitlist email sequence drafted and ready for Brevo
+
+**Decision:** 5-email waitlist nurture sequence drafted for Cambridge 9709 segment. Saved to `marketing/pipelines/emails/waitlist-cambridge9709-2026-06-30.md`. Not yet uploaded to Brevo.
+
+Key decisions made during drafting:
+- **Ask Sparky framed as "coming soon"** — feature not ready at launch; Email 4 introduces it as post-launch rather than omitting it entirely.
+- **Retention stat:** Karpicke & Roediger (2008, *Science*) — "over twice as much material retained after one week vs. restudying." Accurate and citable. Source: Washington University. Original study used vocabulary learning; testing effect replicated across STEM domains.
+- **Pricing language:** "EUR29/month, or EUR12/month on the annual plan" — matches website framing (monthly equivalent, not lump sum). Verified against live exampilot.io/pricing.
+- **Registered address omitted from footer for now** — to be added before Brevo goes live.
+- **Under-18 consent mechanism** — set aside; Enitan to handle separately.
+
+**Why:** EP-62 is a Phase 0 gate criterion. Sequence must be live in Brevo before traffic is driven to the landing page.
+
+**Alternatives considered:** Standard welcome sequence structure (skill default) vs. EP-62 spec — used EP-62 spec as it is waitlist-specific (pre-launch, no product access yet).
+
+**Owner:** Teresa (draft review). Enitan (Brevo upload + automation setup).
+
+**Remaining before Brevo upload:**
+- Confirm CTA links once exampilot.io pages are live (/how-it-works or /features for Emails 1-2; waitlist page for Emails 3-4; confirmation page for Email 5)
+- Add registered business address to all footers
+- Confirm founding member pricing holds at launch
+- Human review sign-off
+
+---
+
+## 2026-06-23 — EP-74 Phase 5 complete: post-production shipped, article in-review
+
+**Decision:** Completed all Phase 5 post-production steps for EP-74. Article is CMS-ready and in-review. Technical handoff to Enitan via Linear EP-168.
+
+Phase 5 steps executed:
+- **Copy-editing** (`/copy-editing`): 6-pass polish applied. No AI tells or em dashes found. Minor rhythm and vague-word fixes applied. Article clean.
+- **Schema markup** (`/schema-markup`): Article + FAQPage + BreadcrumbList JSON-LD generated and appended to review file. Key finding: `seo.ts` has no JSON-LD field — Article and BreadcrumbList must be injected at template level in the frontend, not via Sanity Studio. FAQPage described in `faq.ts` as feeding schema markup from the `faqs` array, but template wiring is unconfirmed.
+- **SEO audit** (`/seo-audit`): 93.5/100, HEALTHY. 2 Important issues resolved (full entity name added to prose; `internal-links-map.md` URL pattern corrected from `/cambridge/[topic-slug]` to `/cambridge/9709/[topic-slug]` across all 5 Cambridge entries). No critical issues. FAQ is a separate `faqs` field in Sanity, not an H2 in the body — confirmed via schema investigation.
+- **Schema investigation**: read `post.ts`, `blockContent.ts`, `faq.ts`, `seo.ts` in `studio-spyglass/schemaTypes/`. `seo.ts` fields: metaTitle (max 60), metaDescription (max 160), ogImage, canonicalUrl, noIndex — no structuredData or JSON-LD field. Q&As must be entered into the `faqs` array in Sanity, not the body.
+- **Linear EP-168 created**: comprehensive blog publishing checklist for Enitan — schema implementation (Article, FAQPage, BreadcrumbList), Sanity CMS data entry, and 5 pre-publish decisions (main image required but missing, /blog index timing, {{EMAIL_CAPTURE}} component, Teresa's author record, internal link live status). 12-item Definition of Done.
+- **Wiki capture**: `wiki/marketing/content/9709-pure1-examiner-report-research.md` committed to spyglass-wiki (166 articles total). Lint: 1 orphan (no inbound links, non-blocking).
+
+**Why:** Phase 5 completes the content pipeline and creates a clean handoff to Enitan. The article cannot publish until EP-168 is resolved. The schema gap (`seo.ts` has no JSON-LD field) is the key technical finding — template-level injection is the recommended path over a manual paste field.
+
+**Alternatives considered:** N/A — workflow checkpoint, not a branching decision.
+
+**Owner:** Teresa (content, in-review). Enitan (EP-168 technical resolution before publish).
+
+---
+
+## 2026-06-23 — EP-74 Phases 2–4 complete: keyword research, wiki check, draft published
+
+**Decision:** Completed Phases 2, 3, and 4 of EP-74 (Cambridge 9709 bridge content article).
+
+Phase 2 (keyword research): ran `/research-keywords` and `/research-serp` using DataForSEO worldwide. Primary keyword confirmed as "common mistakes in Cambridge 9709 Pure 1" (semantic primary, below planner floor — deliberate). Only angle term with measured volume: "9709 examiner report" (20/mo, LOW competition). Demand reality: ~20-40/mo direct worldwide — not a traffic play. Justified on GEO/AI-citation, Pure 1 pillar authority, and internal-link capture from high-volume siblings. Key instruction applied throughout: worldwide lens, not single-country (Teresa's standing rule — do not over-weight Pakistan).
+
+Phase 3 (wiki check): confirmed no positioning conflict with existing wiki articles. Content type set to blog post with native FAQPage JSON-LD; TopicPage commonMistakes field is a complementary distribution channel, not a duplicate.
+
+Phase 4 (write article): ran `/write-article`. Draft produced at `marketing/pipelines/drafts/9709-pure-1-common-mistakes-examiner-reports-2026-06-23.md` — score 90.9/100, ~2,300 words. Structure: GEO-first intro, Key Takeaways, 6 H2 sections, FAQ (5 Q&A pairs), conclusion, FAQPage JSON-LD schema. All 13 examiner quotes verified against official Cambridge PDFs (s24 clean copy); 2 attribution errors corrected (Quotes 4 and 6 re-attributed from w21/s23 → s24/9709/13). Reviewer byline confirmed by Teresa. CTAs updated: `[See how it works →](/)` → homepage; waitlist CTAs → `{{EMAIL_CAPTURE}}` inline component placeholders.
+
+**Why:** The low-volume keyword is intentional — this article serves the GEO/AI-citation layer and the Pure 1 pillar cluster, not direct traffic acquisition. The competitive moat is the 13 verbatim attributed examiner quotes + Pure 1 depth + Teresa E-A-T reviewer box. Page-to-beat (Tutopiya, ~1,200 words, zero direct quotes) is structurally outclassed.
+
+**Alternatives considered:** Broader "all of 9709" angle (rejected — dilutes the depth moat; Pure 1 focus matches our existing cluster and Teresa's reviewer positioning). Higher-volume keyword as primary (rejected — no competitive angle at higher-volume terms; demand is genuinely low for this query).
+
+**Owner:** Teresa.
+
+**Provenance note:** w20, w21, w22, s23 local PDFs carry PapersDaddy watermarks — use official Cambridge School Support Hub links for external citations in Phase 5. Only s24 is a clean official Cambridge copy.
+
+---
+
+## 2026-06-23 — EP-74 Phase 1 complete: 9709 examiner report intelligence extracted
+
+**Decision:** Completed Phase 1 of EP-74 (Cambridge 9709 bridge content article). All 8 Pure 1 examiner reports (m20, s21, s22, s23, s24, w20, w21, w22) read and synthesised into a structured findings document at `marketing/pipelines/research/ep74-phase1-findings-2026-06-23.md` — organised by 10 topics with recurring mistakes, mark-loss mechanisms, cross-year patterns, and verbatim quotable examiner phrases. Paused at the Phase 1 review gate for Teresa's visual review before Phase 2.
+
+**Why:** The data supports a defensible learning-science angle: most marks are lost on execution habits (showing working, accuracy/rounding, range management), not on understanding. That framing fits EP-74's "learning science insight, not AI tutor" brief and Teresa's role as analytical reviewer. Circular Measure is the strongest topic hook (most consistent weak spot, links to the published Circular Measure article, supports the EP-67 Pure 1 pillar). The 2020 syllabus change (Circles + Transformations new) gives a credible 5-year "how the cohort adapted" narrative.
+
+**Alternatives considered:** N/A — this is a workflow checkpoint, not a branching decision. Article angle options are captured in the findings doc for Teresa's selection at the Phase 2 gate.
+
+**Owner:** Teresa.
+
+**Note:** w22 PDF carries a "PapersDaddy" third-party watermark — cite the official Cambridge examiner report for external authority links in Phase 5, not that copy.
 ## 2026-06-23 — Free beta end policy: 14-day trial
 
 **Decision:** Each user gets 14 days from signup before hitting the paywall. Trial-based, not fixed-date or first-N-free.
