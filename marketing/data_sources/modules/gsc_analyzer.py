@@ -33,7 +33,7 @@ except ImportError:
     print("Run: pip install -r marketing/data_sources/requirements.txt")
     sys.exit(1)
 
-sys.path.insert(0, "..")
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import GSC_PROPERTY
 
 SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]

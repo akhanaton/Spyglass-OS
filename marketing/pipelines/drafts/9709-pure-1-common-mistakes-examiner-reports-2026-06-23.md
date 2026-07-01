@@ -118,7 +118,7 @@ The pattern is everywhere in the reports. A student solves correctly, finds the 
 
 A related error is carrying an invalid value forward instead of discarding it, which can sink a whole part:
 
-> "Candidates who wrote cos x = -1/4 were unable to gain any marks." [VERIFIED: 9709/11, June 2024, Q5.]
+> "Candidates who wrote cos x = -1.4 [typo in original report as -1 4] were unable to gain any marks." [VERIFIED: 9709/11, June 2024, Q5.]
 
 There is also a quieter, more fundamental issue examiners return to: combining algebraic fractions. One report calls clean fraction work "a fundamental skill which candidates would benefit from practising more extensively." [VERIFIED: 9709/12, Nov 2020, Q6. ⚠ Local copy watermarked. "Practising" = UK normalisation of source spelling.]
 

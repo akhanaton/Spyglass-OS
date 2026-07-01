@@ -118,7 +118,7 @@ The pattern is everywhere in the reports. A student solves correctly, finds the 
 
 A related error is carrying an invalid value forward instead of discarding it, which can sink a whole part:
 
-> "Candidates who wrote cos x = -1/4 were unable to gain any marks."
+> "Candidates who wrote cos x = -1.4 [typo in original report as -1 4] were unable to gain any marks."
 
 There is also a quieter, more fundamental issue examiners return to: combining algebraic fractions. One report calls clean fraction work "a fundamental skill which candidates would benefit from practising more extensively."
 
@@ -192,7 +192,7 @@ Find out exactly where your 9709 Pure 1 marks are leaking, before the exam does 
       "name": "What are the most common mistakes in Cambridge 9709 Pure 1?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The most common mistakes: no working shown, mixing radians and degrees, forgetting to square y in volumes of revolution, dropping the constant of integration, and finding one trig solution when the question requires three. All flagged across Papers 11, 12, and 13."
+        "text": "The most common mistakes are giving answers with no working shown, confusing radians and degrees in circular measure, forgetting to square y in a volume of revolution, dropping the constant of integration, and finding only one solution to a trigonometric equation when several exist within the range. Cambridge examiner reports flag these same errors across multiple years and across Papers 11, 12 and 13."
       }
     },
     {
@@ -200,7 +200,7 @@ Find out exactly where your 9709 Pure 1 marks are leaking, before the exam does 
       "name": "Where can I read the Cambridge 9709 examiner reports?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Free from Cambridge International at cambridgeinternational.org, alongside question papers and mark schemes. Read the most recent Paper 12 and Paper 13 reports — they list the exact mistakes examiners are currently seeing."
+        "text": "Cambridge International publishes examiner reports for every exam session on its official 9709 past papers pages, alongside the question papers and mark schemes. They're free to access. Read the most recent reports for Paper 12 and Paper 13 before your final revision weeks, because they tell you exactly which mistakes examiners are seeing most often."
       }
     },
     {
@@ -208,7 +208,7 @@ Find out exactly where your 9709 Pure 1 marks are leaking, before the exam does 
       "name": "Why do I lose marks even when my final answer is correct?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cambridge awards method marks for working shown, not just the final answer. A correct result with no working — including one from a calculator — will not receive credit. Always show your method."
+        "text": "Because Cambridge awards method marks for working, not just the final answer. The examiner reports are explicit that a correct result with no supporting working, especially one that looks like it came straight from a calculator, will not receive full credit. Always show your method: factorisation or the quadratic formula with numbers substituted, limits substituted into integrals, and each step of an identity proof."
       }
     },
     {
@@ -216,7 +216,7 @@ Find out exactly where your 9709 Pure 1 marks are leaking, before the exam does 
       "name": "How do examiner reports help me more than just doing past papers?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Past papers show whether your answer was right. Examiner reports tell you why most students get it wrong. That distinction matters: fix the habit once and you're protected across every similar question."
+        "text": "Past papers show you whether you got a question right. Examiner reports tell you why most students get it wrong, which is the more useful information. They reveal the recurring habits that cost marks, so you can fix the habit once and protect yourself across every similar question, rather than rediscovering the same mistake paper after paper."
       }
     },
     {
@@ -224,7 +224,7 @@ Find out exactly where your 9709 Pure 1 marks are leaking, before the exam does 
       "name": "Is circular measure really that important in 9709 Pure 1?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Across five years, circular measure is Pure 1's most consistent source of avoidable mark loss. The errors are predictable: radians vs degrees, perimeter vs area, the triangle inside a sector."
+        "text": "Yes. Across five years of reports, circular measure is the most consistent source of avoidable mark loss in Pure 1. The errors are predictable (radians versus degrees, perimeter versus area, the triangle inside a sector) which is exactly why they are easy to protect against once you know to look for them."
       }
     }
   ]
